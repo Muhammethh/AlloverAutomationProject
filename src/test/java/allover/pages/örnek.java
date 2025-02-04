@@ -8,5 +8,6 @@ public class örnek {
 
 
     }
+    //Mustafa
 
 }
