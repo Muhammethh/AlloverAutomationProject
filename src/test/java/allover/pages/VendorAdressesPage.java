@@ -38,11 +38,30 @@ public class VendorAdressesPage {
     @FindBy(id="billing_address_2")
     public WebElement streetAdress2 ;
 
-    @FindBy(xpath="//a[@class='wishlist block-type']")
-    public WebElement adressss;
+    @FindBy(id="billing_city")
+    public WebElement townCity;
 
 
-    @FindBy(xpath="//a[@class='wishlist block-type']")
-    public WebElement adressss2;
+    @FindBy(id="select2-billing_state-container")
+    public WebElement state;
 
+
+    @FindBy(id="billing_postcode")
+    public WebElement zipCode;
+
+
+    @FindBy(id="billing_phone")
+    public WebElement phone;
+
+
+    @FindBy(id="billing_email")
+    public WebElement email;
+
+
+    @FindBy(name="save_address")
+    public WebElement saveButton;
+
+
+    @FindBy(css="div[role='alert']")
+    public WebElement changedSuccessfully;
 }
