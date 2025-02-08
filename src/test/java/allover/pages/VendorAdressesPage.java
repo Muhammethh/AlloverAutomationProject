@@ -39,6 +39,10 @@ public class VendorAdressesPage {
     public WebElement streetAdress2 ;
 
     @FindBy(xpath="//a[@class='wishlist block-type']")
-    public WebElement whishlistHead ;
+    public WebElement adressss;
+
+
+    @FindBy(xpath="//a[@class='wishlist block-type']")
+    public WebElement adressss2;
 
 }
