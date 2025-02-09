@@ -11,6 +11,9 @@ public class MyAccountPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    @FindBy (xpath = "//h2[text()='My Account']")
+    public WebElement MyAccountTitle;
+
     @FindBy(xpath = "//a[text()='Dashboard']")
     public WebElement DashboardButton;
 
