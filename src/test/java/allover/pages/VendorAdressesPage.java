@@ -14,7 +14,7 @@ public class VendorAdressesPage {
     @FindBy(partialLinkText="Addresses")
     public WebElement adresses;
 
-    @FindBy(partialLinkText="Edit Your Billing Address")
+    @FindBy(xpath="//a[text()='Edit Your Billing Address']")
     public WebElement editYourBilling ;
 
     @FindBy(partialLinkText="Edit Your Shipping Address")
@@ -31,6 +31,7 @@ public class VendorAdressesPage {
 
     @FindBy(id="select2-billing_country-container")
     public WebElement country ;
+
 
     @FindBy(id="billing_address_1")
     public WebElement streetAdress1 ;
@@ -64,4 +65,8 @@ public class VendorAdressesPage {
 
     @FindBy(css="div[role='alert']")
     public WebElement changedSuccessfully;
+
+    //table[1]
+    @FindBy(xpath="//table[1]")
+    public WebElement verfyAdress;
 }

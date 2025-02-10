@@ -89,7 +89,7 @@ public class ReusableMethods {
         WebElement satirSutun = Driver.getDriver().findElement(By.xpath("(//tbody)[1]//tr[" + satir + "]//td[" + sutun + "]"));
         System.out.println(satirSutun.getText());
     }
-    //Click Method
+    //Click TestBase
     public static void click(WebElement element) {
         try {
             element.click();
