@@ -22,6 +22,9 @@ public class HomePage {
     @FindBy(xpath="//a/span[text()='Sign In']")
     public WebElement signIn ;
 
+    @FindBy (xpath ="//a/span[text()='Sign Out']")
+    public WebElement signOut;
+
     @FindBy(xpath="//a/span[text()='Register']")
     public WebElement register ;
 
