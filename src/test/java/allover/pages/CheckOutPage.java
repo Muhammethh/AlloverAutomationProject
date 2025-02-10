@@ -48,7 +48,7 @@ public class CheckOutPage {
     public WebElement payAtDoorSelect;
 
     @FindBy(id = "place_order")
-    public WebElement pleaceOrderButton;
+    public WebElement placeOrderButton;
 
     @FindBy(xpath = "//*[contains(text(), 'Thank you. Your order has been received.')]")
     public WebElement orderCompletedText;
