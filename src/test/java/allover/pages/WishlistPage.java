@@ -1,2 +1,4 @@
-package allover.pages;public class WishlistPage {
+package allover.pages;
+
+public class WishlistPage {
 }
