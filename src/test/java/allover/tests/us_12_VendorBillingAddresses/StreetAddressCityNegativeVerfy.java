@@ -1,4 +1,4 @@
-package allover.tests.us_10_VendorBillingAdress;
+package allover.tests.us_12_VendorBillingAddresses;
 
 import allover.pages.VendorAdressesPage;
 import allover.utilities.ConfigReader;
