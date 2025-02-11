@@ -12,17 +12,7 @@ public class StoreManagerPage {
     }
 
     @FindBy (xpath = "(//span[@class='text'])[4]")
-    public WebElement ProductsButton;
-
-    @FindBy (xpath = "//input[@aria-controls='wcfm-products']")
-    public WebElement SearchBox;
-
-    @FindBy (xpath = "//a[text()='Tea Maker']")
-    public WebElement TeaMaker;
-
-    @FindBy (xpath = "//label[@class='wcfmfa fa-database']")
-    public WebElement InventoryButton;
-
+    public WebElement Products;
 
 
 
