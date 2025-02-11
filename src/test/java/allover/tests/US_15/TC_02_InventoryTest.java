@@ -5,14 +5,9 @@ import allover.pages.MyAccountPage;
 import allover.pages.SignInPage;
 import allover.pages.StoreManagerPage;
 import allover.utilities.*;
-import org.bson.assertions.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_01_DisplayMenuTest {
+public class TC_02_InventoryTest {
     @Test
     public void displayMenuTest() throws InterruptedException {
 
@@ -46,7 +41,6 @@ public class TC_01_DisplayMenuTest {
         storeManagerPage.SearchBox.sendKeys("tea maker");
         ReusableMethods.scroll(storeManagerPage.TeaMaker);
 
-
         ActionsUtils.scrollDown();
         WaitUtils.waitForClickablility(storeManagerPage.TeaMaker,5);
 
@@ -57,14 +51,29 @@ public class TC_01_DisplayMenuTest {
         ActionsUtils.scrollDown();
         ActionsUtils.scrollDown();
 
-        Assert.assertTrue(storeManagerPage.InventoryButton.isDisplayed());
-        Assert.assertTrue(storeManagerPage.ShippingButton.isDisplayed());
-        Assert.assertTrue(storeManagerPage.AttributesButton.isDisplayed());
-        Assert.assertTrue(storeManagerPage.SeoButton.isDisplayed());
-        Assert.assertTrue(storeManagerPage.AdvancedButton.isDisplayed());
+        JSUtils.JSclickWithTimeout(storeManagerPage.InventoryButton);
+        storeManagerPage.InventoryButton.click();
+        ActionsUtils.pressTab();
+        ActionsUtils.pressTab();
+        JSUtils.JSclickWithTimeout(storeManagerPage.ManageStockCheckBox);
+        storeManagerPage.ManageStockCheckBox.click();
+        ActionsUtils.pressTab();
+        storeManagerPage.StockQtyTextBox.sendKeys("2");
+        ActionsUtils.pressTab();
+        storeManagerPage.AllowBackorders.click();
+
+        ReusableMethods.ddmValue(storeManagerPage.AllowBackorders,"notify");
+        storeManagerPage.SoldIndividually.click();
+        storeManagerPage.SubmitButton.click();
 
 
-        Driver.closeDriver();
+
+
+
+
+
+
+//Driver.closeDriver();
 
     }
 }
