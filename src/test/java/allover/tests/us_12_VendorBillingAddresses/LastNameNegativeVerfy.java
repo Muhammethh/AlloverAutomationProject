@@ -1,24 +1,22 @@
-package allover.tests.us_10_VendorBillingAdress;
+package allover.tests.us_12_VendorBillingAddresses;
 
 import allover.pages.VendorAdressesPage;
 import allover.utilities.ConfigReader;
-import allover.utilities.Driver;
 import allover.utilities.ReusableMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class FirstNameNegativeVerfy extends TestBase {
+public class LastNameNegativeVerfy extends TestBase{
 
     @Test
     public void test1Negatif() {
-
-        //Adress bolumunde name kismina gecersiz data girildiginde ekleme yapilmamali
+        //Adress bolumunde Lastname kismina gecersiz data girildiginde ekleme yapilmamali
         VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
-        vendorAdressesPage.firstName.sendKeys("12");
+        vendorAdressesPage.lastName.sendKeys("12");
+
         ReusableMethods.scroll(vendorAdressesPage.country);
         ReusableMethods.visibleWait(vendorAdressesPage.country,3);
-
-        //Country/Region kısmına geçerli veri girilir
+        //          Country/Region kısmına geçerli veri girilir
         ReusableMethods.click(vendorAdressesPage.country);
         ReusableMethods.waitForSecond(2);
 
@@ -53,6 +51,5 @@ public class FirstNameNegativeVerfy extends TestBase {
 //      "Address changed successfully." metni görülmedigi doğrulanır
         Assert.assertFalse(vendorAdressesPage.changedSuccessfully.isDisplayed());
 
-        Driver.closeDriver();
     }
 }
