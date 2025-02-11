@@ -8,12 +8,15 @@ import allover.utilities.ActionsUtils;
 import allover.utilities.ConfigReader;
 import allover.utilities.Driver;
 import allover.utilities.ReusableMethods;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 public class TC_01_DisplayMenuTest {
     @Test
     public void displayMenuTest() throws InterruptedException {
-        //Websiteye gidilir
+
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
 
         HomePage homePage = new HomePage();
@@ -28,16 +31,37 @@ public class TC_01_DisplayMenuTest {
         signInPage.PasswordTextBox.sendKeys(ConfigReader.getProperty("vendorPassword"));
 
         signInPage.SignInButton.click();
-        ReusableMethods.waitForSecond(2);
-
         ReusableMethods.scroll(homePage.myAccount);
+        ReusableMethods.scroll(homePage.myAccount);
+        ReusableMethods.visibleWait(homePage.myAccount,5);
 
         homePage.myAccount.click();
-        ReusableMethods.visibleWait(storeManagerPage.Products,5);
+
+        myAccountPage.StoreManagerButton.click();
+
+        ReusableMethods.scroll(storeManagerPage.ProductsButton);
+        ReusableMethods.visibleWait(storeManagerPage.ProductsButton,5);
+        storeManagerPage.ProductsButton.click();
+
+        storeManagerPage.SearchBox.click();
+        storeManagerPage.SearchBox.sendKeys("tea maker");
+        ReusableMethods.scroll(storeManagerPage.TeaMaker);
+        ReusableMethods.scroll(storeManagerPage.TeaMaker);
+        ReusableMethods.scroll(storeManagerPage.TeaMaker);
+        ReusableMethods.visibleWait(storeManagerPage.TeaMaker,5);
+        storeManagerPage.TeaMaker.click();
+
+       // ReusableMethods.scroll(storeManagerPage.InventoryButton);
 
 
-        storeManagerPage.Products.click();
-        ReusableMethods.visibleWait(homePage.myAccount,5);
+        Thread.sleep(5);
+
+        storeManagerPage.InventoryButton.click();
+
+
+//      ReusableMethods.scroll(storeManagerPage.InventoryButton);
+
+
 
         Driver.closeDriver();
 
