@@ -14,7 +14,7 @@ public class test1 {
 
         AccountDetailsPage accountDetailsPage=new AccountDetailsPage();
         Faker faker=new Faker();
-        SignInCustomer.testName();
+        SignInCustomer.SignIn();
 
         WaitUtils.waitFor(3);
 

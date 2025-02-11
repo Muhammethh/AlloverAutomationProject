@@ -11,12 +11,12 @@ public class SignInCustomer {
 
 
     @Test
-    public static void testName() {
+    public static void SignIn() {
         HomePage homePage=new HomePage();
         SignInPage signIn=new SignInPage();
 
 
-        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl")); // Login sayfasına git
+        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
         homePage.signIn.click();
         signIn.UsernameTextBox.sendKeys(ConfigReader.getProperty("signInUserName"));
         signIn.PasswordTextBox.sendKeys(ConfigReader.getProperty("signInPassword"));
