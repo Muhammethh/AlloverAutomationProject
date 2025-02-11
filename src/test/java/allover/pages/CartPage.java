@@ -13,6 +13,10 @@ public class CartPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    //Sağda çıkan küçük sepet penceresinde ki View cart butonu
+    @FindBy(xpath = "//a[@class='button wc-forward']")
+    public WebElement ViewCartButton;
+
     @FindBy(partialLinkText = "Shopping Cart")
     public WebElement shoppingCartText;
 
@@ -46,8 +50,13 @@ public class CartPage {
     @FindBy(partialLinkText = "Apply coupon")
     public WebElement applyCouponButton;
 
-    @FindBy(partialLinkText = " Proceed to checkout ")
+    @FindBy(xpath = "//a[@class='checkout-button button alt wc-forward']")
     public WebElement proceedToCheckoutButton;
+
+    @FindBy(xpath = "//input[@id='quantity_67aa549c01acf']/@value")
+    public WebElement quantityofItem;
+
+
 
 
 
