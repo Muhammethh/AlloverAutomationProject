@@ -18,7 +18,7 @@ public class TC01 {
     public void testName() {
         HomePage homePage= new HomePage();
         RegisterPage registerPage= new RegisterPage();
-
+        ExtentReportsListener extentReportsListener=new ExtentReportsListener();
 
         ExtentReportsListener.extentTestInfo("sayfaya gidilir");
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
