@@ -32,7 +32,8 @@ public class ExtentReportsListener implements ITestListener, IRetryAnalyzer, IAn
     @Override
     public void onStart(ITestContext context) {
         String reportName = context.getCurrentXmlTest().getName();
-        if (extentReports == null) { // ExtentReports nesnesi oluşturulmamış ise
+        if (extentReports == null) {
+            // ExtentReports nesnesi oluşturulmamış ise
             // Bu objecti raporları oluşturmak ve yönetmek için kullanacağız
             extentReports = new ExtentReports();
             // Öncelikle oluşturmak istediğimiz HTML raporu projemizde nerede saklamak istiyorsak bir dosya yolu oluşturmalıyız
