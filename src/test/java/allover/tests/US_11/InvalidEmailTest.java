@@ -30,14 +30,13 @@ public class InvalidEmailTest {
 
         //Email kısmına geçersiz veri girilir
         SignInPage signInPage = new SignInPage();
-        String invalidVendorEmail ="akifrencber.techproed@gmail";
-        String vendorPassword = "Akif123456789@";
-        ConfigReader.getProperty(invalidVendorEmail);
-        signInPage.UsernameTextBox.sendKeys(invalidVendorEmail);
+        signInPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("invalidVendorEmail"));
+
+
         ExtentReportsListener.extentTestInfo("Gecersiz vendor email girilir");
 
         //Password kısmına geçerli veri girilir
-        signInPage.PasswordTextBox.sendKeys(vendorPassword);
+        signInPage.PasswordTextBox.sendKeys(ConfigReader.getProperty("vendorPassword"));
         ExtentReportsListener.extentTestInfo("Gecerli password girilir");
 
         //Sign-in butonuna tıklanır
@@ -49,7 +48,7 @@ public class InvalidEmailTest {
 
         //Sign-in olunamadığı doğrulanır
         MyAccountPage myAccountPage = new MyAccountPage();
-        Assert.assertTrue(myAccountPage.WrongUsernameWarning.isDisplayed());
+        Assert.assertTrue(myAccountPage.WrongUsernamePasswordWarning.isDisplayed());
         ExtentReportsListener.extentTestInfo("Gecersiz email ile giris yapilamadigi dogrulanir");
 
      Driver.closeDriver();
