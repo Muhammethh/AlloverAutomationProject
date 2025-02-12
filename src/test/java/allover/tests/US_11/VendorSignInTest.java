@@ -15,25 +15,22 @@ public class VendorSignInTest {
 
         //Vendor sign-in sayfasina gilidir
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
-
         ExtentReportsListener.extentTestInfo("allovercommerce anasayfasnia gidilir");
 
         //Sign-in linkine tıklanır
-
         HomePage homePage = new HomePage();
         homePage.signIn.click();
         ExtentReportsListener.extentTestInfo("Sign-in butonuna tiklanir");
 
         //Email kısmına geçerli veri girilir
         SignInPage signInPage = new SignInPage();
-        String vendorEmail ="akifrencber.techproed@gmail.com";
-        String vendorPassword = "Akif123456789@";
-        ConfigReader.getProperty(vendorEmail);
-        signInPage.UsernameTextBox.sendKeys(vendorEmail);
+        signInPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("vendorEmail"));
+        ExtentReportsListener.extentTestInfo("Gecerli email girilir");
+
 
         //Password kısmına geçerli veri girilir
-        signInPage.PasswordTextBox.sendKeys(vendorPassword);
-        ExtentReportsListener.extentTestInfo("Gecerli vendor email ve password girilir");
+        signInPage.PasswordTextBox.sendKeys(ConfigReader.getProperty("vendorPassword"));
+        ExtentReportsListener.extentTestInfo("Gecerli vendor password girilir");
 
         //Sign-in butonuna tıklanır
         signInPage.SignInButton.click();
@@ -43,6 +40,7 @@ public class VendorSignInTest {
         //My Account bölümünun gorulur oldugu dogrulanir (Bu islem icin once tekrardan
         // signout butonuna tiklamak gerekmekte)
 
+        //ActionsUtils.scrollEnd();
         homePage.signOut.click();
         MyAccountPage myAccountPage = new MyAccountPage();
         Assert.assertTrue(myAccountPage.MyAccountTitle.isDisplayed());
