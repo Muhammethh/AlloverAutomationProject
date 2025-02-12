@@ -49,7 +49,7 @@ public class InvalidEmailTest {
 
         //Sign-in olunamadığı doğrulanır
         MyAccountPage myAccountPage = new MyAccountPage();
-        Assert.assertTrue(myAccountPage.WrongUsernameWarning.isDisplayed());
+        Assert.assertTrue(myAccountPage.WrongUsernamePasswordWarning.isDisplayed());
         ExtentReportsListener.extentTestInfo("Gecersiz email ile giris yapilamadigi dogrulanir");
 
      Driver.closeDriver();

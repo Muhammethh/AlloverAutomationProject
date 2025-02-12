@@ -15,7 +15,7 @@ public class MyAccountPage {
     public WebElement MyAccountTitle;
 
     @FindBy (xpath = "//p[text()='Wrong username or password.']")
-    public WebElement WrongUsernameWarning;
+    public WebElement WrongUsernamePasswordWarning;
 
     @FindBy(xpath = "//a[text()='Dashboard']")
     public WebElement DashboardButton;

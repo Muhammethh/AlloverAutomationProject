@@ -6,22 +6,23 @@ import allover.pages.SignInPage;
 import allover.utilities.ConfigReader;
 import allover.utilities.Driver;
 import allover.utilities.ExtentReportsListener;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 
 public class InvalidPasswordTest {
 
-    @Test (description = "US-11 TC-1 Vendor sign in,Vendor olarak Sign in yapılabilmeli")
-    public void vendorSignInTest() {
+    @Test (description = "US-11 TC-03 Password yanlış girildiğinde sisteme giriş yapilamamali (Negative Case)")
+    public void invalidPasswordTest() {
 
-        //Vendor sign-in sayfasina gilidir
+        //Vendor sign-in sayfasina gidilir
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
-
         ExtentReportsListener.extentTestInfo("allovercommerce anasayfasnia gidilir");
 
         //Sign-in linkine tıklanır
-
         HomePage homePage = new HomePage();
         homePage.signIn.click();
         ExtentReportsListener.extentTestInfo("Sign-in butonuna tiklanir");
@@ -29,26 +30,25 @@ public class InvalidPasswordTest {
         //Email kısmına geçerli veri girilir
         SignInPage signInPage = new SignInPage();
         String vendorEmail ="akifrencber.techproed@gmail.com";
-        String vendorPassword = "Akif123456789@";
-        ConfigReader.getProperty(vendorEmail);
+        ConfigReader.getProperty(vendorEmail);//bu kisim da eksiklik var best practice olmama ihtimali!
         signInPage.UsernameTextBox.sendKeys(vendorEmail);
 
-        //Password kısmına geçerli veri girilir
-        signInPage.PasswordTextBox.sendKeys(vendorPassword);
-        ExtentReportsListener.extentTestInfo("Gecerli vendor email ve password girilir");
+        //Password kısmına geçersiz veri girilir
+        String invalidVendorPassword = "Akif123456789";
+        signInPage.PasswordTextBox.sendKeys(invalidVendorPassword);
+        ExtentReportsListener.extentTestInfo("Gecersiz vendor password girilir");
+
 
         //Sign-in butonuna tıklanır
         signInPage.SignInButton.click();
         ExtentReportsListener.extentTestInfo("Sign-in butonuna tiklanir");
 
+        //Gecersiz password ile sayfaya giris yapilamadigi dogrulanir.
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
 
-        //My Account bölümünun gorulur oldugu dogrulanir (Bu islem icin once tekrardan
-        // signout butonuna tiklamak gerekmekte)
-
-        homePage.signOut.click();
         MyAccountPage myAccountPage = new MyAccountPage();
-        Assert.assertTrue(myAccountPage.MyAccountTitle.isDisplayed());
-        ExtentReportsListener.extentTestInfo("My Account bilgisinin gorunur oldugu dogrulanir");
+        Assert.assertTrue(myAccountPage.WrongUsernamePasswordWarning.isDisplayed());
+        ExtentReportsListener.extentTestInfo("Gecersiz password ile giris yapilamadigi dogrulanir");
 
      Driver.closeDriver();
 

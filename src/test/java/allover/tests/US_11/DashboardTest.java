@@ -32,10 +32,11 @@ public class DashboardTest {
         String vendorPassword = "Akif123456789@";
         ConfigReader.getProperty(vendorEmail);
         signInPage.UsernameTextBox.sendKeys(vendorEmail);
+        ExtentReportsListener.extentTestInfo("Email kismina gecerli email girilirr");
 
         //Password kısmına geçerli veri girilir
         signInPage.PasswordTextBox.sendKeys(vendorPassword);
-        ExtentReportsListener.extentTestInfo("Gecerli vendor email ve password girilir");
+        ExtentReportsListener.extentTestInfo("Gecerli vendor password girilir");
 
         //Sign-in butonuna tıklanır
         signInPage.SignInButton.click();
