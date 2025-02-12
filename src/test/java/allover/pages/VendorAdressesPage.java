@@ -55,7 +55,7 @@ public class VendorAdressesPage {
     public WebElement phone;
 
 
-    @FindBy(id="billing_email")
+    @FindBy(xpath="//input[@id='billing_email']")
     public WebElement email;
 
 
@@ -66,7 +66,12 @@ public class VendorAdressesPage {
     @FindBy(css="div[role='alert']")
     public WebElement changedSuccessfully;
 
-    //table[1]
+
+
+
+    @FindBy(css="li.alert.alert-danger")
+    public WebElement zipcodeverfy;
+
     @FindBy(xpath="//table[1]")
     public WebElement verfyAdress;
 }
