@@ -1,6 +1,8 @@
 package allover.tests.us_12_VendorBillingAddresses;
 
+import allover.pages.MyAccountPage;
 import allover.pages.VendorAdressesPage;
+import allover.tests.SignInVendor;
 import allover.utilities.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,13 +10,26 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
-public class TC_05 extends TestBase {
+public class TC_05 extends SignInVendor {
 
     @Test(description = "US-12 TC-5 ZipCode kismina gecersiz data girildiginde adres ekleme  basarili olmamalidir ")
     public void test() {
 
-        //First name kismina gecerli data girilir
+        //    Adresses sekmesine tıklanir
+        MyAccountPage myAccountPage=new MyAccountPage();
+        myAccountPage.AddressesButton.click();
+        ReusableMethods.waitForSecond(2);
+
+        // Edit Billing Adresses sekmesine tıklanır.
+
         VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
+        ReusableMethods.waitForSecond(2);
+        ReusableMethods.scroll(vendorAdressesPage.editYourBilling);
+        ReusableMethods.visibleWait(vendorAdressesPage.editYourBilling,3);
+        ReusableMethods.click(  vendorAdressesPage.editYourBilling);
+
+
+        //First name kismina gecerli data girilir
         vendorAdressesPage.firstName.clear();
         vendorAdressesPage.firstName.sendKeys(ConfigReader.getProperty("firstname"));
         ExtentReportsListener.extentTestInfo("First name kismina gecerli data girilir");
