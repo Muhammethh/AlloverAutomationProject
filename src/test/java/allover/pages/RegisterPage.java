@@ -20,14 +20,13 @@ public class RegisterPage {
     @FindBy(xpath = "//input[@id='reg_password']")
     public WebElement PasswordTextBox;
 
+    @FindBy(css = "input[id='register-policy']")
+    public WebElement AgreeCheckBox;
 
    @FindBy(css = "input[id='register-policy']")
    public WebElement AgreeCheckBox;
 
-
    @FindBy(xpath = "(//button[@value='Sign Up'])[1]")
-
-
    public WebElement SignUpButton;
 
     @FindBy(partialLinkText = "Signup as a vendor?")
@@ -38,17 +37,4 @@ public class RegisterPage {
 
     @FindBy(xpath = "(//p[@class='submit-status'])[2]")
     public WebElement RegistrationCheck;
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
