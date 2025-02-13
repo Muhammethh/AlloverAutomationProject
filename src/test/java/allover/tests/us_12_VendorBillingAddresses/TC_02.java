@@ -1,6 +1,8 @@
 package allover.tests.us_12_VendorBillingAddresses;
 
+import allover.pages.MyAccountPage;
 import allover.pages.VendorAdressesPage;
+import allover.tests.SignInVendor;
 import allover.utilities.ConfigReader;
 import allover.utilities.Driver;
 import allover.utilities.ExtentReportsListener;
@@ -8,13 +10,26 @@ import allover.utilities.ReusableMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_02 extends TestBase {
+public class TC_02 extends SignInVendor {
 
     @Test(description = "US-12 TC-2 First name gecersiz data girildiginde adres ekleme  basarili olmamalidir ")
     public void test() {
 
-        //Adress bolumunde name kismina gecersiz data girildiginde ekleme yapilmamali
+        //    Adresses sekmesine tıklanir
+        MyAccountPage myAccountPage=new MyAccountPage();
+        myAccountPage.AddressesButton.click();
+        ReusableMethods.waitForSecond(2);
+
+        // Edit Billing Adresses sekmesine tıklanır.
+
         VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
+        ReusableMethods.waitForSecond(2);
+        ReusableMethods.scroll(vendorAdressesPage.editYourBilling);
+        ReusableMethods.visibleWait(vendorAdressesPage.editYourBilling,3);
+        ReusableMethods.click(  vendorAdressesPage.editYourBilling);
+
+
+        //Adress bolumunde name kismina gecersiz data girildiginde ekleme yapilmamali
         vendorAdressesPage.firstName.clear();
         vendorAdressesPage.firstName.sendKeys("12");
         ExtentReportsListener.extentTestFail("First name alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
