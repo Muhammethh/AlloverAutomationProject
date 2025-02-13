@@ -1,10 +1,9 @@
-package allover.tests.US_15;
+package allover.tests.us_15;
 
 import allover.pages.HomePage;
 import allover.pages.MyAccountPage;
 import allover.pages.SignInPage;
 import allover.pages.StoreManagerPage;
-import allover.utilities.ActionsUtils;
 import allover.utilities.ConfigReader;
 import allover.utilities.Driver;
 import allover.utilities.ReusableMethods;

@@ -1,4 +1,4 @@
-package allover.tests.US_15;
+package allover.tests.us_15;
 
 import allover.pages.HomePage;
 import allover.pages.MyAccountPage;
