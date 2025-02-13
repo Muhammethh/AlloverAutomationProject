@@ -19,7 +19,7 @@ public class TC_05 extends SignInVendor {
         MyAccountPage myAccountPage=new MyAccountPage();
         myAccountPage.AddressesButton.click();
         ReusableMethods.waitForSecond(2);
-
+        ExtentReportsListener.extentTestInfo("Vendor address sekmesine tiklar");
         // Edit Billing Adresses sekmesine tıklanır.
 
         VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
@@ -27,6 +27,8 @@ public class TC_05 extends SignInVendor {
         ReusableMethods.scroll(vendorAdressesPage.editYourBilling);
         ReusableMethods.visibleWait(vendorAdressesPage.editYourBilling,3);
         ReusableMethods.click(  vendorAdressesPage.editYourBilling);
+        ExtentReportsListener.extentTestInfo("Vendor edit your billing adsress sekmesine tiklar");
+
 
 
         //First name kismina gecerli data girilir
@@ -70,10 +72,10 @@ public class TC_05 extends SignInVendor {
         ReusableMethods.waitForSecond(2);
         ExtentReportsListener.extentTestInfo("States kismina gecerli veri girlir");
 
-//          ZIP Code kısmına geçerli veri girilir
+//          ZIP Code kısmına geçersiz veri girilir
         vendorAdressesPage.zipCode.clear();
         vendorAdressesPage.zipCode.sendKeys("a123?");
-        ExtentReportsListener.extentTestFail("ZipCode alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
+        ExtentReportsListener.extentTestInfo(" ZIP Code kısmına geçersiz veri girilir");
 
 
         ReusableMethods.waitForSecond(2);
@@ -94,7 +96,8 @@ public class TC_05 extends SignInVendor {
 
 //      "Address changed successfully." metni görülmedigi doğrulanır
         assertTrue(vendorAdressesPage.zipcodeverfy.isDisplayed());
-        ExtentReportsListener.extentTestInfo("Address changed successfully. metni görülmedigi doğrulanır");
+        ExtentReportsListener.extentTestFail("ZipCode alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
+
         Driver.closeDriver();
     }
 }

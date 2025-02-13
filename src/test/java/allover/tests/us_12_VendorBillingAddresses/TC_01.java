@@ -90,7 +90,7 @@ public class TC_01 extends SignInVendor {
 
         //Save Address butonuna tıklayarak Billing Addrese (Fatura Adresi) guncellenir.
         ReusableMethods.visibleWait(vendorAdressesPage.saveButton,5);
-        ReusableMethods.click();
+        ReusableMethods.click(vendorAdressesPage.saveButton);
         ReusableMethods.waitForSecond(2);
         Assert.assertTrue(vendorAdressesPage.changedSuccessfully.isDisplayed());
         ExtentReportsListener.extentTestInfo("Save Address butonuna tıklayarak Billing Addrese (Fatura Adresi) eklenme dogrulanir");
