@@ -1,13 +1,15 @@
-package allover.tests.US_15;
+package allover.tests.us_15;
 
 import allover.pages.HomePage;
 import allover.pages.MyAccountPage;
 import allover.pages.SignInPage;
 import allover.pages.StoreManagerPage;
-import allover.utilities.*;
+import allover.utilities.ConfigReader;
+import allover.utilities.Driver;
+import allover.utilities.ReusableMethods;
 import org.testng.annotations.Test;
 
-public class TC_03_ShippingTest {
+public class TC_01_DisplayMenuTest {
     @Test
     public void displayMenuTest() throws InterruptedException {
 
@@ -40,47 +42,24 @@ public class TC_03_ShippingTest {
         storeManagerPage.SearchBox.click();
         storeManagerPage.SearchBox.sendKeys("tea maker");
         ReusableMethods.scroll(storeManagerPage.TeaMaker);
-
-        ActionsUtils.scrollDown();
-        WaitUtils.waitForClickablility(storeManagerPage.TeaMaker,5);
-
-
+        ReusableMethods.scroll(storeManagerPage.TeaMaker);
+        ReusableMethods.scroll(storeManagerPage.TeaMaker);
+        ReusableMethods.visibleWait(storeManagerPage.TeaMaker,5);
         storeManagerPage.TeaMaker.click();
 
-        ActionsUtils.scrollDown();
-        ActionsUtils.scrollDown();
-        ActionsUtils.scrollDown();
+       // ReusableMethods.scroll(storeManagerPage.InventoryButton);
 
-        JSUtils.JSclickWithTimeout(storeManagerPage.ShippingButton);
-        storeManagerPage.ShippingButton.click();
 
-        WaitUtils.waitFor(2);
-        ActionsUtils.pressTab();
-        WaitUtils.waitFor(2);
-        storeManagerPage.WeightTextBox.sendKeys("10.2");
-        ActionsUtils.pressTab();
-        storeManagerPage.LengthTextBox.sendKeys("1000");
-        ActionsUtils.pressTab();
-        storeManagerPage.WeightTextBox.sendKeys("2000");
-        ActionsUtils.pressTab();
-        storeManagerPage.HeightTextBox.sendKeys("2000");
-        ActionsUtils.pressTab();
-        ActionsUtils.pressArrowDown();
-        ActionsUtils.pressEnter();
-        ActionsUtils.pressTab();
-        ActionsUtils.pressArrowDown();
-        ActionsUtils.pressArrowDown();
-        ActionsUtils.scrollDown();
+        Thread.sleep(5);
 
-        storeManagerPage.SubmitButton.click();
+        storeManagerPage.InventoryButton.click();
+
+
+//      ReusableMethods.scroll(storeManagerPage.InventoryButton);
 
 
 
-        
-
-
-        //  Driver.closeDriver();
-
+        Driver.closeDriver();
 
     }
 }

@@ -1,19 +1,13 @@
-package allover.tests.US_15;
+package allover.tests.us_15;
 
 import allover.pages.HomePage;
 import allover.pages.MyAccountPage;
 import allover.pages.SignInPage;
 import allover.pages.StoreManagerPage;
-import allover.utilities.ActionsUtils;
-import allover.utilities.ConfigReader;
-import allover.utilities.Driver;
-import allover.utilities.ReusableMethods;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import allover.utilities.*;
 import org.testng.annotations.Test;
 
-public class TC_01_DisplayMenuTest {
+public class TC_02_InventoryTest {
     @Test
     public void displayMenuTest() throws InterruptedException {
 
@@ -46,24 +40,40 @@ public class TC_01_DisplayMenuTest {
         storeManagerPage.SearchBox.click();
         storeManagerPage.SearchBox.sendKeys("tea maker");
         ReusableMethods.scroll(storeManagerPage.TeaMaker);
-        ReusableMethods.scroll(storeManagerPage.TeaMaker);
-        ReusableMethods.scroll(storeManagerPage.TeaMaker);
-        ReusableMethods.visibleWait(storeManagerPage.TeaMaker,5);
+
+        ActionsUtils.scrollDown();
+        WaitUtils.waitForClickablility(storeManagerPage.TeaMaker,5);
+
+
         storeManagerPage.TeaMaker.click();
 
-       // ReusableMethods.scroll(storeManagerPage.InventoryButton);
+        ActionsUtils.scrollDown();
+        ActionsUtils.scrollDown();
+        ActionsUtils.scrollDown();
 
-
-        Thread.sleep(5);
-
+        JSUtils.JSclickWithTimeout(storeManagerPage.InventoryButton);
         storeManagerPage.InventoryButton.click();
+        ActionsUtils.pressTab();
+        ActionsUtils.pressTab();
+        JSUtils.JSclickWithTimeout(storeManagerPage.ManageStockCheckBox);
+        storeManagerPage.ManageStockCheckBox.click();
+        ActionsUtils.pressTab();
+        storeManagerPage.StockQtyTextBox.sendKeys("2");
+        ActionsUtils.pressTab();
+        storeManagerPage.AllowBackorders.click();
+
+        ReusableMethods.ddmValue(storeManagerPage.AllowBackorders,"notify");
+        storeManagerPage.SoldIndividually.click();
+        storeManagerPage.SubmitButton.click();
 
 
-//      ReusableMethods.scroll(storeManagerPage.InventoryButton);
 
 
 
-        Driver.closeDriver();
+
+
+
+//Driver.closeDriver();
 
     }
 }

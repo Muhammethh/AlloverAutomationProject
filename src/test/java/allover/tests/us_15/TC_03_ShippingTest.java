@@ -1,4 +1,4 @@
-package allover.tests.US_15;
+package allover.tests.us_15;
 
 import allover.pages.HomePage;
 import allover.pages.MyAccountPage;
@@ -7,7 +7,7 @@ import allover.pages.StoreManagerPage;
 import allover.utilities.*;
 import org.testng.annotations.Test;
 
-public class TC_04_AttributesTest {
+public class TC_03_ShippingTest {
     @Test
     public void displayMenuTest() throws InterruptedException {
 
@@ -49,44 +49,38 @@ public class TC_04_AttributesTest {
 
         ActionsUtils.scrollDown();
         ActionsUtils.scrollDown();
+        ActionsUtils.scrollDown();
 
-        JSUtils.JSclickWithTimeout(storeManagerPage.AttributesButton);
-        ReusableMethods.click(storeManagerPage.AttributesButton);
-        JSUtils.JSclickWithTimeout(storeManagerPage.ColorButton);
-        storeManagerPage.ColorButton.click();
-//      storeManagerPage.ColorSearchBox.click();
+        JSUtils.JSclickWithTimeout(storeManagerPage.ShippingButton);
+        storeManagerPage.ShippingButton.click();
 
-        storeManagerPage.ColorSearchBox.sendKeys("Red");
+        WaitUtils.waitFor(2);
+        ActionsUtils.pressTab();
+        WaitUtils.waitFor(2);
+        storeManagerPage.WeightTextBox.sendKeys("10.2");
+        ActionsUtils.pressTab();
+        storeManagerPage.LengthTextBox.sendKeys("1000");
+        ActionsUtils.pressTab();
+        storeManagerPage.WeightTextBox.sendKeys("2000");
+        ActionsUtils.pressTab();
+        storeManagerPage.HeightTextBox.sendKeys("2000");
+        ActionsUtils.pressTab();
+        ActionsUtils.pressArrowDown();
         ActionsUtils.pressEnter();
-        JSUtils.JSclickWithTimeout(storeManagerPage.ColorVisibleOnSearchBoxButton);
-        storeManagerPage.ColorVisibleOnSearchBoxButton.click();
-        ReusableMethods.click(storeManagerPage.SizeButton);
-        storeManagerPage.SizeSearchBox.sendKeys("100x100x200");
+        ActionsUtils.pressTab();
+        ActionsUtils.pressArrowDown();
+        ActionsUtils.pressArrowDown();
+        ActionsUtils.scrollDown();
 
-//        ActionsUtils.pressArrowDown();
-//        ActionsUtils.pressArrowDown();
-//        ActionsUtils.pressArrowDown();
-//        ActionsUtils.pressEnter();
-
-
-//        storeManagerPage.ManageStockCheckBox.click();
-//        ActionsUtils.pressTab();
-//        storeManagerPage.StockQtyTextBox.sendKeys("3");
-//        ActionsUtils.pressTab();
-//        storeManagerPage.AllowBackorders.click();
-//
-//        ReusableMethods.ddmValue(storeManagerPage.AllowBackorders,"Allow");
-//        storeManagerPage.SoldIndividually.click();
-//        storeManagerPage.SubmitButton.click();
-//        ReusableMethods.alertWait(5);
+        storeManagerPage.SubmitButton.click();
 
 
 
+        
 
 
+        //  Driver.closeDriver();
 
-
-//Driver.closeDriver();
 
     }
 }
