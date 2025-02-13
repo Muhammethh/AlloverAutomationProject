@@ -29,7 +29,7 @@ public class VendorAdressesPage {
     @FindBy(id="billing_company")
     public WebElement companyName ;
 
-    @FindBy(id="select2-billing_country-container")
+    @FindBy(id="billing_country")
     public WebElement country ;
 
 
@@ -43,7 +43,7 @@ public class VendorAdressesPage {
     public WebElement townCity;
 
 
-    @FindBy(id="select2-billing_state-container")
+    @FindBy(id="billing_state")
     public WebElement state;
 
 
@@ -55,7 +55,7 @@ public class VendorAdressesPage {
     public WebElement phone;
 
 
-    @FindBy(id="billing_email")
+    @FindBy(xpath="//input[@id='billing_email']")
     public WebElement email;
 
 
@@ -66,7 +66,12 @@ public class VendorAdressesPage {
     @FindBy(css="div[role='alert']")
     public WebElement changedSuccessfully;
 
-    //table[1]
-    @FindBy(xpath="//table[1]")
-    public WebElement verfyAdress;
+
+
+
+    @FindBy(css="li.alert.alert-danger")
+    public WebElement zipcodeverfy;
+
+    @FindBy(xpath="(//table)[1]")
+    public WebElement verfyEmail;
 }
