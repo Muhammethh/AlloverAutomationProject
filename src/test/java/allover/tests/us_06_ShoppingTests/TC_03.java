@@ -1,35 +1,30 @@
-package allover.tests.us_06;
+package allover.tests.us_06_ShoppingTests;
 
 import allover.pages.*;
+import allover.tests.SignInCustomer;
 import allover.utilities.*;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
-public class TC_03_IncreaseDecreaseItemInBasket {
+public class TC_03 {
 
 
 
     @Test
     public void TC_03_IncreaseDecreaseItemInBasket() {
-        //Websiteye gidilir
-        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+
 
         HomePage homePage = new HomePage();
-        SignInPage signInPage = new SignInPage();
         SampleItemsPage sampleItemsPage = new SampleItemsPage();
         CartPage cartPage = new CartPage();
         CheckOutPage checkOutPage = new CheckOutPage();
+        SoftAssert softAssert = new SoftAssert();
 
-        //Sign In butonuna tıklanır
-        homePage.signIn.click();
-
-        //Username ve Password girilerek sign In butonuna basılır
-        signInPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("email"));
-
-        signInPage.PasswordTextBox.sendKeys(ConfigReader.getProperty("password"));
-
-        signInPage.SignInButton.click();
+        SignInCustomer.SignIn();
 
         //Sign Out butonu görünene kadar beklenir ve göründüğü doğrulanır
         WaitUtils.waitForVisibility(homePage.signOut, 10);
@@ -53,17 +48,22 @@ public class TC_03_IncreaseDecreaseItemInBasket {
 
         cartPage.increaseQuantityInCart.click();
 
-        String increasedItem = cartPage.quantityofItem.getDomAttribute("value");
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        WebElement quantityInput = (WebElement) js.executeScript("return document.querySelector('input.input-text.qty.text');");
 
-        Assert.assertEquals(increasedItem,"2");
+        String increasedItem = quantityInput.getDomAttribute("value");
+
+        softAssert.assertEquals(increasedItem,"2");
 
         cartPage.decreaseQuantityInCart.click();
 
-        String decreasedItem = cartPage.quantityofItem.getDomAttribute("value");
+        String decreasedItem = quantityInput.getDomAttribute("value");
 
-        Assert.assertEquals(decreasedItem,"1");
-        System.out.println(decreasedItem);
+        softAssert.assertEquals(decreasedItem,"1");
 
+        Driver.closeDriver();
+
+        softAssert.assertAll();
     }
 
 

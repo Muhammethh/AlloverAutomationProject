@@ -1,36 +1,23 @@
-package allover.tests.us_06;
+package allover.tests.us_06_ShoppingTests;
 
 import allover.pages.HomePage;
 import allover.pages.SampleItemsPage;
-import allover.pages.SignInPage;
-import allover.utilities.ConfigReader;
+import allover.tests.SignInCustomer;
 import allover.utilities.Driver;
 import allover.utilities.WaitUtils;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_02_InvalidSearch {
+public class TC_02 {
 
     @Test
     public void TC_02_InvalidSearch1() {
 
-        //Websiteye gidilir
-        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
-
         HomePage homePage = new HomePage();
-        SignInPage signInPage = new SignInPage();
         SampleItemsPage sampleItemsPage = new SampleItemsPage();
 
-        //Sign In butonuna tıklanır
-        homePage.signIn.click();
-
-        //Username ve Password girilerek sign In butonuna basılır
-        signInPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("email"));
-
-        signInPage.PasswordTextBox.sendKeys(ConfigReader.getProperty("password"));
-
-        signInPage.SignInButton.click();
+        SignInCustomer.SignIn();
 
         //Sign Out butonu görünene kadar beklenir ve göründüğü doğrulanır
         WaitUtils.waitForVisibility(homePage.signOut, 10);

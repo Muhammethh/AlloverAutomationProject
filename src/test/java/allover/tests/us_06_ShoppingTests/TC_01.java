@@ -1,40 +1,27 @@
-package allover.tests.us_06;
+package allover.tests.us_06_ShoppingTests;
 
 import allover.pages.*;
+import allover.tests.SignInCustomer;
 import allover.utilities.*;
-import org.apache.http.util.Asserts;
-import org.bson.assertions.Assertions;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_01_ShoppingTest {
+public class TC_01 {
 
-    //Buraya @BeforeAll ile sign in testi çağrılabilir
+
 
 
     @Test(description = "US_06 TC-01 Geçerli datalar ile kullanıcı alışveriş yapabilmelidir")
     public void TC_01_ShoppingTest1() {
 
-        //Websiteye gidilir
-        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
-
         HomePage homePage = new HomePage();
-        SignInPage signInPage = new SignInPage();
         SampleItemsPage sampleItemsPage = new SampleItemsPage();
         CartPage cartPage = new CartPage();
         CheckOutPage checkOutPage = new CheckOutPage();
 
-        //Sign In butonuna tıklanır
-        homePage.signIn.click();
-
-        //Username ve Password girilerek sign In butonuna basılır
-        signInPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("email"));
-
-        signInPage.PasswordTextBox.sendKeys(ConfigReader.getProperty("password"));
-
-        signInPage.SignInButton.click();
+        //SignIn Classından signIn metodu çağrılarak giriş yapılır
+        SignInCustomer.SignIn();
 
         //Sign Out butonu görünene kadar beklenir ve göründüğü doğrulanır
         WaitUtils.waitForVisibility(homePage.signOut, 10);
