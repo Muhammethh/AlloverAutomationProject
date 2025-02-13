@@ -47,14 +47,19 @@ public class CartPage {
     @FindBy(id = "coupon_code")
     public WebElement couponTextBox;
 
-    @FindBy(partialLinkText = "Apply coupon")
+    @FindBy(xpath = "//button[@name='apply_coupon']")
     public WebElement applyCouponButton;
 
     @FindBy(xpath = "//a[@class='checkout-button button alt wc-forward']")
     public WebElement proceedToCheckoutButton;
 
-    @FindBy(xpath = "//input[@id='quantity_67aa549c01acf']/@value")
+    @FindBy(css = "#quantity_67aca7c11c18d")
     public WebElement quantityofItem;
+
+    @FindBy(xpath = "//li[@class=' alert alert-simple alert-icon alert-close-top alert-danger']")
+    public WebElement couponAlertMessage;
+
+
 
 
 
