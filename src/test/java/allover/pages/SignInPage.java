@@ -23,8 +23,8 @@ public class SignInPage {
     @FindBy(xpath = "//button[@name='login']")
     public WebElement SignInButton;
 
-    @FindBy(xpath = "//button[@title='Close (Esc)']")
-    public WebElement CloseButton;
+    //@FindBy(xpath = "//button[@title='Close (Esc)']")
+    //public WebElement CloseButton;
 
 
 
