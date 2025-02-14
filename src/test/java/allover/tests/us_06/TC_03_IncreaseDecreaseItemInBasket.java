@@ -42,7 +42,7 @@ public class TC_03_IncreaseDecreaseItemInBasket {
         //Çıkan ilk ürünün üzerine gelerek sepete ekle butonuna basılır
         ActionsUtils.hoverOver(sampleItemsPage.firstItemAfterSearch);
 
-        ReusableMethods.click(sampleItemsPage.addFirstItemInCart);
+        ReusableMethods.click();
 
         ActionsUtils.hoverOver(homePage.cartHead);
         //Sepet simgesine basılarak küçük sepet penceresi açılır

@@ -31,7 +31,7 @@ public class StreetAddressCityNegativeVerfy extends TestBase{
         vendorAdressesPage.email.clear();
         vendorAdressesPage.email.sendKeys(ConfigReader.getProperty("email"));
         ReusableMethods.visibleWait(vendorAdressesPage.saveButton,5);
-        ReusableMethods.click(vendorAdressesPage.saveButton);
+        ReusableMethods.click();
         ReusableMethods.waitForSecond(2);
         Assert.assertFalse(vendorAdressesPage.changedSuccessfully.isDisplayed());
     }

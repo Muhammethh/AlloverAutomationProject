@@ -37,7 +37,7 @@ public  class TestBase {
      ReusableMethods.waitForSecond(2);
        ReusableMethods.scroll(vendorAdressesPage.editYourBilling);
        ReusableMethods.visibleWait(vendorAdressesPage.editYourBilling,3);
-       ReusableMethods.click(  vendorAdressesPage.editYourBilling);
+       ReusableMethods.click();
 
     }
 

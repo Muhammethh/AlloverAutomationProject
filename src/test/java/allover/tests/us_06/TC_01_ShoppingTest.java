@@ -2,10 +2,7 @@ package allover.tests.us_06;
 
 import allover.pages.*;
 import allover.utilities.*;
-import org.apache.http.util.Asserts;
-import org.bson.assertions.Assertions;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -64,7 +61,7 @@ public class TC_01_ShoppingTest {
         //Place Order butonuna basılır
         ReusableMethods.scroll(checkOutPage.placeOrderButton);
 
-        ReusableMethods.click(checkOutPage.placeOrderButton);
+        ReusableMethods.click();
 
 
         //Siparişin başarılı olduğu doğrulanır

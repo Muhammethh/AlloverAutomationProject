@@ -29,7 +29,7 @@ public class EditYourBillingAdress extends TestBase {
 
         //Country/Region kısmına geçerli veri girilir
         JSUtils.JSscrollIntoView(vendorAdressesPage.country);
-        ReusableMethods.click(vendorAdressesPage.country);
+        ReusableMethods.click();
         ActionsUtils.scrollDown();
         ReusableMethods.ddmValue(vendorAdressesPage.country,"US");
 
@@ -49,7 +49,7 @@ public class EditYourBillingAdress extends TestBase {
         ExtentReportsListener.extentTestInfo("Town/City kısmına geçerli veri girilir");
 
         JSUtils.JSscrollIntoView(vendorAdressesPage.state);
-        ReusableMethods.click(vendorAdressesPage.state);
+        ReusableMethods.click();
 
         ReusableMethods.ddmValue(vendorAdressesPage.state,"AK");
 
@@ -68,7 +68,7 @@ public class EditYourBillingAdress extends TestBase {
 
         //Save Address butonuna tıklayarak Billing Addrese (Fatura Adresi) guncellenir.
         ReusableMethods.visibleWait(vendorAdressesPage.saveButton,5);
-        ReusableMethods.click(vendorAdressesPage.saveButton);
+        ReusableMethods.click();
         ReusableMethods.waitForSecond(2);
         Assert.assertTrue(vendorAdressesPage.changedSuccessfully.isDisplayed());
         ExtentReportsListener.extentTestInfo("Save Address butonuna tıklayarak Billing Addrese (Fatura Adresi) guncellendigi dogrulanir");

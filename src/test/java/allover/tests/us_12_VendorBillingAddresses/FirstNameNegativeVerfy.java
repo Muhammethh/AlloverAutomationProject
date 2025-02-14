@@ -19,7 +19,7 @@ public class FirstNameNegativeVerfy extends TestBase {
         ReusableMethods.visibleWait(vendorAdressesPage.country,3);
 
         //Country/Region kısmına geçerli veri girilir
-        ReusableMethods.click(vendorAdressesPage.country);
+        ReusableMethods.click();
         ReusableMethods.waitForSecond(2);
 
 
@@ -34,7 +34,7 @@ public class FirstNameNegativeVerfy extends TestBase {
         ReusableMethods.waitForSecond(2);
 
         //        States kismina gecerli veri girlir
-        ReusableMethods.click(vendorAdressesPage.state);
+        ReusableMethods.click();
 
         ReusableMethods.waitForSecond(2);
 
@@ -47,7 +47,7 @@ public class FirstNameNegativeVerfy extends TestBase {
 
 //       Save Address butonuna tıklayarak Billing Addrese (Fatura Adresi) eklenir
         ReusableMethods.visibleWait(vendorAdressesPage.saveButton,5);
-        ReusableMethods.click(vendorAdressesPage.saveButton);
+        ReusableMethods.click();
         ReusableMethods.waitForSecond(2);
 
 //      "Address changed successfully." metni görülmedigi doğrulanır

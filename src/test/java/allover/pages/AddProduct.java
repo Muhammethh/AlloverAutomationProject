@@ -1,19 +1,19 @@
 package allover.pages;
 
 import allover.utilities.Driver;
+import allover.utilities.ReusableMethods;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class AddProduct {
 
+    public static ReusableMethods addNewButton;
+
     public AddProduct() { PageFactory.initElements(Driver.getDriver(), this);
     }
     @FindBy(xpath="//a/span[text()='Sign In']")
     public WebElement signIn ;
-
-    //@FindBy(xpath = "//input[@id='reg_username']")
-    //public WebElement UsernameTextBox;
 
     @FindBy(xpath = "//input[@type='email']")
     public WebElement MailAddressTextBox;
@@ -30,26 +30,32 @@ public class AddProduct {
     @FindBy(xpath = "//a[text()='Store Manager']")
     public WebElement StoreManagerButton;
 
+    @FindBy (xpath = "(//span[@class='text'])[4]")
+    public WebElement ProductsButton;
+
     @FindBy(xpath = "//a[text()='Store Manager']")
     public WebElement NewAddButton;
 
-    @FindBy(css = "input[id='register-policy']")
-    public WebElement AgreeCheckBox;
+    @FindBy(id = "product_type")
+    public WebElement productTypeDropdown;
 
-    @FindBy(partialLinkText = "Become a Vendor")
-    public WebElement BecomeVendorButton;
+    @FindBy(id = "is_virtual")
+    public WebElement virtualOption;
 
+    @FindBy(id = "is_downloadable")
+    public WebElement downloadableOption;
 
+    @FindBy(id = "pro_title")
+    public WebElement proTitle;
 
+    @FindBy(id = "regular_price")
+    public WebElement regPrice;
 
+    @FindBy(id = "sale_price")
+    public WebElement salePrice;
 
+    @FindBy(id = "product_cats[]")
+    public WebElement category;
 
-    @FindBy(xpath="//a/span[text()='Register']")
-    public WebElement register ;
-
-
-
-    @FindBy (xpath = "(//span[@class='text'])[4]")
-    public WebElement ProductsButton;
 
 }

@@ -63,7 +63,7 @@ public class AddressChanged extends TestBase{
 
         //Save Address butonuna tıklayarak Billing Addrese (Fatura Adresi) guncellenir.
         ReusableMethods.visibleWait(vendorAdressesPage.saveButton,5);
-        ReusableMethods.click(vendorAdressesPage.saveButton);
+        ReusableMethods.click();
         ReusableMethods.waitForSecond(2);
         Assert.assertTrue(vendorAdressesPage.changedSuccessfully.isDisplayed());
         ExtentReportsListener.extentTestInfo("Save Address butonuna tıklayarak Billing Addrese (Fatura Adresi) guncellendigi dogrulanir");

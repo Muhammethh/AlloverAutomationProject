@@ -1,9 +1,6 @@
 package allover.tests.US_16;
 
-import allover.pages.HomePage;
-import allover.pages.MyAccountPage;
-import allover.pages.SignInPage;
-import allover.pages.StoreManagerPage;
+import allover.pages.*;
 import allover.utilities.ConfigReader;
 import allover.utilities.Driver;
 import allover.utilities.ReusableMethods;
@@ -44,6 +41,8 @@ public class TC_01_Product_Default {
         ReusableMethods.scroll(storeManagerPage.ProductsButton);
         ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
         storeManagerPage.ProductsButton.click();
+
+        AddProduct.addNewButton.click();
 
         WebElement productTypeDropdown = driver.findElement(By.id("product_type"));
         String selectedOption = productTypeDropdown.getText();

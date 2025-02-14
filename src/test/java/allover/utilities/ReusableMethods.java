@@ -90,7 +90,7 @@ public class ReusableMethods {
         System.out.println(satirSutun.getText());
     }
     //Click TestBase
-    public static void click(WebElement element) {
+    public static void click() {
         try {
             element.click();
         } catch (Exception e) {
