@@ -21,6 +21,8 @@ public class TC_01 extends SignInCustomer {
         //  Web sitesine gidilir
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
         ExtentReportsListener.extentTestInfo("Web sitesine gidildi.");
-        Thread.sleep(3000);
+
+
+
     }
 }
