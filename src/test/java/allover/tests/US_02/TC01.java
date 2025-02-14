@@ -16,9 +16,10 @@ public class TC01 {
 
     @Test(description = "Siteye daha önce kayıtlı bilgiler ile(username ve email) kayıt yapılamamalı.(Register)")
     public void testName() {
-        HomePage homePage= new HomePage();
-        RegisterPage registerPage= new RegisterPage();
-        ExtentReportsListener extentReportsListener=new ExtentReportsListener();
+
+        HomePage homePage = new HomePage();
+        RegisterPage registerPage = new RegisterPage();
+        ExtentReportsListener extentReportsListener = new ExtentReportsListener();
 
         ExtentReportsListener.extentTestInfo("sayfaya gidilir");
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
@@ -26,8 +27,7 @@ public class TC01 {
         ExtentReportsListener.extentTestInfo("register butonuna tıklanır");
         homePage.register.click();
 
-
-        ExtentReportsListener.extentTestInfo("Username bölümüne önceden kayıt olunan bir userName girilir");
+        ExtentReportsListener.extentTestInfo("Username bölümüne önceden kayıt olunan bir username girilir");
         registerPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("registerPositiveUsername"));
 
         ExtentReportsListener.extentTestInfo("Email bölümüne kayıtlı bir email girilir");
@@ -46,8 +46,6 @@ public class TC01 {
 
         ExtentReportsListener.extentTestInfo("'An account is already' uyrasının göründüğünü doğrulanır");
         Assert.assertTrue(registerPage.RegistrationCheck.getText().contains("An account is already"));
-
-
 
     }
 }
