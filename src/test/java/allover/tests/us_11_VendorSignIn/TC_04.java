@@ -1,4 +1,4 @@
-package allover.tests.US_11;
+package allover.tests.us_11_VendorSignIn;
 
 import allover.pages.HomePage;
 import allover.pages.MyAccountPage;
@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class DashboardTest {
+public class TC_04 {
 
     @Test (description = "US-11 TC-04 Dashboard menusu gorunur ve tiklanabilir olmali")
     public void DashboardMenuTest() {
@@ -47,7 +47,6 @@ public class DashboardTest {
         //Dashboard'da  Store manager, orders, downloads, addresses , account details,
         // wishlist, Support tickets, followings ve log out gorunur oldugu dogrulanir
 
-        ActionsUtils.scrollDown();
         WaitUtils.waitFor(3);
         Assert.assertTrue(myAccountPage.DashboardButton.isDisplayed());
         Assert.assertTrue(myAccountPage.StoreManagerButton.isDisplayed());
@@ -55,30 +54,13 @@ public class DashboardTest {
         Assert.assertTrue(myAccountPage.DownloadsButton.isDisplayed());
         Assert.assertTrue(myAccountPage.AddressesButton.isDisplayed());
         Assert.assertTrue(myAccountPage.AccountDetailsButton.isDisplayed());
+
+        ActionsUtils.scrollDown();
         Assert.assertTrue(myAccountPage.WishlistButton.isDisplayed());
         Assert.assertTrue(myAccountPage.SupportTicketsButton.isDisplayed());
         Assert.assertTrue(myAccountPage.FollowingsButton.isDisplayed());
         Assert.assertTrue(myAccountPage.LogoutButton.isDisplayed());
         ExtentReportsListener.extentTestInfo("Dashboard altinda yer alan sekmelerin gorunur oldugu dogrulanir");
-
-
-
-        //Dashboard altindaki Store manager, orders, downloads, addresses , account details,
-        // wishlist, Support tickets, followings ve log out'a girilir
-        ActionsUtils.scrollDown();
-        WaitUtils.waitFor(3);
-        myAccountPage.DashboardButton.click();
-        myAccountPage.StoreManagerButton.click();
-        myAccountPage.OrdersButton.click();
-        myAccountPage.DownloadsButton.click();
-        myAccountPage.AddressesButton.click();
-        myAccountPage.AccountDetailsButton.click();
-        myAccountPage.WishlistButton.click();
-        myAccountPage.SupportTicketsButton.click();
-        myAccountPage.FollowingsButton.click();
-        myAccountPage.LogoutButton.click();
-
-        ExtentReportsListener.extentTestInfo("Dashboard altinda yer alan sekmelerin erisilebilir oldugu dogrulanir");
 
         Driver.closeDriver();
 

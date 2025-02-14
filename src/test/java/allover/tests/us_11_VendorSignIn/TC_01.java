@@ -1,4 +1,4 @@
-package allover.tests.US_11;
+package allover.tests.us_11_VendorSignIn;
 
 import allover.pages.HomePage;
 import allover.pages.MyAccountPage;
@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import org.testng.Assert;
 
 
-public class VendorSignInTest {
+public class TC_01 {
 
     @Test (description = "US-11 TC-1 Vendor sign in,Vendor olarak Sign in yapılabilmeli")
     public void vendorSignInTest() {
