@@ -15,7 +15,7 @@ public class MyAccountPage {
     public WebElement MyAccountTitle;
 
     @FindBy (xpath = "//p[text()='Wrong username or password.']")
-    public WebElement WrongUsernameWarning;
+    public WebElement WrongUsernamePasswordWarning;
 
     @FindBy(xpath = "//a[text()='Dashboard']")
     public WebElement DashboardButton;
@@ -38,13 +38,13 @@ public class MyAccountPage {
     @FindBy(xpath = "(//a[text()='Wishlist'])[1]")
     public WebElement WishlistButton;
 
-    @FindBy(xpath = "(//a[text()='Support Tickets']")
+    @FindBy(xpath = "//a[text()='Support Tickets']")
     public WebElement SupportTicketsButton;
 
-    @FindBy(xpath = "(//a[text()='Followings']")
+    @FindBy(xpath = "//a[text()='Followings']")
     public WebElement FollowingsButton;
 
-    @FindBy(xpath = "(//a[text()='Logout']")
+    @FindBy(xpath = "//a[text()='Logout']")
     public WebElement LogoutButton;
 
 
