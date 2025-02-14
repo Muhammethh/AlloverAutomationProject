@@ -74,4 +74,7 @@ public class VendorAdressesPage {
 
     @FindBy(xpath="(//table)[1]")
     public WebElement verfyEmail;
+
+    @FindBy(xpath="(//table)[1]")
+    public WebElement verfyName;
 }

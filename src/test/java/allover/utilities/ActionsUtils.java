@@ -103,4 +103,24 @@ public class ActionsUtils {
     public static void pressTab() {
         actions.sendKeys(Keys.TAB).build().perform();
     }
+
+    /**
+     *  Asagi yon tusuna basar.
+     */
+
+    public static void pressArrowDown() {
+        actions.sendKeys(Keys.ARROW_DOWN).build().perform();
+    }
+
+    /**
+     *  Enter tusuna basar.
+     */
+
+    public static void pressEnter() {
+        actions.sendKeys(Keys.ENTER).build().perform();
+    }
+
+
+
+
 }

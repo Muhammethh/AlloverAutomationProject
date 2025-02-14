@@ -4,14 +4,13 @@ import allover.pages.MyAccountPage;
 import allover.pages.VendorAdressesPage;
 import allover.tests.SignInVendor;
 import allover.utilities.ExtentReportsListener;
-import allover.utilities.JSUtils;
 import allover.utilities.ReusableMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_09 extends SignInVendor {
+public class TC_10 extends SignInVendor {
 
-    @Test(description = "US-12 TC-9 My Accountta Email   otomatik gelmelidir  ")
+    @Test(description = "US-12 TC-10 My Accountta name   otomatik gelmelidir  ")
     public void test() {
 
         //    Adresses sekmesine tıklanir
@@ -22,8 +21,10 @@ public class TC_09 extends SignInVendor {
 
 
         VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
-        Assert.assertTrue(vendorAdressesPage.verfyEmail.getText().contains("email"));
-        ExtentReportsListener.extentTestFail("Email otomatik olarak gelmeliydi email ile ilgili bir bilgi yok");
+        Assert.assertTrue(vendorAdressesPage.verfyName.getText().contains("Name"));
+        ExtentReportsListener.extentTestPass("Name otomatik olarak geldi");
 
     }
+
+
 }
