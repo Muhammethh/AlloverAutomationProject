@@ -44,7 +44,6 @@ public class TC_02_InventoryTest {
         ActionsUtils.scrollDown();
         WaitUtils.waitForClickablility(storeManagerPage.TeaMaker,5);
 
-
         storeManagerPage.TeaMaker.click();
 
         ActionsUtils.scrollDown();
