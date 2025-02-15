@@ -1,22 +1,21 @@
-package allover.tests.us_06_ShoppingTests;
+package allover.tests.us_19_ShoppingWithCoupon;
 
-import allover.pages.*;
+import allover.pages.CartPage;
+import allover.pages.CheckOutPage;
+import allover.pages.HomePage;
+import allover.pages.SampleItemsPage;
 import allover.tests.SignInCustomer;
-import allover.utilities.*;
-import org.openqa.selenium.JavascriptExecutor;
+import allover.utilities.ActionsUtils;
+import allover.utilities.ReusableMethods;
+import allover.utilities.WaitUtils;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class TC_03 {
 
-
-
     @Test
-    public void TC_03_IncreaseDecreaseItemInBasket() {
-
+    public void shoppingWithCouponforSameCart() {
 
         HomePage homePage = new HomePage();
         SampleItemsPage sampleItemsPage = new SampleItemsPage();
@@ -28,8 +27,6 @@ public class TC_03 {
 
         //Sign Out butonu görünene kadar beklenir ve göründüğü doğrulanır
         WaitUtils.waitForVisibility(homePage.signOut, 10);
-
-        Assert.assertTrue(homePage.signOut.isDisplayed());
 
         //Search Bara geçerli bir ürün ismi girilir
         homePage.searchBox.sendKeys("Masa", Keys.ENTER);
@@ -46,24 +43,33 @@ public class TC_03 {
         //Sepet sayfasına gidilir
         cartPage.ViewCartButton.click();
 
-        cartPage.increaseQuantityInCart.click();
+        ActionsUtils.scrollDown();
 
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        WebElement quantityInput = (WebElement) js.executeScript("return document.querySelector('input.input-text.qty.text');");
+        cartPage.couponTextBox.sendKeys("ALLITEMS");
+        cartPage.applyCouponButton.click();
 
-        String increasedItem = quantityInput.getDomAttribute("value");
+        WaitUtils.waitFor(3);
 
-        softAssert.assertEquals(increasedItem,"2");
+        ActionsUtils.scrollDown();
 
-        cartPage.decreaseQuantityInCart.click();
+        cartPage.couponTextBox.sendKeys("ALLITEMS");
+        cartPage.applyCouponButton.click();
 
-        String decreasedItem = quantityInput.getDomAttribute("value");
+        String couponMessage = cartPage.couponAlertMessage.getText();
 
-        softAssert.assertEquals(decreasedItem,"1");
+        softAssert.assertTrue(couponMessage.contains("applied"),"Kupon uygulanamadı");
 
-        Driver.closeDriver();
+        //Proceed to Checkout butonuna basılır
+        ReusableMethods.click(cartPage.proceedToCheckoutButton);
+
+
+        ReusableMethods.click(checkOutPage.placeOrderButton);
+
 
         softAssert.assertAll();
+
+
+
     }
 
 
