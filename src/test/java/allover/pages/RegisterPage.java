@@ -34,4 +34,5 @@ public class RegisterPage {
 
     @FindBy(xpath = "(//p[@class='submit-status'])[2]")
     public WebElement RegistrationCheck;
+
 }
