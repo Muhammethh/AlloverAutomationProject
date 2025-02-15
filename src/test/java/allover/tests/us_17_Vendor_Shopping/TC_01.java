@@ -2,16 +2,22 @@ package allover.tests.us_17_Vendor_Shopping;
 
 import allover.pages.*;
 import allover.utilities.*;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_01{
+public class TC_01 {
+
+    @FindBy(xpath = "//a[contains(text(),'View cart')]")
+    public WebElement viewCartButton;
+
     @Test
     public void test01() throws InterruptedException {
         SampleItemsPage sampleItemsPage = new SampleItemsPage();
         CartPage cartPage = new CartPage();
-
 
 
         //  Web sitesine gidilir
@@ -25,7 +31,7 @@ public class TC_01{
 
         //Email kısmına geçerli veri girilir
         SignInPage signInPage = new SignInPage();
-        String vendorEmail ="akifrencber.techproed@gmail.com";
+        String vendorEmail = "akifrencber.techproed@gmail.com";
         String vendorPassword = "Akif123456789@";
         ConfigReader.getProperty(vendorEmail);
         signInPage.UsernameTextBox.sendKeys(vendorEmail);
@@ -48,7 +54,6 @@ public class TC_01{
         ExtentReportsListener.extentTestInfo("My Account bilgisinin gorunur oldugu dogrulanir");
 
 
-
         homePage.searchBox.sendKeys("Book", Keys.ENTER);
 
         ActionsUtils.hoverOver(sampleItemsPage.firstItemAfterSearch);
@@ -68,13 +73,17 @@ public class TC_01{
         Thread.sleep(3000);
         cartPage.ViewCartButton.click();
         Thread.sleep(3000);
-        Assert.assertTrue(sampleItemsPage.addFirstItemInCart.isDisplayed());
+        Assert.assertTrue(cartPage.firstItemInCart.isDisplayed());
 
-       Assert.assertTrue(cartPage.firstItemInCart.isDisplayed());
+//        String productName = "Book";
+//        String xpath = "//table[1]//td[contains(text(), '" + productName + "')]";
+//
+//        // Assertion: Ürün sepette görünüyor mu?
+//        Assert.assertFalse(Driver.getDriver().findElements(By.xpath(xpath))., "Ürün sepette değil!");
+    }
+}
 
 
 
 
-
-    }}
 
