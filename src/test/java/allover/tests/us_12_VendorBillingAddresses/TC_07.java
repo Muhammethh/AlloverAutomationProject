@@ -1,6 +1,8 @@
 package allover.tests.us_12_VendorBillingAddresses;
 
+import allover.pages.MyAccountPage;
 import allover.pages.VendorAdressesPage;
+import allover.tests.SignInVendor;
 import allover.utilities.ConfigReader;
 import allover.utilities.Driver;
 import allover.utilities.ExtentReportsListener;
@@ -9,13 +11,25 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertFalse;
 
-public class TC_07 extends TestBase {
+public class TC_07 extends SignInVendor {
 
     @Test(description = "US-12 TC-7 Phone kismina gecersiz data girildiginde adres ekleme  basarili olmamalidir ")
     public void test() {
+        //    Adresses sekmesine tıklanir
+        MyAccountPage myAccountPage=new MyAccountPage();
+        myAccountPage.AddressesButton.click();
+        ReusableMethods.waitForSecond(2);
+        ExtentReportsListener.extentTestInfo("Vendor address sekmesine tiklar");
+        // Edit Billing Adresses sekmesine tıklanır.
+
+        VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
+        ReusableMethods.waitForSecond(2);
+        ReusableMethods.scroll(vendorAdressesPage.editYourBilling);
+        ReusableMethods.visibleWait(vendorAdressesPage.editYourBilling,3);
+        ReusableMethods.click(  vendorAdressesPage.editYourBilling);
+        ExtentReportsListener.extentTestInfo("First name kismina gecerli data girilir");
 
         //First name kismina gecerli data girilir
-        VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
         vendorAdressesPage.firstName.clear();
         vendorAdressesPage.firstName.sendKeys(ConfigReader.getProperty("firstname"));
         ExtentReportsListener.extentTestInfo("First name kismina gecerli data girilir");
@@ -64,15 +78,15 @@ public class TC_07 extends TestBase {
 
         vendorAdressesPage.townCity.clear();
         vendorAdressesPage.townCity.sendKeys(ConfigReader.getProperty("city"));
-        ExtentReportsListener.extentTestInfo("Phone kısmına geçerli veri girilir");
+        ExtentReportsListener.extentTestInfo("town/city kısmına geçerli veri girilir");
 
         ReusableMethods.waitForSecond(2);
 
-//        	Phone kısmına geçerli veri girilir
+//        	Phone kısmına geçersiz veri girilir
         vendorAdressesPage.phone.clear();
         vendorAdressesPage.phone.sendKeys("1");
         ReusableMethods.waitForSecond(2);
-        ExtentReportsListener.extentTestFail("Phone alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
+        ExtentReportsListener.extentTestInfo("Phone kısmına geçersiz veri girilir");
 
 
 
@@ -85,7 +99,8 @@ public class TC_07 extends TestBase {
 
 //      "Address changed successfully." metni görülmedigi doğrulanır
         assertFalse(vendorAdressesPage.changedSuccessfully.isDisplayed());
-        ExtentReportsListener.extentTestInfo("Address changed successfully. metni görülmedigi doğrulanır");
+        ExtentReportsListener.extentTestFail("Phone alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
+
         Driver.closeDriver();
     }
 }

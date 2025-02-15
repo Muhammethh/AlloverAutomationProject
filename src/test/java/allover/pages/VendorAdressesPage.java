@@ -72,6 +72,9 @@ public class VendorAdressesPage {
     @FindBy(css="li.alert.alert-danger")
     public WebElement zipcodeverfy;
 
-    @FindBy(xpath="//table[1]")
-    public WebElement verfyAdress;
+    @FindBy(xpath="(//table)[1]")
+    public WebElement verfyEmail;
+
+    @FindBy(xpath="(//table)[1]")
+    public WebElement verfyName;
 }

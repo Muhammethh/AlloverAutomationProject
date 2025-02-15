@@ -42,4 +42,7 @@ public class VendorRegistrationPage {
     @FindBy(xpath = "//div[@class='wcfm-message email_verification_message wcfm-success']")
     public WebElement SuccessRegistration;
 
+    @FindBy(xpath = "//div[@name='password_strength']")
+    public WebElement PasswordStrength;
+
 }

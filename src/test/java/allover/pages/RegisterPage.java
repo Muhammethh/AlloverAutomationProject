@@ -32,22 +32,7 @@ public class RegisterPage {
     @FindBy(partialLinkText = "Become a Vendor")
     public WebElement BecomeVendorButton;
 
-     @FindBy(xpath = "(//p[@class='submit-status'])[2]")
+    @FindBy(xpath = "(//p[@class='submit-status'])[2]")
     public WebElement RegistrationCheck;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

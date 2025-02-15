@@ -1,6 +1,8 @@
 package allover.tests.us_12_VendorBillingAddresses;
 
+import allover.pages.MyAccountPage;
 import allover.pages.VendorAdressesPage;
+import allover.tests.SignInVendor;
 import allover.utilities.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,13 +10,28 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
-public class TC_05 extends TestBase {
+public class TC_05 extends SignInVendor {
 
     @Test(description = "US-12 TC-5 ZipCode kismina gecersiz data girildiginde adres ekleme  basarili olmamalidir ")
     public void test() {
 
-        //First name kismina gecerli data girilir
+        //    Adresses sekmesine tıklanir
+        MyAccountPage myAccountPage=new MyAccountPage();
+        myAccountPage.AddressesButton.click();
+        ReusableMethods.waitForSecond(2);
+        ExtentReportsListener.extentTestInfo("Vendor address sekmesine tiklar");
+        // Edit Billing Adresses sekmesine tıklanır.
+
         VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
+        ReusableMethods.waitForSecond(2);
+        ReusableMethods.scroll(vendorAdressesPage.editYourBilling);
+        ReusableMethods.visibleWait(vendorAdressesPage.editYourBilling,3);
+        ReusableMethods.click(  vendorAdressesPage.editYourBilling);
+        ExtentReportsListener.extentTestInfo("Vendor edit your billing adsress sekmesine tiklar");
+
+
+
+        //First name kismina gecerli data girilir
         vendorAdressesPage.firstName.clear();
         vendorAdressesPage.firstName.sendKeys(ConfigReader.getProperty("firstname"));
         ExtentReportsListener.extentTestInfo("First name kismina gecerli data girilir");
@@ -55,10 +72,10 @@ public class TC_05 extends TestBase {
         ReusableMethods.waitForSecond(2);
         ExtentReportsListener.extentTestInfo("States kismina gecerli veri girlir");
 
-//          ZIP Code kısmına geçerli veri girilir
+//          ZIP Code kısmına geçersiz veri girilir
         vendorAdressesPage.zipCode.clear();
         vendorAdressesPage.zipCode.sendKeys("a123?");
-        ExtentReportsListener.extentTestFail("ZipCode alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
+        ExtentReportsListener.extentTestInfo(" ZIP Code kısmına geçersiz veri girilir");
 
 
         ReusableMethods.waitForSecond(2);
@@ -79,7 +96,8 @@ public class TC_05 extends TestBase {
 
 //      "Address changed successfully." metni görülmedigi doğrulanır
         assertTrue(vendorAdressesPage.zipcodeverfy.isDisplayed());
-        ExtentReportsListener.extentTestInfo("Address changed successfully. metni görülmedigi doğrulanır");
+        ExtentReportsListener.extentTestFail("ZipCode alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
+
         Driver.closeDriver();
     }
 }

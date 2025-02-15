@@ -1,6 +1,8 @@
 package allover.tests.us_12_VendorBillingAddresses;
 
+import allover.pages.MyAccountPage;
 import allover.pages.VendorAdressesPage;
+import allover.tests.SignInVendor;
 import allover.utilities.*;
 import com.github.javafaker.Faker;
 import org.testng.Assert;
@@ -13,14 +15,30 @@ import org.testng.annotations.Test;
 
 
 
-public class TC_01 extends TestBase{
+public class TC_01 extends SignInVendor {
+
 
     @Test(description = "US-12 TC-1 Vendor Billing Addrese (Fatura Adresi) gecerli datalar ekleyebilmelidir")
     public void test2negative() {
 
-        Faker faker=new Faker();
-        VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
 
+        //    Adresses sekmesine tıklanir
+        MyAccountPage myAccountPage=new MyAccountPage();
+        myAccountPage.AddressesButton.click();
+        ExtentReportsListener.extentTestInfo("Vendor address sekmesine tiklar");
+        ReusableMethods.waitForSecond(2);
+
+        // Edit Billing Adresses sekmesine tıklanır.
+
+       VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
+       ReusableMethods.waitForSecond(2);
+       ReusableMethods.scroll(vendorAdressesPage.editYourBilling);
+       ReusableMethods.visibleWait(vendorAdressesPage.editYourBilling,3);
+       ReusableMethods.click(  vendorAdressesPage.editYourBilling);
+        ExtentReportsListener.extentTestInfo("Vendor edit your billing adsress sekmesine tiklar");
+
+
+        Faker faker=new Faker();
         //First name kısmına geçerli veri girilir
         vendorAdressesPage.firstName.clear();
         vendorAdressesPage.firstName.sendKeys(faker.name().firstName());
@@ -77,9 +95,11 @@ public class TC_01 extends TestBase{
         //Save Address butonuna tıklayarak Billing Addrese (Fatura Adresi) guncellenir.
         ReusableMethods.visibleWait(vendorAdressesPage.saveButton,5);
         ReusableMethods.click(vendorAdressesPage.saveButton);
+        ExtentReportsListener.extentTestInfo("Save Address butonuna tıklayarak Billing Addrese (Fatura Adresi) eklenir");
         ReusableMethods.waitForSecond(2);
+
         Assert.assertTrue(vendorAdressesPage.changedSuccessfully.isDisplayed());
-        ExtentReportsListener.extentTestInfo("Save Address butonuna tıklayarak Billing Addrese (Fatura Adresi) eklenme dogrulanir");
+        ExtentReportsListener.extentTestPass("Save Address butonuna tıklayarak Billing Addrese (Fatura Adresi) eklenme dogrulanir");
 
     }
 }

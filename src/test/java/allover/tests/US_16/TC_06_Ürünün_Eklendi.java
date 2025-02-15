@@ -1,21 +1,22 @@
-package allover.tests.US_15;
+package allover.tests.US_16;
 
 import allover.pages.HomePage;
 import allover.pages.MyAccountPage;
 import allover.pages.SignInPage;
 import allover.pages.StoreManagerPage;
-import allover.utilities.ActionsUtils;
 import allover.utilities.ConfigReader;
 import allover.utilities.Driver;
 import allover.utilities.ReusableMethods;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_01_DisplayMenuTest {
+public class TC_06_Ürünün_Eklendi {
+
+WebElement driver;
     @Test
-    public void displayMenuTest() throws InterruptedException {
+    public void productDefalt() throws InterruptedException {
 
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
 
@@ -33,40 +34,26 @@ public class TC_01_DisplayMenuTest {
         signInPage.SignInButton.click();
         ReusableMethods.scroll(homePage.myAccount);
         ReusableMethods.scroll(homePage.myAccount);
-        ReusableMethods.visibleWait(homePage.myAccount,5);
+        ReusableMethods.visibleWait(homePage.myAccount, 5);
 
         homePage.myAccount.click();
 
         myAccountPage.StoreManagerButton.click();
 
         ReusableMethods.scroll(storeManagerPage.ProductsButton);
-        ReusableMethods.visibleWait(storeManagerPage.ProductsButton,5);
+        ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
         storeManagerPage.ProductsButton.click();
 
-        storeManagerPage.SearchBox.click();
-        storeManagerPage.SearchBox.sendKeys("tea maker");
-        ReusableMethods.scroll(storeManagerPage.TeaMaker);
-        ReusableMethods.scroll(storeManagerPage.TeaMaker);
-        ReusableMethods.scroll(storeManagerPage.TeaMaker);
-        ReusableMethods.visibleWait(storeManagerPage.TeaMaker,5);
-        storeManagerPage.TeaMaker.click();
+        WebElement submitButton = driver.findElement(By.id("publish"));
+        submitButton.click();
 
-       // ReusableMethods.scroll(storeManagerPage.InventoryButton);
+        WebElement successMessage = driver.findElement(By.xpath("//div[@class='updated notice']"));
+        Assert.assertTrue(successMessage.getText().contains("Product published"));
 
-
-        Thread.sleep(5);
-
-        storeManagerPage.InventoryButton.click();
-
-
-//      ReusableMethods.scroll(storeManagerPage.InventoryButton);
-
-
-
-        Driver.closeDriver();
+        driver.findElement(By.linkText("Products")).click();
+        WebElement addedProduct = driver.findElement(By.xpath("//a[contains(text(),'Test Ürünü')]"));
+        Assert.assertTrue(addedProduct.isDisplayed());
 
     }
+
 }
-
-
-
