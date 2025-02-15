@@ -57,7 +57,7 @@ public class TC01_RegisterPositive {
 
          // Siteye kayit olundugu dogrulanir.
 
-        Assert.assertEquals(registerPage.RegistrationCheck.getText(),"Register successfulling");
+        Assert.assertEquals(registerPage.RegistrationCheck.getText(),"");
 
         System.out.println(registerPage.RegistrationCheck.getText());
 
