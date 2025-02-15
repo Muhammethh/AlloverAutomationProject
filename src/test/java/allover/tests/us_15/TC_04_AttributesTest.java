@@ -27,14 +27,14 @@ public class TC_04_AttributesTest {
         signInPage.SignInButton.click();
         ReusableMethods.scroll(homePage.myAccount);
         ReusableMethods.scroll(homePage.myAccount);
-        ReusableMethods.visibleWait(homePage.myAccount,5);
+        ReusableMethods.visibleWait(homePage.myAccount, 5);
 
         homePage.myAccount.click();
 
         myAccountPage.StoreManagerButton.click();
 
         ReusableMethods.scroll(storeManagerPage.ProductsButton);
-        ReusableMethods.visibleWait(storeManagerPage.ProductsButton,5);
+        ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
         storeManagerPage.ProductsButton.click();
 
         storeManagerPage.SearchBox.click();
@@ -42,7 +42,7 @@ public class TC_04_AttributesTest {
         ReusableMethods.scroll(storeManagerPage.TeaMaker);
 
         ActionsUtils.scrollDown();
-        WaitUtils.waitForClickablility(storeManagerPage.TeaMaker,5);
+        WaitUtils.waitForClickablility(storeManagerPage.TeaMaker, 5);
 
 
         storeManagerPage.TeaMaker.click();

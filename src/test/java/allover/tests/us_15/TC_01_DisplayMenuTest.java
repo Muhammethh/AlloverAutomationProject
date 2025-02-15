@@ -28,14 +28,14 @@ public class TC_01_DisplayMenuTest {
         signInPage.SignInButton.click();
         ReusableMethods.scroll(homePage.myAccount);
         ReusableMethods.scroll(homePage.myAccount);
-        ReusableMethods.visibleWait(homePage.myAccount,5);
+        ReusableMethods.visibleWait(homePage.myAccount, 5);
 
         homePage.myAccount.click();
 
         myAccountPage.StoreManagerButton.click();
 
         ReusableMethods.scroll(storeManagerPage.ProductsButton);
-        ReusableMethods.visibleWait(storeManagerPage.ProductsButton,5);
+        ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
         storeManagerPage.ProductsButton.click();
 
         storeManagerPage.SearchBox.click();
@@ -43,9 +43,7 @@ public class TC_01_DisplayMenuTest {
         ReusableMethods.scroll(storeManagerPage.TeaMaker);
 
         ActionsUtils.scrollDown();
-        WaitUtils.waitForClickablility(storeManagerPage.TeaMaker,5);
-
-
+        WaitUtils.waitForClickablility(storeManagerPage.TeaMaker, 5);
 
         storeManagerPage.TeaMaker.click();
 
@@ -62,9 +60,7 @@ public class TC_01_DisplayMenuTest {
         Assert.assertTrue(storeManagerPage.SeoButton.isDisplayed());
         Assert.assertTrue(storeManagerPage.AdvancedButton.isDisplayed());
 
-
         Driver.closeDriver();
-
     }
 }
 
