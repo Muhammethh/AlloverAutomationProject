@@ -53,40 +53,25 @@ public class TC_04_AttributesTest {
         JSUtils.JSclickWithTimeout(storeManagerPage.AttributesButton);
         ReusableMethods.click(storeManagerPage.AttributesButton);
         JSUtils.JSclickWithTimeout(storeManagerPage.ColorButton);
-        storeManagerPage.ColorButton.click();
-//      storeManagerPage.ColorSearchBox.click();
+        ReusableMethods.click(storeManagerPage.ColorButton);
 
         storeManagerPage.ColorSearchBox.sendKeys("Red");
         ActionsUtils.pressEnter();
         JSUtils.JSclickWithTimeout(storeManagerPage.ColorVisibleOnSearchBoxButton);
         storeManagerPage.ColorVisibleOnSearchBoxButton.click();
         ReusableMethods.click(storeManagerPage.SizeButton);
-        storeManagerPage.SizeSearchBox.sendKeys("100x100x200");
+        JSUtils.JSclickWithTimeout(storeManagerPage.SizeSearchBox);
 
-//        ActionsUtils.pressArrowDown();
-//        ActionsUtils.pressArrowDown();
-//        ActionsUtils.pressArrowDown();
-//        ActionsUtils.pressEnter();
+//        storeManagerPage.SizeSearchBox.sendKeys("100x100x200");
 
+        ActionsUtils.pressArrowDown();
+        ActionsUtils.pressArrowDown();
+        ActionsUtils.pressEnter();
+        ReusableMethods.click(storeManagerPage.SizeVisibleOnSearchBoxButton);
+        ReusableMethods.click(storeManagerPage.AttributesButton);
+        ReusableMethods.click(storeManagerPage.SubmitButton);
 
-//        storeManagerPage.ManageStockCheckBox.click();
-//        ActionsUtils.pressTab();
-//        storeManagerPage.StockQtyTextBox.sendKeys("3");
-//        ActionsUtils.pressTab();
-//        storeManagerPage.AllowBackorders.click();
-//
-//        ReusableMethods.ddmValue(storeManagerPage.AllowBackorders,"Allow");
-//        storeManagerPage.SoldIndividually.click();
-//        storeManagerPage.SubmitButton.click();
-//        ReusableMethods.alertWait(5);
-
-
-
-
-
-
-
-//Driver.closeDriver();
+        Driver.closeDriver();
 
     }
 }
