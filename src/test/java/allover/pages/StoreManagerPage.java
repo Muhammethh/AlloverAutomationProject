@@ -96,6 +96,10 @@ public class StoreManagerPage {
     @FindBy (xpath = "//input[@type='checkbox' and @id='attributes_is_visible_1']")
     public WebElement ColorVisibleOnSearchBoxButton;
 
+    @FindBy (xpath = "//a[@class='wcfm_menu_item active']")
+    public WebElement CouponButton;
+
+
 
 
 
