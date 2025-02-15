@@ -23,10 +23,7 @@ public class RegisterPage {
     @FindBy(css = "input[id='register-policy']")
     public WebElement AgreeCheckBox;
 
-   @FindBy(css = "input[id='register-policy']")
-   public WebElement AgreeCheckBox;
-
-   @FindBy(xpath = "(//button[@value='Sign Up'])[1]")
+    @FindBy(xpath = "(//button[@value='Sign Up'])[1]")
    public WebElement SignUpButton;
 
     @FindBy(partialLinkText = "Signup as a vendor?")
