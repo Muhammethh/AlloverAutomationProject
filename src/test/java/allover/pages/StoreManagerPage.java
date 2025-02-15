@@ -1,11 +1,15 @@
 package allover.pages;
 
 import allover.utilities.Driver;
+import allover.utilities.ReusableMethods;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class StoreManagerPage {
+
+
+    public ReusableMethods addNewButton;
 
     public StoreManagerPage() {
         PageFactory.initElements(Driver.getDriver(),this);

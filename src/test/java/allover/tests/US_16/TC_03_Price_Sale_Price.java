@@ -1,6 +1,9 @@
 package allover.tests.US_16;
 
-import allover.pages.*;
+import allover.pages.HomePage;
+import allover.pages.MyAccountPage;
+import allover.pages.SignInPage;
+import allover.pages.StoreManagerPage;
 import allover.utilities.ConfigReader;
 import allover.utilities.Driver;
 import allover.utilities.ReusableMethods;
@@ -39,8 +42,6 @@ public class TC_03_Price_Sale_Price {
         ReusableMethods.scroll(storeManagerPage.ProductsButton);
         ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
         storeManagerPage.ProductsButton.click();
-
-        AddProduct.addNewButton.click();
 
         WebElement priceField = driver.findElement(By.id("regular_price"));
         priceField.clear();

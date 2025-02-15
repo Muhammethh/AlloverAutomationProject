@@ -1,7 +1,6 @@
 package allover.tests.us_06_ShoppingTests;
 
 import allover.pages.*;
-import allover.tests.SignInCustomer;
 import allover.utilities.*;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
@@ -37,7 +36,7 @@ public class TC_05 {
         ActionsUtils.hoverOver(sampleItemsPage.firstItemAfterSearch);
 
         WaitUtils.waitForVisibility(sampleItemsPage.addFirstItemInCart,10);
-        ReusableMethods.click(sampleItemsPage.addFirstItemInCart);
+        ReusableMethods.click();
 
         ActionsUtils.hoverOver(homePage.cartHead);
         //Sepet simgesine basılarak küçük sepet penceresi açılır
@@ -47,7 +46,7 @@ public class TC_05 {
         cartPage.ViewCartButton.click();
 
         //Proceed to Checkout butonuna basılır
-        ReusableMethods.click(cartPage.proceedToCheckoutButton);
+        ReusableMethods.click();
 
 
         ActionsUtils.scrollDown();
@@ -61,7 +60,7 @@ public class TC_05 {
 
         if (!checkOutPage.payAtDoorSelect.isSelected()) {
             WaitUtils.waitForClickablility(checkOutPage.payAtDoorSelect,10);
-            ReusableMethods.click(checkOutPage.payAtDoorSelect);
+            ReusableMethods.click();
             softAssert.assertTrue(checkOutPage.payAtDoorSelect.isSelected(),"Pay at the door hatalı");
         }
 

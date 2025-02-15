@@ -25,7 +25,7 @@ public class TC_08 extends SignInVendor {
         ReusableMethods.waitForSecond(2);
         ReusableMethods.scroll(vendorAdressesPage.editYourBilling);
         ReusableMethods.visibleWait(vendorAdressesPage.editYourBilling,3);
-        ReusableMethods.click(  vendorAdressesPage.editYourBilling);
+        ReusableMethods.click();
         ExtentReportsListener.extentTestInfo("Edit Billing Adresses sekmesine tıklanır");
 
         JSUtils.JSscrollIntoView(vendorAdressesPage.email);

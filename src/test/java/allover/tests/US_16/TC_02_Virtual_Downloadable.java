@@ -1,6 +1,9 @@
 package allover.tests.US_16;
 
-import allover.pages.*;
+import allover.pages.HomePage;
+import allover.pages.MyAccountPage;
+import allover.pages.SignInPage;
+import allover.pages.StoreManagerPage;
 import allover.utilities.ConfigReader;
 import allover.utilities.Driver;
 import allover.utilities.ReusableMethods;
@@ -40,8 +43,6 @@ public class TC_02_Virtual_Downloadable {
         ReusableMethods.scroll(storeManagerPage.ProductsButton);
         ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
         storeManagerPage.ProductsButton.click();
-
-        AddProduct.addNewButton.click();
 
         WebElement virtualCheckbox = driver.findElement(By.id("is_virtual"));
         if (!virtualCheckbox.isSelected()) {

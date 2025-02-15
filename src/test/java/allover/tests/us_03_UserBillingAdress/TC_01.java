@@ -16,7 +16,7 @@ public class TC_01 extends SignInCustomer {
 
         SignInCustomer.SignIn();
         HomePage homePage = new HomePage();
-        ReusableMethods.click(homePage.myAccount);
+        ReusableMethods.click();
 
         //  Web sitesine gidilir
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));

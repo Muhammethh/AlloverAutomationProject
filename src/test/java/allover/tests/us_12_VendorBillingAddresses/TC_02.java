@@ -45,13 +45,9 @@ public class TC_02 extends SignInVendor {
 
 
         //Country/Region kısmına geçerli veri girilir
-<<<<<<< HEAD:src/test/java/allover/tests/us_12_VendorBillingAddresses/FirstNameNegativeVerfy.java
-        ReusableMethods.click();
-=======
         ReusableMethods.scroll(vendorAdressesPage.country);
         ReusableMethods.visibleWait(vendorAdressesPage.country,3);
         ReusableMethods.click(vendorAdressesPage.country);
->>>>>>> f43d158 (testcaselerde degisiklik yapildi):src/test/java/allover/tests/us_12_VendorBillingAddresses/TC_02.java
         ReusableMethods.waitForSecond(2);
         ExtentReportsListener.extentTestInfo("Country/Region kısmına geçerli veri girilir");
 
@@ -71,12 +67,7 @@ public class TC_02 extends SignInVendor {
         ExtentReportsListener.extentTestInfo("Town/City kısmına geçerli veri girilir");
 
         //        States kismina gecerli veri girlir
-<<<<<<< HEAD:src/test/java/allover/tests/us_12_VendorBillingAddresses/FirstNameNegativeVerfy.java
-        ReusableMethods.click();
-
-=======
         ReusableMethods.click(vendorAdressesPage.state);
->>>>>>> f43d158 (testcaselerde degisiklik yapildi):src/test/java/allover/tests/us_12_VendorBillingAddresses/TC_02.java
         ReusableMethods.waitForSecond(2);
         ExtentReportsListener.extentTestInfo("States kismina gecerli veri girlir");
 
@@ -96,7 +87,7 @@ public class TC_02 extends SignInVendor {
 
 //       Save Address butonuna tıklayarak Billing Addrese (Fatura Adresi) eklenir
         ReusableMethods.visibleWait(vendorAdressesPage.saveButton,5);
-        ReusableMethods.click();
+        ReusableMethods.click(vendorAdressesPage.saveButton);
         ReusableMethods.waitForSecond(2);
         ExtentReportsListener.extentTestInfo("Save Address butonuna tıklayarak Billing Addrese (Fatura Adresi) eklenir");
 

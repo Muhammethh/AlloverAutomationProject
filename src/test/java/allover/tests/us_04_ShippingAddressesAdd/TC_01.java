@@ -1,13 +1,9 @@
 package allover.tests.us_04_ShippingAddressesAdd;
 
-import allover.pages.AccountDetailsPage;
 import allover.pages.HomePage;
 import allover.pages.UserAddressesPage;
 import allover.tests.SignInCustomer;
-import allover.utilities.ConfigReader;
-import allover.utilities.Driver;
 import allover.utilities.ReusableMethods;
-import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 
 public class TC_01 extends SignInCustomer {
@@ -33,9 +29,9 @@ public class TC_01 extends SignInCustomer {
 SignInCustomer.SignIn();
 
         HomePage homePage = new HomePage();
-        ReusableMethods.click(homePage.myAccount);
+        ReusableMethods.click();
         UserAddressesPage userAddressesPage=new UserAddressesPage();
         userAddressesPage.adresses.click();
-        ReusableMethods.click(userAddressesPage.addShippingAddress2);
+        ReusableMethods.click();
     }
 }

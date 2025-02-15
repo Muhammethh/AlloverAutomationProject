@@ -51,15 +51,15 @@ public class TC_04_AttributesTest {
         ActionsUtils.scrollDown();
 
         JSUtils.JSclickWithTimeout(storeManagerPage.AttributesButton);
-        ReusableMethods.click(storeManagerPage.AttributesButton);
+        ReusableMethods.click();
         JSUtils.JSclickWithTimeout(storeManagerPage.ColorButton);
-        ReusableMethods.click(storeManagerPage.ColorButton);
+        ReusableMethods.click();
 
         storeManagerPage.ColorSearchBox.sendKeys("Red");
         ActionsUtils.pressEnter();
         JSUtils.JSclickWithTimeout(storeManagerPage.ColorVisibleOnSearchBoxButton);
         storeManagerPage.ColorVisibleOnSearchBoxButton.click();
-        ReusableMethods.click(storeManagerPage.SizeButton);
+        ReusableMethods.click();
         JSUtils.JSclickWithTimeout(storeManagerPage.SizeSearchBox);
 
 //        storeManagerPage.SizeSearchBox.sendKeys("100x100x200");
@@ -67,9 +67,9 @@ public class TC_04_AttributesTest {
         ActionsUtils.pressArrowDown();
         ActionsUtils.pressArrowDown();
         ActionsUtils.pressEnter();
-        ReusableMethods.click(storeManagerPage.SizeVisibleOnSearchBoxButton);
-        ReusableMethods.click(storeManagerPage.AttributesButton);
-        ReusableMethods.click(storeManagerPage.SubmitButton);
+        ReusableMethods.click();
+        ReusableMethods.click();
+        ReusableMethods.click();
 
         Driver.closeDriver();
 

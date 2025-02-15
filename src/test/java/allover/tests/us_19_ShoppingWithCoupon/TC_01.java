@@ -34,7 +34,7 @@ public class TC_01 {
         //Çıkan ilk ürünün üzerine gelerek sepete ekle butonuna basılır
         ActionsUtils.hoverOver(sampleItemsPage.firstItemAfterSearch);
 
-        ReusableMethods.click(sampleItemsPage.addFirstItemInCart);
+        ReusableMethods.click();
 
         ActionsUtils.hoverOver(homePage.cartHead);
         //Sepet simgesine basılarak küçük sepet penceresi açılır
@@ -53,10 +53,10 @@ public class TC_01 {
         softAssert.assertTrue(couponMessage.contains("applied"),"Kupon uygulanamadı");
 
         //Proceed to Checkout butonuna basılır
-        ReusableMethods.click(cartPage.proceedToCheckoutButton);
+        ReusableMethods.click();
 
 
-        ReusableMethods.click(checkOutPage.placeOrderButton);
+        ReusableMethods.click();
 
 
         softAssert.assertAll();
