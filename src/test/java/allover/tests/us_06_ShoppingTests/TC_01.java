@@ -51,7 +51,7 @@ public class TC_01 {
         //Place Order butonuna basılır
         ReusableMethods.scroll(checkOutPage.placeOrderButton);
 
-        ReusableMethods.click();
+        ReusableMethods.click(checkOutPage.placeOrderButton);
 
 
         //Siparişin başarılı olduğu doğrulanır
