@@ -4,29 +4,31 @@ import allover.pages.HomePage;
 import allover.pages.RegisterPage;
 import allover.utilities.ConfigReader;
 import allover.utilities.Driver;
-import allover.utilities.ExtentReportsListener;
 import allover.utilities.ReusableMethods;
+import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 
-public class TC01_Register {
+public class TC03_RegisterNegative {
 
 
     @DataProvider
     public Object[][] emails() {
+
+        Faker faker = new Faker();
+
         return new Object[][]{
-                {"Hakan1","Hakan1.techproed@gmail.com","malaky.charith123"},    // True Geçerli Gmail adresi
-                {"","Hakan2.techproed@gmail.com","malaky.charith123"},   // False Username alani bos birakildiginda
-                {"Hakan2","", "malaky.charith123"},    // False Your email address alani bos birakildiginda
-                {"Hakan3","Hakan3.techproed@gmail.com", ""},    // False Password alani bos birakildiginda
-                {"Hakan4","Hakan4.techproedgmail.com", "malaky.charith123"},   // False @ uzantisi yazilmadiginda
-                {"Hakan5","Hakan5.techproed", "malaky.charith123"},   // False @gmail.com uzantisi yazilmadiginda
+
+                {faker.name().username(),"Hakan4.techproedgmail.com", "malaky.charith123"},   // (False) @ uzantisi yazilmadiginda...
+                {faker.name().username(),"Hakan5.techproed", "malaky.charith123"},   // (False) @gmail.com uzantisi yazilmadiginda...
 
                 // Password alanina 8 karakterden az bir data girilmesine ragmen kayit islemi gerceklesmistir.
 
-                {"Hakan6","Hakan6.techproed@gmail.com","mal.123"}    // False Password alanina 8 karakterden az data yazildiginda
+                {faker.name().username(),faker.internet().emailAddress(),"mal.123"}    // (False) Password alanina 8 karakterden az data yazildiginda...
+
+                // ...Kayit islemleri gerceklesmemelidir.
         };
     }
 
@@ -40,24 +42,35 @@ public class TC01_Register {
         HomePage homePage = new HomePage();
         homePage.register.click();
 
+        // Username alanina bir data girelim
         RegisterPage registerPage = new RegisterPage();
         registerPage.UsernameTextBox.sendKeys(username);
 
-        // Dataprovider Kullanarak verilen email ve password bilgileri ile login olalım
+        // Your email address alanina bir data girelim
         registerPage.MailAddressTextBox.sendKeys(email);
 
+        // Password alanina bir data girelim
         registerPage.PasswordTextBox.sendKeys(password);
 
+        // Agree check box ini tiklayalim.
         registerPage.AgreeCheckBox.click();
 
+        // SignUp butonuna tiklayalim.
         registerPage.SignUpButton.click();
 
         ReusableMethods.visibleWait(registerPage.SignUpButton, 10);
         Assert.assertTrue(registerPage.SignUpButton.isDisplayed());
 
+        // Siteye kayit olundugu dogrulanir.
+        //registerPage.RegistrationCheck.getText().contains("An account is already registered with your email address.");
 
 
-    }}
+
+
+
+
+    }
+}
 
 
 

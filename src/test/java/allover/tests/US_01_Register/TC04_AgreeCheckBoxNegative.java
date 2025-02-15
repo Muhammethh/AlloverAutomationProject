@@ -8,7 +8,7 @@ import allover.utilities.ExtentReportsListener;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC02_AgreeCheckBox {
+public class TC04_AgreeCheckBoxNegative {
 
     @Test(description = "Geçerli datalar ile Kullanıcı sayfaya kayıt olabilmelidir (Positive Scenario)")
     public void testName() {
