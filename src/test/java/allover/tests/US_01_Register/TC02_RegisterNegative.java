@@ -59,8 +59,7 @@ public class TC02_RegisterNegative {
         ReusableMethods.visibleWait(registerPage.SignUpButton, 10);
         Assert.assertTrue(registerPage.SignUpButton.isDisplayed());
 
-        // Siteye kayit olundugu dogrulanir.
-        //registerPage.RegistrationCheck.getText().contains("An account is already registered with your email address.");
+
 
 
 
