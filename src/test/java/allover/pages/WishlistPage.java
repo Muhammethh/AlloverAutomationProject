@@ -11,7 +11,7 @@ public class WishlistPage {
         PageFactory.initElements(Driver.getDriver(),this);}
 
 
-    @FindBy(xpath = "//a[@data-title='Add to wishlist']")
+    @FindBy(xpath = "//a[@data-title='Add to wishlist'][1]")
     public WebElement AddToWishlist;
 
     @FindBy(css = "button[title='Quick View']")
