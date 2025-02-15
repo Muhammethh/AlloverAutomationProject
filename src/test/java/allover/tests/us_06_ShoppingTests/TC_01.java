@@ -44,6 +44,7 @@ public class TC_01 {
         //Çıkan ilk ürünün üzerine gelerek sepete ekle butonuna basılır
         ExtentReportsListener.extentTestInfo("Çıkan ilk ürünün üzerine gelerek sepete ekle butonuna basılır");
         ActionsUtils.hoverOver(sampleItemsPage.firstItemAfterSearch);
+
         sampleItemsPage.addFirstItemInCart.click();
 
 
@@ -66,8 +67,6 @@ public class TC_01 {
         ReusableMethods.scroll(checkOutPage.placeOrderButton);
 
         ReusableMethods.click(checkOutPage.placeOrderButton);
-
-
         //Siparişin başarılı olduğu doğrulanır
         ExtentReportsListener.extentTestInfo("Siparişin başarılı olduğu doğrulanır");
         Assert.assertTrue(checkOutPage.orderCompletedText.isDisplayed());
