@@ -1,18 +1,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="AlloverAutomation">
-    
+
     <listeners>
         <listener class-name="allover.utilities.Listeners"></listener>
     </listeners>
     <test verbose="2" preserve-order="true"
-          name="US-12 VendorBillingAddress">
+          name="US-11 VendorSignIn">
 
 
 
-      <classes>
+        <classes>
 
-          <class name="allover.tests.us_12_VendorBillingAddresses.TC_09"></class>
-      </classes>
+            <class name="allover.tests.us_11_VendorSignIn.TC_03"></class>
+
+        </classes>
 
     </test>
 </suite>
