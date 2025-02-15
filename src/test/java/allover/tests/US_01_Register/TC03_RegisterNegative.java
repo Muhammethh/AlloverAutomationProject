@@ -28,6 +28,8 @@ public class TC03_RegisterNegative {
 
                 {faker.name().username(),faker.internet().emailAddress(),"mal.123"}    // (False) Password alanina 8 karakterden az data yazildiginda...
 
+
+
                 // ...Kayit islemleri gerceklesmemelidir.
         };
     }
@@ -46,11 +48,13 @@ public class TC03_RegisterNegative {
         RegisterPage registerPage = new RegisterPage();
         registerPage.UsernameTextBox.sendKeys(username);
 
+
         // Your email address alanina bir data girelim
         registerPage.MailAddressTextBox.sendKeys(email);
 
         // Password alanina bir data girelim
         registerPage.PasswordTextBox.sendKeys(password);
+
 
         // Agree check box ini tiklayalim.
         registerPage.AgreeCheckBox.click();
@@ -58,8 +62,11 @@ public class TC03_RegisterNegative {
         // SignUp butonuna tiklayalim.
         registerPage.SignUpButton.click();
 
+
         ReusableMethods.visibleWait(registerPage.SignUpButton, 10);
         Assert.assertTrue(registerPage.SignUpButton.isDisplayed());
+
+        ReusableMethods.takeScreenShot();
 
         // Siteye kayit olundugu dogrulanir.
         //registerPage.RegistrationCheck.getText().contains("An account is already registered with your email address.");
