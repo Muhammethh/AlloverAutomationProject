@@ -56,6 +56,7 @@ public class TC_04 extends SignInVendor {
         ReusableMethods.waitForSecond(2);
         vendorAdressesPage.streetAdress2.clear();
         vendorAdressesPage.streetAdress2.sendKeys("?");
+        ExtentReportsListener.addScreenShotToReport();
         ReusableMethods.waitForSecond(2);
         ExtentReportsListener.extentTestInfo("Street address kısmına geçerersiz veri girilir");
 
@@ -93,6 +94,7 @@ public class TC_04 extends SignInVendor {
 
 //      "Address changed successfully." metni görülmedigi doğrulanır
         Assert.assertFalse(vendorAdressesPage.changedSuccessfully.isDisplayed());
+        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestFail("StreetAdress alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
 
         Driver.closeDriver();
