@@ -21,10 +21,8 @@ public class SignInCustomer {
         signIn.UsernameTextBox.sendKeys(ConfigReader.getProperty("signInUserName"));
         signIn.PasswordTextBox.sendKeys(ConfigReader.getProperty("signInPassword"));
         signIn.SignInButton.click();
-<<<<<<< Updated upstream
-       // Driver.closeDriver();
-=======
 
->>>>>>> Stashed changes
+       // Driver.closeDriver();
+
     }
 }
