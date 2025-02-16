@@ -51,5 +51,7 @@ public class TC11_ValidEmailTest {
 
         Assert.assertEquals(accountDetailsPage.EmailAddress.getAttribute("value"),email);
 
+        //sayfa kapatılır
+        Driver.closeDriver();
     }
 }

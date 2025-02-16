@@ -56,5 +56,6 @@ public class TC21_OnlySymbolPasswordTest {
         ExtentReportsListener.addScreenShotToReport();
         Assert.assertNotEquals(accountDetailsPage.VerifyControl.getText(), "Account details changed successfully.");
 
-
+        //sayfa kapatılır
+        Driver.closeDriver();
     }}

@@ -57,6 +57,8 @@ public class TC16_BiographyTextButtonsTest {
         softAssert.assertTrue(accountDetailsPage.TextCloseTagButton.isSelected());
 
 
+        //sayfa kapatılır
+        Driver.closeDriver();
        
 
     }

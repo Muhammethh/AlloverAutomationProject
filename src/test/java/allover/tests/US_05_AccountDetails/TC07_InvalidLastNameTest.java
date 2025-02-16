@@ -49,6 +49,7 @@ public class TC07_InvalidLastNameTest {
         Assert.assertEquals(value2,value1);
 
 
-
+        //sayfa kapatılır
+        Driver.closeDriver();
     }
 }
