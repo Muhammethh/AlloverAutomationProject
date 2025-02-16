@@ -24,7 +24,6 @@ public class TC_09 extends SignInVendor {
 
         VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
         Assert.assertTrue(vendorAdressesPage.verfyEmail.getText().contains("email"));
-        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestFail("Email otomatik olarak gelmeliydi email ile ilgili bir bilgi yok");
 
     }
