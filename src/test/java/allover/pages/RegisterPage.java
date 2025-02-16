@@ -24,11 +24,7 @@ public class RegisterPage {
     public WebElement AgreeCheckBox;
 
     @FindBy(xpath = "(//button[@value='Sign Up'])[1]")
-
-   public WebElement SignUpButton;
-
     public WebElement SignUpButton;
-
 
     @FindBy(partialLinkText = "Signup as a vendor?")
     public WebElement VendorSignUpButton;
