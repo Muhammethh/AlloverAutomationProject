@@ -18,7 +18,7 @@ public class TC_08 extends SignInVendor {
         MyAccountPage myAccountPage=new MyAccountPage();
         myAccountPage.AddressesButton.click();
         ReusableMethods.waitForSecond(2);
-
+        ExtentReportsListener.extentTestInfo("Vendor address sekmesine tiklar");
         // Edit Billing Adresses sekmesine tıklanır.
 
         VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
@@ -26,11 +26,11 @@ public class TC_08 extends SignInVendor {
         ReusableMethods.scroll(vendorAdressesPage.editYourBilling);
         ReusableMethods.visibleWait(vendorAdressesPage.editYourBilling,3);
         ReusableMethods.click(  vendorAdressesPage.editYourBilling);
-
+        ExtentReportsListener.extentTestInfo("Edit Billing Adresses sekmesine tıklanır");
 
         JSUtils.JSscrollIntoView(vendorAdressesPage.email);
         Assert.assertEquals(vendorAdressesPage.email.getDomAttribute("value"),"akifrencber.techproed@gmail.com");
-        ExtentReportsListener.extentTestInfo("Email otomatik olarak geldigi dogrulanir");
+        ExtentReportsListener.extentTestPass("Email otomatik olarak geldigi dogrulanir");
 
     }
 }

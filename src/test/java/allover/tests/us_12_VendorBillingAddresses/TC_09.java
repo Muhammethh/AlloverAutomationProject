@@ -11,24 +11,17 @@ import org.testng.annotations.Test;
 
 public class TC_09 extends SignInVendor {
 
-    @Test(description = "US-12 TC-9 Email kismi ilk Address kisminda otomatik gelmelidir  ")
+    @Test(description = "US-12 TC-9 My Accountta Email   otomatik gelmelidir  ")
     public void test() {
 
         //    Adresses sekmesine tıklanir
         MyAccountPage myAccountPage=new MyAccountPage();
         myAccountPage.AddressesButton.click();
         ReusableMethods.waitForSecond(2);
+        ExtentReportsListener.extentTestInfo("Vendor address sekmesine tiklar");
 
-        // Edit Billing Adresses sekmesine tıklanır.
 
         VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
-        ReusableMethods.waitForSecond(2);
-        ReusableMethods.scroll(vendorAdressesPage.editYourBilling);
-        ReusableMethods.visibleWait(vendorAdressesPage.editYourBilling,3);
-        ReusableMethods.click(  vendorAdressesPage.editYourBilling);
-
-
-
         Assert.assertTrue(vendorAdressesPage.verfyEmail.getText().contains("email"));
         ExtentReportsListener.extentTestFail("Email otomatik olarak gelmeliydi email ile ilgili bir bilgi yok");
 

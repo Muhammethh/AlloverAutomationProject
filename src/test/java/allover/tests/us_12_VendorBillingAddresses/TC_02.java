@@ -19,7 +19,7 @@ public class TC_02 extends SignInVendor {
         MyAccountPage myAccountPage=new MyAccountPage();
         myAccountPage.AddressesButton.click();
         ReusableMethods.waitForSecond(2);
-
+        ExtentReportsListener.extentTestInfo("Vendor address sekmesine tiklar");
         // Edit Billing Adresses sekmesine tıklanır.
 
         VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
@@ -27,12 +27,13 @@ public class TC_02 extends SignInVendor {
         ReusableMethods.scroll(vendorAdressesPage.editYourBilling);
         ReusableMethods.visibleWait(vendorAdressesPage.editYourBilling,3);
         ReusableMethods.click(  vendorAdressesPage.editYourBilling);
+        ExtentReportsListener.extentTestInfo("Vendor edit your billing adsress sekmesine tiklar");
 
 
         //Adress bolumunde name kismina gecersiz data girildiginde ekleme yapilmamali
         vendorAdressesPage.firstName.clear();
         vendorAdressesPage.firstName.sendKeys("12");
-        ExtentReportsListener.extentTestFail("First name alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
+        ExtentReportsListener.extentTestInfo("First name alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
 
         vendorAdressesPage.lastName.clear();
         vendorAdressesPage.lastName.sendKeys(ConfigReader.getProperty("lastname"));
@@ -93,7 +94,7 @@ public class TC_02 extends SignInVendor {
 
 //      "Address changed successfully." metni görülmedigi doğrulanır
         Assert.assertFalse(vendorAdressesPage.changedSuccessfully.isDisplayed());
-        ExtentReportsListener.extentTestInfo("Address changed successfully. metni görülmedigi doğrulanır");
+        ExtentReportsListener.extentTestFail(" Gceresiz dta girildigi icin Address changed successfully. metni görülmedigi doğrulanmaliydi fakat hatali");
         Driver.closeDriver();
     }
 }

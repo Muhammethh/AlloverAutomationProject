@@ -19,7 +19,7 @@ public class TC_07 extends SignInVendor {
         MyAccountPage myAccountPage=new MyAccountPage();
         myAccountPage.AddressesButton.click();
         ReusableMethods.waitForSecond(2);
-
+        ExtentReportsListener.extentTestInfo("Vendor address sekmesine tiklar");
         // Edit Billing Adresses sekmesine tıklanır.
 
         VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
@@ -27,7 +27,7 @@ public class TC_07 extends SignInVendor {
         ReusableMethods.scroll(vendorAdressesPage.editYourBilling);
         ReusableMethods.visibleWait(vendorAdressesPage.editYourBilling,3);
         ReusableMethods.click(  vendorAdressesPage.editYourBilling);
-
+        ExtentReportsListener.extentTestInfo("First name kismina gecerli data girilir");
 
         //First name kismina gecerli data girilir
         vendorAdressesPage.firstName.clear();
@@ -78,15 +78,15 @@ public class TC_07 extends SignInVendor {
 
         vendorAdressesPage.townCity.clear();
         vendorAdressesPage.townCity.sendKeys(ConfigReader.getProperty("city"));
-        ExtentReportsListener.extentTestInfo("Phone kısmına geçerli veri girilir");
+        ExtentReportsListener.extentTestInfo("town/city kısmına geçerli veri girilir");
 
         ReusableMethods.waitForSecond(2);
 
-//        	Phone kısmına geçerli veri girilir
+//        	Phone kısmına geçersiz veri girilir
         vendorAdressesPage.phone.clear();
         vendorAdressesPage.phone.sendKeys("1");
         ReusableMethods.waitForSecond(2);
-        ExtentReportsListener.extentTestFail("Phone alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
+        ExtentReportsListener.extentTestInfo("Phone kısmına geçersiz veri girilir");
 
 
 
@@ -99,7 +99,8 @@ public class TC_07 extends SignInVendor {
 
 //      "Address changed successfully." metni görülmedigi doğrulanır
         assertFalse(vendorAdressesPage.changedSuccessfully.isDisplayed());
-        ExtentReportsListener.extentTestInfo("Address changed successfully. metni görülmedigi doğrulanır");
+        ExtentReportsListener.extentTestFail("Phone alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
+
         Driver.closeDriver();
     }
 }

@@ -44,7 +44,7 @@ public class CheckOutPage {
     @FindBy(id = "payment_method_bacs")
     public WebElement wireTransferEftSelect;
 
-    @FindBy(id = "payment_method_cod")
+    @FindBy(xpath = "//input[@id='payment_method_cod']")
     public WebElement payAtDoorSelect;
 
     @FindBy(id = "place_order")
