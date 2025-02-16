@@ -75,6 +75,7 @@ public class TC_05 extends SignInVendor {
 //          ZIP Code kısmına geçersiz veri girilir
         vendorAdressesPage.zipCode.clear();
         vendorAdressesPage.zipCode.sendKeys("a123?");
+        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestInfo(" ZIP Code kısmına geçersiz veri girilir");
 
 
@@ -96,6 +97,7 @@ public class TC_05 extends SignInVendor {
 
 //      "Address changed successfully." metni görülmedigi doğrulanır
         assertTrue(vendorAdressesPage.zipcodeverfy.isDisplayed());
+        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestFail("ZipCode alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
 
         Driver.closeDriver();
