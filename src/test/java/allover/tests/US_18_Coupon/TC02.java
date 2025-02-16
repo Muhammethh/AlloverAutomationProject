@@ -1,12 +1,15 @@
 package allover.tests.US_18_Coupon;
 
 import allover.pages.*;
-import allover.utilities.*;
+import allover.utilities.ConfigReader;
+import allover.utilities.Driver;
+import allover.utilities.JSUtils;
+import allover.utilities.ReusableMethods;
 import org.testng.annotations.Test;
 
-public class TC01 {
+public class TC02 {
     @Test
-    public void codeTest() {
+    public void descriptionTest() {
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
 
         HomePage homePage = new HomePage();
@@ -14,6 +17,7 @@ public class TC01 {
         MyAccountPage myAccountPage = new MyAccountPage();
         StoreManagerPage storeManagerPage = new StoreManagerPage();
         CouponPage couponPage=new CouponPage();
+
         homePage.signIn.click();
 
         signInPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("vendorEmail"));
@@ -26,17 +30,14 @@ public class TC01 {
         ReusableMethods.visibleWait(homePage.myAccount, 5);
         homePage.myAccount.click();
         myAccountPage.StoreManagerButton.click();
-
         ReusableMethods.scroll(couponPage.CouponButton);
         JSUtils.JSclickWithTimeout(couponPage.CouponButton);
         couponPage.CouponButton.click();
-
-       // ReusableMethods.scroll(couponPage.AddNewButton);
-        ActionsUtils.scrollDown();
-       // couponPage.AddNewButton.click();
-        JSUtils.JSclickWithTimeout(couponPage.AddNewButton);
+        //ReusableMethods.click(couponPage.AddNewButton);
         couponPage.AddNewButton.click();
-        couponPage.CodeTextBox.sendKeys("KPTech");
+
+
+        couponPage.DescriptionTextArea.sendKeys("urun aciklaması");
 
     }
 }
