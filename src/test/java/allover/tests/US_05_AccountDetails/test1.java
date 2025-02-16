@@ -1,4 +1,4 @@
-package allover.tests.US_05;
+package allover.tests.US_05_AccountDetails;
 
 import allover.pages.AccountDetailsPage;
 import allover.tests.SignInCustomer;
