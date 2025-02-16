@@ -18,11 +18,13 @@ public class TC_09 extends SignInVendor {
         MyAccountPage myAccountPage=new MyAccountPage();
         myAccountPage.AddressesButton.click();
         ReusableMethods.waitForSecond(2);
+        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestInfo("Vendor address sekmesine tiklar");
 
 
         VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
         Assert.assertTrue(vendorAdressesPage.verfyEmail.getText().contains("email"));
+        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestFail("Email otomatik olarak gelmeliydi email ile ilgili bir bilgi yok");
 
     }
