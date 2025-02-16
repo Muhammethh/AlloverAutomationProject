@@ -22,11 +22,9 @@ public class SignInCustomer {
         signIn.PasswordTextBox.sendKeys(ConfigReader.getProperty("signInPassword"));
         signIn.SignInButton.click();
 
-<<<<<<< HEAD
-       // Driver.closeDriver();
-=======
+
         //Driver.closeDriver();
->>>>>>> master
+
 
     }
 }
