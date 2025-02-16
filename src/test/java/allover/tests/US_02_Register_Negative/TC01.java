@@ -12,9 +12,10 @@ public class TC01 {
 
     @Test(description = "Siteye daha önce kayıtlı bilgiler ile(username ve email) kayıt yapılamamalı.(Register)")
     public void testName() {
-        HomePage homePage= new HomePage();
-        RegisterPage registerPage= new RegisterPage();
-        ExtentReportsListener extentReportsListener=new ExtentReportsListener();
+
+        HomePage homePage = new HomePage();
+        RegisterPage registerPage = new RegisterPage();
+        ExtentReportsListener extentReportsListener = new ExtentReportsListener();
 
         ExtentReportsListener.extentTestInfo("sayfaya gidilir");
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
@@ -22,9 +23,14 @@ public class TC01 {
         ExtentReportsListener.extentTestInfo("register butonuna tıklanır");
         homePage.register.click();
 
+<<<<<<< HEAD:src/test/java/allover/tests/US_02_Register_Negative/TC01.java
 
         ExtentReportsListener.extentTestInfo("Username bölümüne önceden kayıt olunan bir userName girilir");
         registerPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("registerUsedUsername"));
+=======
+        ExtentReportsListener.extentTestInfo("Username bölümüne önceden kayıt olunan bir username girilir");
+        registerPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("registerPositiveUsername"));
+>>>>>>> master:src/test/java/allover/tests/US_02/TC01.java
 
         ExtentReportsListener.extentTestInfo("Email bölümüne kayıtlı bir email girilir");
         registerPage.MailAddressTextBox.sendKeys(ConfigReader.getProperty("registerUsedEmail"));
@@ -43,8 +49,11 @@ public class TC01 {
         ExtentReportsListener.extentTestInfo("'An account is already' uyrasının göründüğünü doğrulanır");
         Assert.assertTrue(registerPage.RegistrationCheck.getText().contains("An account is already"));
 
+<<<<<<< HEAD:src/test/java/allover/tests/US_02_Register_Negative/TC01.java
         //sayfa kapatılır
         Driver.closeDriver();
 
+=======
+>>>>>>> master:src/test/java/allover/tests/US_02/TC01.java
     }
 }
