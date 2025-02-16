@@ -35,9 +35,11 @@ public class TC_03 extends SignInVendor {
         vendorAdressesPage.firstName.sendKeys(ConfigReader.getProperty("firstname"));
         ExtentReportsListener.extentTestInfo("First name kismina gecerli data girilir");
 
+
         vendorAdressesPage.lastName.clear();
         vendorAdressesPage.lastName.sendKeys("0");
-        ExtentReportsListener.extentTestFail("Last name alanı gecersiz data girilir");
+
+        ExtentReportsListener.extentTestFail("Last  ExtentReportsListener.addScreenShotToReport(); name alanı gecersiz data girilir");
 
         vendorAdressesPage.companyName.clear();
         vendorAdressesPage.companyName.sendKeys(ConfigReader.getProperty("companyname"));
@@ -93,6 +95,7 @@ public class TC_03 extends SignInVendor {
 
 //      "Address changed successfully." metni görülmedigi doğrulanır
         Assert.assertFalse(vendorAdressesPage.changedSuccessfully.isDisplayed());
+        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestFail("Last name alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
         Driver.closeDriver();
     }

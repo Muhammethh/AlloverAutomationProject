@@ -18,11 +18,13 @@ public class TC_11 extends SignInVendor {
         MyAccountPage myAccountPage=new MyAccountPage();
         myAccountPage.AddressesButton.click();
         ReusableMethods.waitForSecond(2);
+        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestInfo("Vendor address sekmesine tiklar");
 
 
         VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
         Assert.assertTrue(vendorAdressesPage.verfyName.getText().contains("Last name"));
+        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestFail("Last name otomatik olarak gelmeliydi  fakat last name ile ilgili bilgi yok");
 
     }
