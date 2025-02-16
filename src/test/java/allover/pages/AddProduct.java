@@ -12,11 +12,11 @@ public class AddProduct {
     @FindBy(xpath="//a/span[text()='Sign In']")
     public WebElement signIn ;
 
-    //@FindBy(xpath = "//input[@id='reg_username']")
-    //public WebElement UsernameTextBox;
-
     @FindBy(xpath = "//input[@type='email']")
     public WebElement MailAddressTextBox;
+
+    @FindBy(partialLinkText = "Become a Vendor")
+    public WebElement BecomeVendorButton;
 
     @FindBy(xpath = "//input[@id='reg_password']")
     public WebElement PasswordTextBox;
@@ -30,24 +30,27 @@ public class AddProduct {
     @FindBy(xpath = "//a[text()='Store Manager']")
     public WebElement StoreManagerButton;
 
-    @FindBy(xpath = "//a[text()='Store Manager']")
-    public WebElement NewAddButton;
+    @FindBy(id = "add_new_product_dashboard")
+    public WebElement addNewButton;
 
-    @FindBy(css = "input[id='register-policy']")
-    public WebElement AgreeCheckBox;
+    @FindBy(id = "product_type")
+    public WebElement productTypeDropdown;
 
-    @FindBy(partialLinkText = "Become a Vendor")
-    public WebElement BecomeVendorButton;
+    @FindBy(id = "is_virtual")
+    public WebElement virtualOption;
 
+    @FindBy(id = "is_downloadable")
+    public WebElement downloadableOption;
+    @FindBy(id = "pro_title") public WebElement proTitle;
 
+    @FindBy(id = "regular_price")
+    public WebElement regPrice;
 
+    @FindBy(id = "sale_price")
+    public WebElement salePrice;
 
-
-
-    @FindBy(xpath="//a/span[text()='Register']")
-    public WebElement register ;
-
-
+    @FindBy(id = "product_cats[]")
+    public WebElement category;
 
     @FindBy (xpath = "(//span[@class='text'])[4]")
     public WebElement ProductsButton;

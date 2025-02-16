@@ -4,9 +4,7 @@ import allover.pages.HomePage;
 import allover.pages.MyAccountPage;
 import allover.pages.SignInPage;
 import allover.pages.StoreManagerPage;
-import allover.utilities.ConfigReader;
-import allover.utilities.Driver;
-import allover.utilities.ReusableMethods;
+import allover.utilities.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -32,10 +30,11 @@ WebElement driver;
         signInPage.PasswordTextBox.sendKeys(ConfigReader.getProperty("vendorPassword"));
 
         signInPage.SignInButton.click();
-        ReusableMethods.scroll(homePage.myAccount);
-        ReusableMethods.scroll(homePage.myAccount);
-        ReusableMethods.visibleWait(homePage.myAccount, 5);
+        WaitUtils.waitFor(2);
+        ActionsUtils.scrollDown();
 
+        ReusableMethods.scrollEnd();
+        ReusableMethods.waitForSecond(2);
         homePage.myAccount.click();
 
         myAccountPage.StoreManagerButton.click();
