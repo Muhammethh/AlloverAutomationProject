@@ -11,7 +11,9 @@
 
       <classes>
 
-          <class name="allover.tests.us_12_VendorBillingAddresses.TC_01"></class>
+
+          <class name="allover.tests.us_12_VendorBillingAddresses.TC_03"></class>
+
       </classes>
 
     </test>

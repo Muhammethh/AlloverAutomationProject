@@ -96,7 +96,6 @@ public class TC_05 extends SignInVendor {
 
 //      "Address changed successfully." metni görülmedigi doğrulanır
         assertTrue(vendorAdressesPage.zipcodeverfy.isDisplayed());
-        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestFail("ZipCode alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
 
         Driver.closeDriver();

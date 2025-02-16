@@ -99,7 +99,6 @@ public class TC_06 extends SignInVendor {
 
 //      "Address changed successfully." metni görülmedigi doğrulanır
         assertFalse(vendorAdressesPage.changedSuccessfully.isDisplayed());
-        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestFail("Town/City alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
 
         Driver.closeDriver();
