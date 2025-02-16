@@ -6,12 +6,13 @@ import allover.utilities.ConfigReader;
 import allover.utilities.Driver;
 import allover.utilities.ReusableMethods;
 import com.github.javafaker.Faker;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 
-public class TC02_RegisterNegative {
+public class TC04_RegisterNegative {
 
 
     @DataProvider
@@ -21,12 +22,13 @@ public class TC02_RegisterNegative {
 
         return new Object[][]{
 
-                {"",faker.internet().emailAddress(),"malaky.charith123"},   // (False) Username alani bos birakildiginda...
-                {faker.name().username(),"", "malaky.charith123"},    // (False) Your email address alani bos birakildiginda...
-                {faker.name().username(),faker.internet().emailAddress(), ""},    // (False) Password alani bos birakildiginda...
+                // Password alanina 8 karakterden az bir data girilmesine ragmen kayit islemi gerceklesmistir.
 
+                // (False) Password alanina 8 karakterden az data yazildiginda...
 
+                {faker.name().username(),faker.internet().emailAddress(),"mal.123"}
 
+                // ...Kayit islemleri gerceklesmemelidir.
         };
     }
 
@@ -44,11 +46,13 @@ public class TC02_RegisterNegative {
         RegisterPage registerPage = new RegisterPage();
         registerPage.UsernameTextBox.sendKeys(username);
 
+
         // Your email address alanina bir data girelim
         registerPage.MailAddressTextBox.sendKeys(email);
 
         // Password alanina bir data girelim
         registerPage.PasswordTextBox.sendKeys(password);
+
 
         // Agree check box ini tiklayalim.
         registerPage.AgreeCheckBox.click();
@@ -56,8 +60,16 @@ public class TC02_RegisterNegative {
         // SignUp butonuna tiklayalim.
         registerPage.SignUpButton.click();
 
+
         ReusableMethods.visibleWait(registerPage.SignUpButton, 10);
         Assert.assertTrue(registerPage.SignUpButton.isDisplayed());
+
+        // Siteye kayit olundugu dogrulanir.
+
+        Assert.assertFalse(homePage.signOut.isDisplayed(), "Sign Out");
+
+        // ekran resmi cekiyor
+        ReusableMethods.takeScreenShot();
 
 
 
