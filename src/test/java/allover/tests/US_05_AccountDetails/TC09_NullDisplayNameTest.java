@@ -48,5 +48,7 @@ public class TC09_NullDisplayNameTest {
         ExtentReportsListener.extentTestInfo("Display name in değişmediği görülür");
         Assert.assertEquals(accountDetailsPage.DisplayName.getAttribute("value"),displayName);
 
+        //sayfa kapatılır
+        Driver.closeDriver();
     }
 }

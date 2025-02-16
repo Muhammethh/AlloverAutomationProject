@@ -43,7 +43,8 @@ public class TC01 {
         ExtentReportsListener.extentTestInfo("'An account is already' uyrasının göründüğünü doğrulanır");
         Assert.assertTrue(registerPage.RegistrationCheck.getText().contains("An account is already"));
 
-
+        //sayfa kapatılır
+        Driver.closeDriver();
 
     }
 }

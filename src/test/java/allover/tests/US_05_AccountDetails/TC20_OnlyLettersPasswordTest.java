@@ -57,5 +57,6 @@ public class TC20_OnlyLettersPasswordTest {
         ExtentReportsListener.addScreenShotToReport();
         Assert.assertNotEquals(accountDetailsPage.VerifyControl.getText(), "Account details changed successfully.");
 
-
+        //sayfa kapatılır
+        Driver.closeDriver();
     }}

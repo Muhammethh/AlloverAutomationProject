@@ -50,5 +50,7 @@ public class TC02_ValidFirstNameTest {
         System.out.println("a"+accountDetailsPage.FirstName.getAttribute("value"));
         Assert.assertEquals(accountDetailsPage.FirstName.getAttribute("value"),firstName);
 
+        //sayfa kapatılır
+        Driver.closeDriver();
     }
 }

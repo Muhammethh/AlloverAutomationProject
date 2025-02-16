@@ -52,6 +52,8 @@ public class TC15_BiographyVisualButtonsTest {
         softAssert.assertTrue(accountDetailsPage.VisualToolbarTagleButton.isSelected());
 
 
+        //sayfa kapatılır
+        Driver.closeDriver();
 
 
     }
