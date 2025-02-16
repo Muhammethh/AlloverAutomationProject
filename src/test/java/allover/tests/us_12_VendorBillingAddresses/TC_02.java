@@ -95,7 +95,6 @@ public class TC_02 extends SignInVendor {
 
 //      "Address changed successfully." metni görülmedigi doğrulanır
         Assert.assertFalse(vendorAdressesPage.changedSuccessfully.isDisplayed());
-        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestFail(" Gecersiz data girildigi icin Address changed successfully!. metni görülmedigi doğrulanmaliydi fakat hatali");
         Driver.closeDriver();
     }
