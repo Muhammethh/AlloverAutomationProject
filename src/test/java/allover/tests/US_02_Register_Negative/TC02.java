@@ -45,7 +45,8 @@ public class TC02 {
         ExtentReportsListener.extentTestInfo("'An account is already registered with that username.' uyrasının göründüğünü doğrulanır");
         Assert.assertTrue(registerPage.RegistrationCheck.getText().contains("An account is already registered with that username."));
 
-
+        //sayfa kapatılır
+        Driver.closeDriver();
 
     }
 }

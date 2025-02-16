@@ -56,5 +56,6 @@ public class TC19_OnlyNumbersPasswordTest {
         ExtentReportsListener.addScreenShotToReport();
         Assert.assertNotEquals(accountDetailsPage.VerifyControl.getText(), "Account details changed successfully.");
 
-
+        //sayfa kapatılır
+        Driver.closeDriver();
     }}

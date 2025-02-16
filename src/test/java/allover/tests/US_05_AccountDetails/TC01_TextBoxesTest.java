@@ -53,5 +53,7 @@ public class TC01_TextBoxesTest {
 
         Assert.assertTrue(accountDetailsPage.BiographyTextBox.isDisplayed());
 
+        //sayfa kapatılır
+        Driver.closeDriver();
     }
 }

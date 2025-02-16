@@ -48,4 +48,6 @@ public class TC17_NullCurrentPasswordTest {
         Assert.assertEquals(accountDetailsPage.VerifyControl.getText(), "Please enter your current password.");
 
 
+        //sayfa kapatılır
+        Driver.closeDriver();
     }}

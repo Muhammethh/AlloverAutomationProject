@@ -52,5 +52,7 @@ public class TC13_InvalidEmailTest {
 
         Assert.assertEquals(accountDetailsPage.EmailAddress.getAttribute("value"),email);
 
+        //sayfa kapatılır
+        Driver.closeDriver();
     }
 }

@@ -45,6 +45,8 @@ public class TC03 {
         ExtentReportsListener.extentTestInfo("'An account is already registered with your email address.' uyrasının göründüğünü doğrulanır");
         Assert.assertTrue(registerPage.RegistrationCheck.getText().contains("An account is already registered with your email address."));
 
+        //sayfa kapatılır
+        Driver.closeDriver();
 
 
     }

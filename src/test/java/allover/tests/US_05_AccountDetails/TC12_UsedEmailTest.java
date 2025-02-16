@@ -50,5 +50,7 @@ public class TC12_UsedEmailTest {
 
         Assert.assertEquals(accountDetailsPage.EmailAddress.getAttribute("value"),email);
 
+        //sayfa kapatılır
+        Driver.closeDriver();
     }
 }

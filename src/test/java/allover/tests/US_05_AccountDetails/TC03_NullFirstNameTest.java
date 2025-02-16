@@ -48,5 +48,8 @@ WaitUtils.waitFor(2);
         String value2 = accountDetailsPage.FirstName.getAttribute("value");
         Assert.assertEquals(value2,value1);
 
+        //sayfa kapatılır
+        Driver.closeDriver();
+
     }
 }

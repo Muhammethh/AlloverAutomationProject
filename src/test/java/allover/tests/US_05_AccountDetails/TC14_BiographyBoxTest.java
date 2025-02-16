@@ -67,5 +67,8 @@ public class TC14_BiographyBoxTest {
        Driver.getDriver().switchTo().frame(0);
         Assert.assertNotNull(accountDetailsPage.BiographyTextBoxIn);
 
+        //sayfa kapatılır
+        Driver.closeDriver();
     }
+
 }

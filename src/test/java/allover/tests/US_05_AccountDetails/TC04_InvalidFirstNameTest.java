@@ -49,6 +49,8 @@ public class TC04_InvalidFirstNameTest {
         ExtentReportsListener.addScreenShotToReport();
         Assert.assertEquals(value2,value1);
 
+        //sayfa kapatılır
+        Driver.closeDriver();
 
 
     }

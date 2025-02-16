@@ -53,5 +53,7 @@ public class TC05_ValidLastNameTest {
         System.out.println("a"+accountDetailsPage.LastName.getAttribute("value"));
         Assert.assertEquals(accountDetailsPage.LastName.getAttribute("value"),lastName);
 
+        //sayfa kapatılır
+        Driver.closeDriver();
     }
 }

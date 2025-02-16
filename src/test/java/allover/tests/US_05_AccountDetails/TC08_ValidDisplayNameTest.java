@@ -52,5 +52,7 @@ public class TC08_ValidDisplayNameTest {
 
         Assert.assertEquals(accountDetailsPage.DisplayName.getAttribute("value"),displayName);
 
+        //sayfa kapatılır
+        Driver.closeDriver();
     }
 }

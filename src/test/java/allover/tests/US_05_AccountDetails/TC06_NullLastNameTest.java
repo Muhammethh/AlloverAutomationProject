@@ -49,5 +49,7 @@ public class TC06_NullLastNameTest {
         ExtentReportsListener.extentTestInfo("Last name in değişmediği görülür");
         Assert.assertEquals(accountDetailsPage.LastName.getAttribute("value"),lastName);
 
+        //sayfa kapatılır
+        Driver.closeDriver();
     }
 }
