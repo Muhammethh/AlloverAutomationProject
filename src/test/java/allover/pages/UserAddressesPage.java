@@ -33,7 +33,7 @@ public class UserAddressesPage {
     @FindBy(id="shipping_company")
    public WebElement shippingCompanyName;
 
-    @FindBy(id="select2-shipping_country-container")
+    @FindBy(id="shipping_country")
     public WebElement shippingCountry;
 
 
@@ -44,14 +44,39 @@ public class UserAddressesPage {
     @FindBy(id="shipping_address_2")
     public WebElement shippingAddress2;
 
-    @FindBy(id="select2-shipping_state-container")
+    @FindBy(id="shipping_state")
     public WebElement shippingState;
 
 
     @FindBy(id="shipping_postcode")
     public WebElement shippingZipCode;
 
-    @FindBy(id="woocommerce-edit-address-nonce")
+    @FindBy(xpath="//button[@name='save_address']")
     public WebElement shippingSaveAdress;
+
+    @FindBy(id="shipping_city")
+    public WebElement shippingCity;
+
+    @FindBy(css="div[role='alert']")
+    public WebElement changedSuccessfullyText;
+
+    @FindBy(xpath = "//*[text()='First name is a required field.']")
+    public WebElement nameRequiredField;
+
+    @FindBy(xpath = "//*[text()='Last name is a required field.']")
+    public WebElement lastNameRequiredField;
+
+    @FindBy(xpath = "//*[text()='Street address is a required field.']")
+    public WebElement streetRequiredField;
+
+    @FindBy(xpath = "//*[text()='Postcode / ZIP is a required field.']")
+    public WebElement zipCodeRequiredField;
+
+    @FindBy(xpath = "//*[text()='Town / City is a required field.']")
+    public WebElement cityRequiredField;
+
+
+
+
 
 }
