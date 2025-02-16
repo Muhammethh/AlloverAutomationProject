@@ -1,7 +1,7 @@
 package allover.tests.us_04_ShippingAddressesAdd;
 
-import allover.pages.AccountDetailsPage;
 import allover.pages.HomePage;
+import allover.pages.SignInPage;
 import allover.pages.UserAddressesPage;
 import allover.tests.SignInCustomer;
 import allover.utilities.*;
@@ -9,12 +9,16 @@ import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_01 extends SignInCustomer {
+public class TC_02 extends SignInCustomer {
+
+
+
+    //GIRME ZORUNLULUGU OLAN first name BOS BIRAKILINCA UYARI VERMELI
 
 
 
     @Test
-    public void test01() {
+    public void test02() {
         Faker faker=new Faker();
 
         SignInCustomer.SignIn();
@@ -23,17 +27,15 @@ public class TC_01 extends SignInCustomer {
         ReusableMethods.click(homePage.myAccount);
         ReusableMethods.waitForSecond(2);
 
-        //"Addresses" sekmesi tiklanir
         UserAddressesPage userAddressesPage = new UserAddressesPage();
         userAddressesPage.adresses.click();
 
-        //"ADD" sekmesi tiklanir
         ReusableMethods.click(userAddressesPage.addShippingAddress2);
 
         //    First name alanına gecerli veri girilir
         userAddressesPage.shippingFirstName.clear();
-        userAddressesPage.shippingFirstName.sendKeys(faker.name().firstName());
-        ExtentReportsListener.extentTestInfo("First name kısmına geçerli veri girilir");
+
+        ExtentReportsListener.extentTestInfo("First name kısmi bos birakilir");
 
         //    Last name alanı gecerli veri girilir
         userAddressesPage.shippingLastName.clear();
@@ -86,21 +88,34 @@ public class TC_01 extends SignInCustomer {
         JSUtils.JSscrollIntoView(userAddressesPage.shippingState);
         ReusableMethods.click(userAddressesPage.shippingState);
         ReusableMethods.ddmValue(userAddressesPage.shippingState,"TR01");
-       // ReusableMethods.scroll(userAddressesPage.shippingState);
+        // ReusableMethods.scroll(userAddressesPage.shippingState);
         ReusableMethods.visibleWait(userAddressesPage.shippingState,2);
 
-       // ReusableMethods.click(userAddressesPage.shippingState);
+        // ReusableMethods.click(userAddressesPage.shippingState);
         ReusableMethods.waitForSecond(2);
         ExtentReportsListener.extentTestInfo("state kısmına geçerli veri secilir");
-        ActionsUtils.scrollDown();
         //"SAVE ADDRESS" kutusu tiklanir
         userAddressesPage.shippingSaveAdress.click();
 
-        //    Addresses changed successfully yazisi gorulur
 
-        Assert.assertTrue(userAddressesPage.changedSuccessfullyText.isDisplayed());
-        ExtentReportsListener.extentTestInfo("Save Address butonuna tıklayarak successfully yazisi goruldu");
+
+// gorulmedigi dogrulanir.
+        ReusableMethods.waitForSecond(2);
+        Assert.assertTrue(userAddressesPage.nameRequiredField.isDisplayed());
+        ExtentReportsListener.extentTestInfo("Save Address butonuna tıklayarak successfully yazisi gorulmemelidir");
+
         Driver.closeDriver();
+
+
+
+
+
+
+
+
+
+
+
 
 
 
