@@ -12,7 +12,7 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_02 {
+public class TC_02 extends Notations{
 
     @Test
     public void TC_02_InvalidSearch1() {
@@ -23,12 +23,12 @@ public class TC_02 {
         ExtentReportsListener.extentTestInfo("SignIn Classından signIn metodu çağrılarak giriş yapılır");
         //SignInCustomer.SignIn();
 
-        SignInPage signIn=new SignInPage();
-        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
-        homePage.signIn.click();
-        signIn.UsernameTextBox.sendKeys(ConfigReader.getProperty("signInUserName"));
-        signIn.PasswordTextBox.sendKeys(ConfigReader.getProperty("signInPassword"));
-        signIn.SignInButton.click();
+       // SignInPage signIn=new SignInPage();
+       // Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+       // homePage.signIn.click();
+       // signIn.UsernameTextBox.sendKeys(ConfigReader.getProperty("signInUserName"));
+       // signIn.PasswordTextBox.sendKeys(ConfigReader.getProperty("signInPassword"));
+       // signIn.SignInButton.click();
 
         ExtentReportsListener.extentTestInfo("Sign Out butonu görünene kadar beklenir ve göründüğü doğrulanır");
         //Sign Out butonu görünene kadar beklenir ve göründüğü doğrulanır
