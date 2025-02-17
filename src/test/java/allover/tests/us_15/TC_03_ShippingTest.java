@@ -69,9 +69,9 @@ public class TC_03_ShippingTest {
         ActionsUtils.pressTab();
         ActionsUtils.pressArrowDown();
         ActionsUtils.pressArrowDown();
-        ActionsUtils.scrollDown();
-
-        storeManagerPage.SubmitButton.click();
+        JSUtils.JSclickWithTimeout(storeManagerPage.SubmitButton);
+        ReusableMethods.click(storeManagerPage.SubmitButton);
+        ReusableMethods.takeScreenShot();
 
         Driver.closeDriver();
     }

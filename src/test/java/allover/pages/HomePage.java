@@ -41,6 +41,11 @@ public class HomePage {
     @FindBy(partialLinkText="My Account")
     public WebElement myAccount;
 
+    @FindBy(tagName = "body")
+    public WebElement body;
+
+
+
 
 
 
