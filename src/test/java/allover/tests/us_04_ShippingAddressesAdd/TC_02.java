@@ -59,7 +59,7 @@ public class TC_02 extends SignInCustomer {
         ReusableMethods.visibleWait(userAddressesPage.shippingCountry,5);
         ReusableMethods.click(userAddressesPage.shippingCountry);
         ReusableMethods.waitForSecond(2);
-=======
+
         JSUtils.JSscrollIntoView(userAddressesPage.shippingCountry);
         ReusableMethods.click(userAddressesPage.shippingCountry);
         ActionsUtils.scrollDown();
@@ -79,7 +79,7 @@ public class TC_02 extends SignInCustomer {
 
         ActionsUtils.scrollDown();
 
-=======
+
 
 
         //    ZIP Code alanina gecerli veri girilir
@@ -103,7 +103,7 @@ public class TC_02 extends SignInCustomer {
         ReusableMethods.visibleWait(userAddressesPage.shippingState,2);
 
         // ReusableMethods.click(userAddressesPage.shippingState);
-=======
+
         ReusableMethods.visibleWait(userAddressesPage.shippingState,2);
 
 
@@ -119,7 +119,7 @@ public class TC_02 extends SignInCustomer {
         Assert.assertTrue(userAddressesPage.nameRequiredField.isDisplayed());
 
         ExtentReportsListener.extentTestInfo("Save Address butonuna tıklayarak successfully yazisi gorulmemelidir");
-=======
+
         ExtentReportsListener.extentTestPass("Save Address butonuna tıklayarak successfully yazisi gorulmedi ve zorunlu alanla ilgili uyari mesaji vermistir.");
 
 

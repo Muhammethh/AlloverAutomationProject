@@ -32,6 +32,7 @@ public class TC12_UsedEmailTest {
         //Email Text box ına geçerli bir Last name girilir
 
 
+
         JSUtils.JSscrollIntoView(accountDetailsPage.EmailAddress);
 
         accountDetailsPage.EmailAddress.clear();

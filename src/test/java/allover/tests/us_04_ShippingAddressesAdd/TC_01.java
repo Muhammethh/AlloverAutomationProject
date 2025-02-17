@@ -57,7 +57,7 @@ public class TC_01 extends SignInCustomer {
         ReusableMethods.visibleWait(userAddressesPage.shippingCountry,5);
         ReusableMethods.click(userAddressesPage.shippingCountry);
         ReusableMethods.waitForSecond(2);
-=======
+
 
         JSUtils.JSscrollIntoView(userAddressesPage.shippingCountry);
         ReusableMethods.click(userAddressesPage.shippingCountry);
@@ -97,8 +97,8 @@ public class TC_01 extends SignInCustomer {
         ReusableMethods.click(userAddressesPage.shippingState);
         ReusableMethods.ddmValue(userAddressesPage.shippingState,"TR01");
        // ReusableMethods.scroll(userAddressesPage.shippingState);
-=======
-        ;
+
+
         JSUtils.JSscrollIntoView(userAddressesPage.shippingState);
         ReusableMethods.click(userAddressesPage.shippingState);
         ReusableMethods.ddmValue(userAddressesPage.shippingState,"TR01");
@@ -117,7 +117,7 @@ public class TC_01 extends SignInCustomer {
         Assert.assertTrue(userAddressesPage.changedSuccessfullyText.isDisplayed());
 
         ExtentReportsListener.extentTestInfo("Save Address butonuna tıklayarak successfully yazisi goruldu");
-=======
+
         ExtentReportsListener.extentTestPass("Save Address butonuna tıklayarak successfully yazisi goruldu");
 
         Driver.closeDriver();
