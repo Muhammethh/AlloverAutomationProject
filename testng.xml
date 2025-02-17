@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/nimet/IdeaProjects/AlloverAutomationProject/src/test/java/allover/tests/US_02_Register_Negative">
+        <classes>
+            <class name="allover.tests.US_02_Register_Negative.TC01">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_02_Register_Negative.TC02">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_02_Register_Negative.TC03">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
