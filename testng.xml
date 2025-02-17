@@ -3,6 +3,66 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
+          name="C:/Users/fatma/IdeaProjects/AlloverAutomationProject/src/test/java/allover/tests/us_12_VendorBillingAddresses">
+        <classes>
+            <class name="allover.tests.us_12_VendorBillingAddresses.TC_01">
+                <methods>
+                    <include name="test2negative"/>
+                </methods>
+            </class>
+            <class name="allover.tests.us_12_VendorBillingAddresses.TC_02">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="allover.tests.us_12_VendorBillingAddresses.TC_03">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="allover.tests.us_12_VendorBillingAddresses.TC_04">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="allover.tests.us_12_VendorBillingAddresses.TC_05">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="allover.tests.us_12_VendorBillingAddresses.TC_06">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="allover.tests.us_12_VendorBillingAddresses.TC_07">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="allover.tests.us_12_VendorBillingAddresses.TC_08">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="allover.tests.us_12_VendorBillingAddresses.TC_09">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="allover.tests.us_12_VendorBillingAddresses.TC_10">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="allover.tests.us_12_VendorBillingAddresses.TC_11">
+                <methods>
+                    <include name="test"/>
+
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
           name="C:/Users/nimet/IdeaProjects/AlloverAutomationProject/src/test/java/allover/tests/US_05_AccountDetails">
         <classes>
             <class name="allover.tests.US_05_AccountDetails.TC01_TextBoxesTest">
@@ -108,6 +168,7 @@
             <class name="allover.tests.US_05_AccountDetails.TC21_OnlySymbolPasswordTest">
                 <methods>
                     <include name="testName"/>
+
                 </methods>
             </class>
         </classes>
