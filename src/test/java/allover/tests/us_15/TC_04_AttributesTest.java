@@ -70,10 +70,13 @@ public class TC_04_AttributesTest {
         ReusableMethods.click(storeManagerPage.SizeVisibleOnSearchBoxButton);
         ReusableMethods.click(storeManagerPage.AttributesButton);
         ReusableMethods.click(storeManagerPage.SubmitButton);
+        WaitUtils.waitFor(2);
+        ReusableMethods.takeScreenShot();
 
         Driver.closeDriver();
 
-    }
+
+  }
 }
 
 
