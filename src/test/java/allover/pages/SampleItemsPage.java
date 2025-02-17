@@ -43,5 +43,25 @@ public class SampleItemsPage {
     @FindBy(xpath = "//p[@class='alert alert-light alert-info woocommerce-info']")
     public WebElement noProductWereFoundWriting;
 
+    // Compare button on the product page
+
+
+    @FindBy(xpath ="(//a[@title='Compare'])[1]" )
+    public WebElement compareButton1;
+
+    @FindBy(xpath ="(//a[@title='Compare'])[2]")
+    public WebElement compareButton2;
+
+    @FindBy(css ="body > div:nth-child(10) > main:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > ul:nth-child(1) > li:nth-child(3) > div:nth-child(1) > figure:nth-child(1) > div:nth-child(3) > a:nth-child(3)")
+    public WebElement compareButton3;
+
+    @FindBy(css ="body > div:nth-child(10) > main:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > ul:nth-child(1) > li:nth-child(4) > div:nth-child(1) > figure:nth-child(1) > div:nth-child(3) > a:nth-child(3)")
+    public WebElement compareButton4;
+
+    // Start compare button in the pop-up window
+    @FindBy(xpath= "//a[contains(@class,'btn btn-dark btn-rounded')]")
+    public WebElement startCompareButton;
+@FindBy(xpath= "//a[contains(@class,'compare-clean')]")
+    public WebElement cleanAllCompareButton;
 
 }

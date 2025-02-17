@@ -4,6 +4,13 @@ import allover.pages.MyAccountPage;
 import allover.pages.VendorAdressesPage;
 import allover.tests.SignInVendor;
 import allover.utilities.*;
+
+=======
+
+
+import com.aventstack.extentreports.ExtentReports;
+
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -33,6 +40,13 @@ BrowserUtils.clickWithTimeOut(vendorAdressesPage.getEditYourShipping,3);
         vendorAdressesPage.shippingfirstName.clear();
 
         vendorAdressesPage.shippingfirstName.sendKeys(ConfigReader.getProperty("firstname"));
+
+=======
+
+
+        ExtentReportsListener.extentTestInfo("Kullanici firstname kismina gecerli data girdi");
+
+
         vendorAdressesPage.shippinglastName.sendKeys(ConfigReader.getProperty("lastname"));
         vendorAdressesPage.shippingcompanyName.sendKeys(ConfigReader.getProperty("companyname"));
 
@@ -58,6 +72,13 @@ BrowserUtils.clickWithTimeOut(vendorAdressesPage.getEditYourShipping,3);
         ReusableMethods.visibleWait(vendorAdressesPage.saveButton,2);
         ReusableMethods.click(vendorAdressesPage.saveButton);
         Assert.assertTrue(vendorAdressesPage.changedSuccessfully.isDisplayed());
+
+
+
+=======
+        ExtentReportsListener.extentTestPass("Adres degisikligi basarili oldu");
+
+
 
 
 

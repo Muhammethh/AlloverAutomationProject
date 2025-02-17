@@ -54,10 +54,17 @@ public class TC_02 extends SignInCustomer {
 
         //    Country/Region seçilir.
 
+
         ReusableMethods.scroll(userAddressesPage.shippingCountry);
         ReusableMethods.visibleWait(userAddressesPage.shippingCountry,5);
         ReusableMethods.click(userAddressesPage.shippingCountry);
         ReusableMethods.waitForSecond(2);
+=======
+        JSUtils.JSscrollIntoView(userAddressesPage.shippingCountry);
+        ReusableMethods.click(userAddressesPage.shippingCountry);
+        ActionsUtils.scrollDown();
+        ReusableMethods.ddmValue(userAddressesPage.shippingCountry,"TR");
+
         ExtentReportsListener.extentTestInfo("Country/Region kısmına geçerli veri girilir");
 
         //    Street address alanina gecerli veri girilir
@@ -69,7 +76,10 @@ public class TC_02 extends SignInCustomer {
         ReusableMethods.waitForSecond(2);
         ExtentReportsListener.extentTestInfo("Street address kısmına geçerli veri girilir");
 
+
         ActionsUtils.scrollDown();
+
+=======
 
 
         //    ZIP Code alanina gecerli veri girilir
@@ -88,10 +98,15 @@ public class TC_02 extends SignInCustomer {
         JSUtils.JSscrollIntoView(userAddressesPage.shippingState);
         ReusableMethods.click(userAddressesPage.shippingState);
         ReusableMethods.ddmValue(userAddressesPage.shippingState,"TR01");
+
         // ReusableMethods.scroll(userAddressesPage.shippingState);
         ReusableMethods.visibleWait(userAddressesPage.shippingState,2);
 
         // ReusableMethods.click(userAddressesPage.shippingState);
+=======
+        ReusableMethods.visibleWait(userAddressesPage.shippingState,2);
+
+
         ReusableMethods.waitForSecond(2);
         ExtentReportsListener.extentTestInfo("state kısmına geçerli veri secilir");
         //"SAVE ADDRESS" kutusu tiklanir
@@ -102,7 +117,11 @@ public class TC_02 extends SignInCustomer {
 // gorulmedigi dogrulanir.
         ReusableMethods.waitForSecond(2);
         Assert.assertTrue(userAddressesPage.nameRequiredField.isDisplayed());
+
         ExtentReportsListener.extentTestInfo("Save Address butonuna tıklayarak successfully yazisi gorulmemelidir");
+=======
+        ExtentReportsListener.extentTestPass("Save Address butonuna tıklayarak successfully yazisi gorulmedi ve zorunlu alanla ilgili uyari mesaji vermistir.");
+
 
         Driver.closeDriver();
 
