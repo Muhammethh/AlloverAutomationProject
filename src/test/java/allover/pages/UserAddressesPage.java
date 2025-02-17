@@ -71,17 +71,17 @@ public class UserAddressesPage {
     @FindBy(id="shipping_address_2")
     public WebElement shippingAddress2;
 
-
-   @FindBy(id="shipping_state")
-
-   @FindBy(id="billing_address_2")
-   public WebElement billingAddress2;
+<<<<<<< HEAD
+    @FindBy(id="shipping_state")
+=======
+    @FindBy(id="billing_address_2")
+    public WebElement billingAddress2;
 
 
 
 
     @FindBy(id="select2-shipping_state-container")
-
+>>>>>>> master
     public WebElement shippingState;
 
     @FindBy(id="billing_state")
@@ -91,7 +91,7 @@ public class UserAddressesPage {
     @FindBy(id="shipping_postcode")
     public WebElement shippingZipCode;
 
-
+<<<<<<< HEAD
     @FindBy(xpath="//button[@name='save_address']")
     public WebElement shippingSaveAdress;
 
@@ -117,7 +117,7 @@ public class UserAddressesPage {
     public WebElement cityRequiredField;
 
 
-
+=======
     @FindBy(id="billing_postcode")
     public WebElement billingZipCode;
 
@@ -130,8 +130,8 @@ public class UserAddressesPage {
 
 
 
-   @FindBy(id="woocommerce-edit-address-nonce")
-/  public WebElement shippingSaveAdress;
+    @FindBy(id="woocommerce-edit-address-nonce")
+    public WebElement shippingSaveAdress;
 
     @FindBy(xpath = "//button[@value='Save address']")
     public WebElement billingSaveAdressButton;
@@ -144,7 +144,7 @@ public class UserAddressesPage {
 
     //@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/address[1]/table[1]/tbody[1]/tr[3]/th[1]")
     //public WebElement writingshippingcity;
-
+>>>>>>> master
 
 
 
