@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/nimet/IdeaProjects/AlloverAutomationProject/src/test/java/allover/tests/US_05_AccountDetails">
+        <classes>
+            <class name="allover.tests.US_05_AccountDetails.TC01_TextBoxesTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC02_ValidFirstNameTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC03_NullFirstNameTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC04_InvalidFirstNameTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC05_ValidLastNameTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC06_NullLastNameTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC07_InvalidLastNameTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC08_ValidDisplayNameTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC09_NullDisplayNameTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC10_InvalidDisplayNameTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC11_ValidEmailTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC12_UsedEmailTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC13_InvalidEmailTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC14_BiographyBoxTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC15_BiographyVisualButtonsTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC16_BiographyTextButtonsTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC17_NullCurrentPasswordTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC18_ShortCharacterPasswordTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC19_OnlyNumbersPasswordTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC20_OnlyLettersPasswordTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC21_OnlySymbolPasswordTest">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
