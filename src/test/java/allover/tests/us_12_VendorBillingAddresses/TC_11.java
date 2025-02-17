@@ -18,7 +18,6 @@ public class TC_11 extends SignInVendor {
         MyAccountPage myAccountPage=new MyAccountPage();
         myAccountPage.AddressesButton.click();
         ReusableMethods.waitForSecond(2);
-        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestInfo("Vendor address sekmesine tiklar");
 
 
