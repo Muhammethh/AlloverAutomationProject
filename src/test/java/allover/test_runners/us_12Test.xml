@@ -12,7 +12,17 @@
       <classes>
 
 
+          <class name="allover.tests.us_12_VendorBillingAddresses.TC_01"></class>
+          <class name="allover.tests.us_12_VendorBillingAddresses.TC_08"></class>
+          <class name="allover.tests.us_12_VendorBillingAddresses.TC_10"></class>
+          <class name="allover.tests.us_12_VendorBillingAddresses.TC_04"></class>
+          <class name="allover.tests.us_12_VendorBillingAddresses.TC_05"></class>
+          <class name="allover.tests.us_12_VendorBillingAddresses.TC_06"></class>
+          <class name="allover.tests.us_12_VendorBillingAddresses.TC_07"></class>
           <class name="allover.tests.us_12_VendorBillingAddresses.TC_03"></class>
+          <class name="allover.tests.us_12_VendorBillingAddresses.TC_02"></class>
+          <class name="allover.tests.us_12_VendorBillingAddresses.TC_09"></class>
+          <class name="allover.tests.us_12_VendorBillingAddresses.TC_11"></class>
 
       </classes>
 
