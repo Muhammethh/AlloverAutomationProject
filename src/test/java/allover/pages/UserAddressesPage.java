@@ -78,10 +78,10 @@ public class UserAddressesPage {
    @FindBy(id="billing_address_2")
    public WebElement billingAddress2;
 
-//    @FindBy(id="shipping_state")
+    @FindBy(id="shipping_state")
 
-    @FindBy(id="billing_address_2")
-    public WebElement billingAddress2;
+   @FindBy(id="billing_address_2")
+   public WebElement billingAddress2;
 
 
     @FindBy(id="select2-shipping_state-container")
@@ -100,8 +100,8 @@ public class UserAddressesPage {
     @FindBy(xpath="//button[@name='save_address']")
     public WebElement shippingSaveAdress;
 
-//    @FindBy(xpath="//button[@name='save_address']")
-//    public WebElement shippingSaveAdress;
+  @FindBy(xpath="//button[@name='save_address']")
+  public WebElement shippingSaveAdress;
 
 
     @FindBy(id="shipping_city")
@@ -143,7 +143,7 @@ public class UserAddressesPage {
    @FindBy(id="woocommerce-edit-address-nonce")
   public WebElement shippingSaveAdress;
 
-    @FindBy(id="woocommerce-edit-address-nonce")
+   @FindBy(id="woocommerce-edit-address-nonce")
     public WebElement shippingSaveAdress;
 
 
