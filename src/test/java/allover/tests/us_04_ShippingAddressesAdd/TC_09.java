@@ -79,7 +79,8 @@ public class TC_09 extends SignInCustomer {
         userAddressesPage.shippingCity.clear();
 
         userAddressesPage.shippingCity.sendKeys("123@");
-        ExtentReportsListener.extentTestInfo("Town/City kısmına geçersiz veri girilir");
+        ReusableMethods.addScreenShotToReport();
+        ExtentReportsListener.extentTestInfo("Town/City kısmına geçersiz veri girildiginde adres eklenmemelidir fakat eklendi");
 
         //    State secilir
         JSUtils.JSscrollIntoView(userAddressesPage.shippingState);

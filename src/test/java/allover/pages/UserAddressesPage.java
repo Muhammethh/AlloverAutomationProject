@@ -65,6 +65,7 @@ public class UserAddressesPage {
     public WebElement billingAddress2;
 
     @FindBy(id = "select2-shipping_state-container")
+
     public WebElement shippingState;
 
     @FindBy(id = "billing_state")
