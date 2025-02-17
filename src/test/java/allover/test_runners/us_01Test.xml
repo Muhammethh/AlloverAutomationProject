@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AlloverAutomation">
+
+    <listeners>
+        <listener class-name="allover.utilities.ExtentReportsListener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true"
+          name="Us-01 Register">
+
+
+
+        <classes>
+
+            <class name="allover.tests.US_01_Register.TC01_RegisterPositive"></class>
+
+        </classes>
+
+    </test>
+</suite>

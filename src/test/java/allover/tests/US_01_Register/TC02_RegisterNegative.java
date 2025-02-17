@@ -61,11 +61,6 @@ public class TC02_RegisterNegative {
 
 
 
-
-
-
-
-
     }
 }
 

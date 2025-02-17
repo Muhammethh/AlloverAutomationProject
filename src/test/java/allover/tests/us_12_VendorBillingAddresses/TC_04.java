@@ -56,7 +56,6 @@ public class TC_04 extends SignInVendor {
         ReusableMethods.waitForSecond(2);
         vendorAdressesPage.streetAdress2.clear();
         vendorAdressesPage.streetAdress2.sendKeys("?");
-        ExtentReportsListener.addScreenShotToReport();
         ReusableMethods.waitForSecond(2);
         ExtentReportsListener.extentTestInfo("Street address kısmına geçerersiz veri girilir");
 

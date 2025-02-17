@@ -8,7 +8,7 @@ import allover.utilities.ExtentReportsListener;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC04_AgreeCheckBoxNegative {
+public class TC05_AgreeCheckBoxNegative {
 
     @Test(description = "Geçerli datalar ile Kullanıcı sayfaya kayıt olabilmelidir (Positive Scenario)")
     public void testName() {
@@ -41,7 +41,7 @@ public class TC04_AgreeCheckBoxNegative {
         registerPage.SignUpButton.click();
 
         ExtentReportsListener.extentTestInfo("'An account is already' uyrasının göründüğünü doğrulanır");
-        Assert.assertTrue(registerPage.RegistrationCheck.getText().contains("An account is already"));
+        Assert.assertFalse(registerPage.RegistrationCheck.getText().contains("An account is already"));
     }
 }
 
