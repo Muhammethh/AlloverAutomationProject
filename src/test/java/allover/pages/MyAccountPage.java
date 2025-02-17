@@ -47,6 +47,8 @@ public class MyAccountPage {
     @FindBy(xpath = "//a[text()='Logout']")
     public WebElement LogoutButton;
 
+    @FindBy(xpath = "(//a[contains(@class, 'view')])[1]")
+    public WebElement ViewButton;
 
 
 }
