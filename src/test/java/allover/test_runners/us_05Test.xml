@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AlloverAutomation">
+    <listeners>
+        <listener class-name="allover.utilities.ExtentReportsListener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true"
+          name="US_05_AccountDetails">
+        <classes>
+            <class name="allover.tests.US_05_AccountDetails.TC01_TextBoxesTest">            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC02_ValidFirstNameTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC03_NullFirstNameTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC04_InvalidFirstNameTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC05_ValidLastNameTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC06_NullLastNameTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC07_InvalidLastNameTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC14_BiographyBoxTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC15_BiographyVisualButtonsTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC16_BiographyTextButtonsTest"></class>
+        </classes>
+    </test>
+</suite>

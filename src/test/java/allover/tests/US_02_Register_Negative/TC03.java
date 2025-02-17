@@ -18,32 +18,32 @@ public class TC03 {
         Faker faker=new Faker();
         ExtentReportsListener extentReportsListener=new ExtentReportsListener();
 
-        ExtentReportsListener.extentTestInfo("sayfaya gidilir");
+
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+        ExtentReportsListener.extentTestInfo("sayfaya gidilir");
 
-        ExtentReportsListener.extentTestInfo("register butonuna tıklanır");
         homePage.register.click();
+        ExtentReportsListener.extentTestInfo("register butonuna tıklanır");
 
-
-        ExtentReportsListener.extentTestInfo("Username bölümüne önceden kayıtlı olmayan bir username girilir");
         registerPage.UsernameTextBox.sendKeys(faker.name().username());
+        ExtentReportsListener.extentTestInfo("Username bölümüne önceden kayıtlı olmayan bir username girilir");
 
-        ExtentReportsListener.extentTestInfo("Email bölümüne kayıtlı bir email girilir");
         registerPage.MailAddressTextBox.sendKeys(ConfigReader.getProperty("registerUsedEmail"));
+        ExtentReportsListener.extentTestInfo("Email bölümüne kayıtlı bir email girilir");
 
 
-        ExtentReportsListener.extentTestInfo("Password bölümüne geçerli bir şifre girilir");
         registerPage.PasswordTextBox.sendKeys(ConfigReader.getProperty("registerUsedPassword"));
+        ExtentReportsListener.extentTestInfo("Password bölümüne geçerli bir şifre girilir");
 
 
-        ExtentReportsListener.extentTestInfo("I agree to the privacy policy' checkbox ı işaretlenir");
         registerPage.AgreeCheckBox.click();
+        ExtentReportsListener.extentTestInfo("I agree to the privacy policy' checkbox ı işaretlenir");
 
-        ExtentReportsListener.extentTestInfo("SingUP butonuna tıklanır");
         registerPage.SignUpButton.click();
+        ExtentReportsListener.extentTestInfo("SingUP butonuna tıklanır");
 
-        ExtentReportsListener.extentTestInfo("'An account is already registered with your email address.' uyrasının göründüğünü doğrulanır");
         Assert.assertTrue(registerPage.RegistrationCheck.getText().contains("An account is already registered with your email address."));
+        ExtentReportsListener.extentTestInfo("'An account is already registered with your email address.' uyrasının göründüğünü doğrulanır");
 
         //sayfa kapatılır
         Driver.closeDriver();
