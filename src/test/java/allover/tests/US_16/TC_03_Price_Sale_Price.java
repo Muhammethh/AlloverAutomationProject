@@ -6,7 +6,9 @@ import allover.pages.SignInPage;
 import allover.pages.StoreManagerPage;
 import allover.utilities.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 public class TC_03_Price_Sale_Price {
@@ -41,6 +43,11 @@ public class TC_03_Price_Sale_Price {
         ReusableMethods.scroll(storeManagerPage.ProductsButton);
         ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
         storeManagerPage.ProductsButton.click();
+
+        ReusableMethods.scroll((WebElement) storeManagerPage.addNewButton);
+        ReusableMethods.visibleWait((WebElement) storeManagerPage.addNewButton, 5);
+        ReusableMethods.click();
+        new Actions(Driver.getDriver()).sendKeys(Keys.PAGE_DOWN).perform();
 
         WebElement priceField = driver.findElement(By.id("regular_price"));
         priceField.clear();

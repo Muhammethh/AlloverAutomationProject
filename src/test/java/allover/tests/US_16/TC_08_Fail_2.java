@@ -4,9 +4,7 @@ import allover.pages.HomePage;
 import allover.pages.MyAccountPage;
 import allover.pages.SignInPage;
 import allover.pages.StoreManagerPage;
-import allover.utilities.ConfigReader;
-import allover.utilities.Driver;
-import allover.utilities.ReusableMethods;
+import allover.utilities.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -36,10 +34,11 @@ public class TC_08_Fail_2 {
         signInPage.PasswordTextBox.sendKeys(ConfigReader.getProperty("vendorPassword"));
 
         signInPage.SignInButton.click();
-        ReusableMethods.scroll(homePage.myAccount);
-        ReusableMethods.scroll(homePage.myAccount);
-        ReusableMethods.visibleWait(homePage.myAccount, 5);
+        WaitUtils.waitFor(2);
+        ActionsUtils.scrollDown();
 
+        ReusableMethods.scrollEnd();
+        ReusableMethods.waitForSecond(2);
         homePage.myAccount.click();
 
         myAccountPage.StoreManagerButton.click();
@@ -52,6 +51,7 @@ public class TC_08_Fail_2 {
         ReusableMethods.visibleWait((WebElement) storeManagerPage.addNewButton, 5);
         ReusableMethods.click();
         new Actions(Driver.getDriver()).sendKeys(Keys.PAGE_DOWN).perform();
+
 
         WebElement productTypeDropdown = driver.findElement(By.id("product_type"));
         String selectedOption = productTypeDropdown.getText();

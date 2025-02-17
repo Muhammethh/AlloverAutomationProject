@@ -30,7 +30,10 @@ public class AddProduct {
     @FindBy(xpath = "//a[text()='Store Manager']")
     public WebElement StoreManagerButton;
 
-    @FindBy(id = "add_new_product_dashboard")
+    @FindBy(xpath = "//*[@id=\"wcfm_menu\"]/div[5]/a/span[2]")
+    public WebElement getProductsButton;
+
+    @FindBy(id = "<a href= https://allovercommerce.com/store-manager/products-manage/")
     public WebElement addNewButton;
 
     @FindBy(id = "product_type")

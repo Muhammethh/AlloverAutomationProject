@@ -1,11 +1,12 @@
 package allover.tests.us_03_UserBillingAdress;
 
-import allover.pages.HomePage;
+import allover.pages.*;
 import allover.tests.SignInCustomer;
-import allover.utilities.ConfigReader;
-import allover.utilities.Driver;
-import allover.utilities.ExtentReportsListener;
-import allover.utilities.ReusableMethods;
+import allover.utilities.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.locators.RelativeLocator;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC_01 extends SignInCustomer {
@@ -14,13 +15,37 @@ public class TC_01 extends SignInCustomer {
     public void test01() {
         //Web sitesine gidilir.
 
+<<<<<<< HEAD
         SignInCustomer.SignIn();
         HomePage homePage = new HomePage();
-        ReusableMethods.click(homePage.myAccount);
+        ReusableMethods.click();
+=======
+        HomePage homePage=new HomePage();
+        RegisterPage registerPage= new RegisterPage();
+        SignInPage signIn=new SignInPage();
+        UserAddressesPage userAddressesPage=new UserAddressesPage();
+>>>>>>> master
 
-        //  Web sitesine gidilir
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
-        ExtentReportsListener.extentTestInfo("Web sitesine gidildi.");
+        WaitUtils.waitFor(2);
+        homePage.register.click();
+        WaitUtils.waitFor(2);
+        registerPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("UserName"));
+        registerPage.MailAddressTextBox.sendKeys(ConfigReader.getProperty("UserEmail"));
+        registerPage.PasswordTextBox.sendKeys(ConfigReader.getProperty("UserPassword"));
+        registerPage.AgreeCheckBox.click();
+        registerPage.SignUpButton.click();
+
+
+        ActionsUtils.scrollDown();
+        WaitUtils.waitFor(2);
+        ActionsUtils.scrollEnd();
+        WaitUtils.waitFor(2);
+        ReusableMethods.click(homePage.myAccount);
+        userAddressesPage.adresses.click();
+        ReusableMethods.click(userAddressesPage.addBillingAddress);
+
+        Assert.assertTrue(userAddressesPage.billingfirstnamefield.isDisplayed());
 
 
 
