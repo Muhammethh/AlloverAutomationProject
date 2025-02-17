@@ -81,7 +81,6 @@ public class UserAddressesPage {
 
 
     @FindBy(id="select2-shipping_state-container")
->>>>>>> master
     public WebElement shippingState;
 
     @FindBy(id="billing_state")
