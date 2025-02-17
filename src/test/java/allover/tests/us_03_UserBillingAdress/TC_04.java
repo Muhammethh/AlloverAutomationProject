@@ -30,8 +30,8 @@ public class TC_04 {
         ReusableMethods.click(userAddressesPage.addBillingAddress);
 
         //    First name alanı gecerli veri girilir
-        userAddressesPage.billingFirstName.clear();
-        userAddressesPage.billingFirstName.sendKeys(faker.name().firstName());
+        userAddressesPage.billingfirstnamefield.clear();
+        userAddressesPage.billingfirstnamefield.sendKeys(faker.name().firstName());
         ExtentReportsListener.extentTestInfo("First name kısmına geçerli veri girilir");
 
         //    Last name alanı bos birakilir.

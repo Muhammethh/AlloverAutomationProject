@@ -28,7 +28,7 @@ public class TC_03 {
         ReusableMethods.click(userAddressesPage.addBillingAddress);
 
         //    First name alanı bos birakilir.
-        userAddressesPage.billingFirstName.clear();
+        userAddressesPage.billingfirstnamefield.clear();
 
         ExtentReportsListener.extentTestInfo("First name kısmi bos birakilir");
 

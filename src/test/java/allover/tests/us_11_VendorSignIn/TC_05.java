@@ -49,28 +49,43 @@ public class TC_05 {
         // wishlist, Support tickets, followings ve log out'a girilir
 
         WaitUtils.waitFor(3);
+        ReusableMethods.click(myAccountPage.DashboardButton);
         Assert.assertTrue(myAccountPage.DashboardButton.isEnabled());
+
+        ReusableMethods.click(myAccountPage.StoreManagerButton);
         Assert.assertTrue(myAccountPage.StoreManagerButton.isEnabled());
         Driver.getDriver().navigate().back();
         WaitUtils.waitFor(3);
+
+        ReusableMethods.click(myAccountPage.OrdersButton);
         Assert.assertTrue(myAccountPage.OrdersButton.isEnabled());
+
+        ReusableMethods.click(myAccountPage.DownloadsButton);
         Assert.assertTrue(myAccountPage.DownloadsButton.isEnabled());
         //WaitUtils.waitFor(3);
         ReusableMethods.click(myAccountPage.AddressesButton);
+        Assert.assertTrue(myAccountPage.AddressesButton.isEnabled());
+
+        ReusableMethods.click(myAccountPage.AccountDetailsButton);
         Assert.assertTrue(myAccountPage.AccountDetailsButton.isEnabled());
         WaitUtils.waitFor(3);
 
         ActionsUtils.scrollDown();
+        ReusableMethods.click(myAccountPage.WishlistButton);
         Assert.assertTrue(myAccountPage.WishlistButton.isEnabled());
+
         //WaitUtils.waitFor(3);
         Driver.getDriver().navigate().back();
+        ReusableMethods.click(myAccountPage.SupportTicketsButton);
         Assert.assertTrue(myAccountPage.SupportTicketsButton.isEnabled());
         // WaitUtils.waitFor(3);
-        //ReusableMethods.click(myAccountPage.FollowingsButton);
-        //WaitUtils.waitFor(3);
 
+        ReusableMethods.click(myAccountPage.FollowingsButton);
         Assert.assertTrue(myAccountPage.FollowingsButton.isEnabled());
+
         Assert.assertTrue(myAccountPage.LogoutButton.isEnabled());
+        ReusableMethods.click(myAccountPage.LogoutButton);
+
         ExtentReportsListener.extentTestPass("Dashboard altinda yer alan sekmelerin erisilebilir oldugu dogrulanir");
         Driver.closeDriver();
 

@@ -12,7 +12,7 @@ import allover.utilities.WaitUtils;
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 
-package allover.tests.US_02_Register_Negative;
+//package allover.tests.US_02_Register_Negative;
 
 import allover.pages.HomePage;
 import allover.pages.RegisterPage;
@@ -48,7 +48,7 @@ public class TC01 {
 
         ExtentReportsListener.extentTestInfo("Password bölümüne geçerli bir şifre girilir");
         registerPage.PasswordTextBox.sendKeys(ConfigReader.getProperty("registerPositivePassword"));
-=======
+
         ExtentReportsListener.extentTestInfo("Username bölümüne önceden kayıt olunan bir userName girilir");
         registerPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("registerUsedUsername"));
 
@@ -72,7 +72,7 @@ public class TC01 {
         Assert.assertTrue(registerPage.RegistrationCheck.getText().contains("An account is already"));
 
 
-=======
+
 
         //sayfa kapatılır
         Driver.closeDriver();

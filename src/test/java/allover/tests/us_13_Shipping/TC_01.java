@@ -5,7 +5,7 @@ import allover.pages.VendorAdressesPage;
 import allover.tests.SignInVendor;
 import allover.utilities.*;
 
-=======
+
 
 
 import com.aventstack.extentreports.ExtentReports;
@@ -41,7 +41,7 @@ BrowserUtils.clickWithTimeOut(vendorAdressesPage.getEditYourShipping,3);
 
         vendorAdressesPage.shippingfirstName.sendKeys(ConfigReader.getProperty("firstname"));
 
-=======
+
 
 
         ExtentReportsListener.extentTestInfo("Kullanici firstname kismina gecerli data girdi");
@@ -75,7 +75,7 @@ BrowserUtils.clickWithTimeOut(vendorAdressesPage.getEditYourShipping,3);
 
 
 
-=======
+
         ExtentReportsListener.extentTestPass("Adres degisikligi basarili oldu");
 
 

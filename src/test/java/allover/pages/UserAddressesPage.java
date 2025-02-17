@@ -48,16 +48,16 @@ public class UserAddressesPage {
 
 
 
-    @FindBy(id = "billing_last_name")
-    public WebElement billingLastName;
+    //@FindBy(id = "billing_last_name")
+    //public WebElement billingLastName;
 
 
-    @FindBy(id = "shipping_company")
-    public WebElement shippingCompanyName;
+    //@FindBy(id = "shipping_company")
+    //public WebElement shippingCompanyName;
 
 
-    @FindBy(id = "billing_company")
-    public WebElement billingCompanyName;
+    //@FindBy(id = "billing_company")
+    //public WebElement billingCompanyName;
 
     @FindBy(id = "shipping_country")
     public WebElement shippingCountry;
@@ -69,8 +69,8 @@ public class UserAddressesPage {
 
 
 
-    @FindBy(id = "select2-billing_country-container")
-    public WebElement billingCountry;
+    //@FindBy(id = "select2-billing_country-container")
+    //public WebElement billingCountry;
 
 
     @FindBy(id = "shipping_address_1")
@@ -81,8 +81,8 @@ public class UserAddressesPage {
     public WebElement billingAddress;
 
 
-    @FindBy(id = "billing_address_1")
-    public WebElement billingAddress;
+    //@FindBy(id = "billing_address_1")
+    //public WebElement billingAddress;
 
 
     @FindBy(id = "shipping_address_2")
@@ -101,14 +101,14 @@ public class UserAddressesPage {
     public WebElement billingState;
 
 
-    @FindBy(id = "billing_address_2")
-    public WebElement billingAddress2;
+    //@FindBy(id = "billing_address_2")
+    //public WebElement billingAddress2;
 
-    @FindBy(id = "shipping_state")
-    public WebElement shippingState;
+    //@FindBy(id = "shipping_state")
+    //public WebElement shippingState;
 
-    @FindBy(id = "billing_state")
-    public WebElement billingState;
+    //@FindBy(id = "billing_state")
+    //public WebElement billingState;
 
 
     @FindBy(id = "shipping_postcode")
@@ -136,8 +136,8 @@ public class UserAddressesPage {
     @FindBy(xpath = "(//input)[3]") public WebElement firstNameAutomatically;
     @FindBy(xpath = "(//input[@class='input-text '])[2]") public WebElement lastNameAutomatically;
 
-    @FindBy(xpath = "//button[@name='save_address']")
-    public WebElement shippingSaveAdress;
+    //@FindBy(xpath = "//button[@name='save_address']")
+    //public WebElement shippingSaveAdress;
 
     @FindBy(id = "shipping_city")
     public WebElement shippingCity;
@@ -160,65 +160,65 @@ public class UserAddressesPage {
     @FindBy(xpath = "//*[text()='Town / City is a required field.']")
     public WebElement cityRequiredField;
 
-    @FindBy(id = "billing_postcode")
-    public WebElement billingZipCode;
+    //@FindBy(id = "billing_postcode")
+    //public WebElement billingZipCode;
 
-    @FindBy(id = "billing_phone")
-    public WebElement billingPhone;
-
-
-
-    public WebElement shippingState;
-
-    @FindBy(id = "billing_state")
-    public WebElement billingState;
-
-    @FindBy(id = "shipping_postcode")
-    public WebElement shippingZipCode;
-
-    @FindBy(xpath = "//button[@name='save_address']")
-    public WebElement shippingSaveAdress;
-
-    @FindBy(id = "shipping_city")
-    public WebElement shippingCity;
-
-    @FindBy(css = "div[role='alert']")
-    public WebElement changedSuccessfullyText;
-
-    @FindBy(xpath = "//*[text()='First name is a required field.']")
-    public WebElement nameRequiredField;
-
-    @FindBy(xpath = "//*[text()='Last name is a required field.']")
-    public WebElement lastNameRequiredField;
-
-    @FindBy(xpath = "//*[text()='Street address is a required field.']")
-    public WebElement streetRequiredField;
-
-    @FindBy(xpath = "//*[text()='Postcode / ZIP is a required field.']")
-    public WebElement zipCodeRequiredField;
-
-    @FindBy(xpath = "//*[text()='Town / City is a required field.']")
-    public WebElement cityRequiredField;
-
-    @FindBy(id = "billing_postcode")
-    public WebElement billingZipCode;
-
-    @FindBy(id = "billing_phone")
-    public WebElement billingPhone;
+    //@FindBy(id = "billing_phone")
+    //public WebElement billingPhone;
 
 
-    @FindBy(id = "billing_city")
-    public WebElement billingCity;
 
-    @FindBy(xpath = "//button[@value='Save address']")
-    public WebElement billingSaveAdressButton;
+    //public WebElement shippingState;
 
-    @FindBy(xpath = "(//input)[3]")
-    public WebElement firstNameAutomatically;
+    //@FindBy(id = "billing_state")
+    //public WebElement billingState;
 
-    @FindBy(xpath = "(//input[@class='input-text '])[2]")
-    public WebElement lastNameAutomatically;
+    //@FindBy(id = "shipping_postcode")
+    //public WebElement shippingZipCode;
 
+    //@FindBy(xpath = "//button[@name='save_address']")
+    //public WebElement shippingSaveAdress;
+
+    //@FindBy(id = "shipping_city")
+    //public WebElement shippingCity;
+
+    //@FindBy(css = "div[role='alert']")
+    //public WebElement changedSuccessfullyText;
+
+    //@FindBy(xpath = "//*[text()='First name is a required field.']")
+    //public WebElement nameRequiredField;
+
+    //@FindBy(xpath = "//*[text()='Last name is a required field.']")
+    //public WebElement lastNameRequiredField;
+
+    //@FindBy(xpath = "//*[text()='Street address is a required field.']")
+    //public WebElement streetRequiredField;
+
+//    @FindBy(xpath = "//*[text()='Postcode / ZIP is a required field.']")
+//    public WebElement zipCodeRequiredField;
+//
+//    @FindBy(xpath = "//*[text()='Town / City is a required field.']")
+//    public WebElement cityRequiredField;
+//
+//    @FindBy(id = "billing_postcode")
+//    public WebElement billingZipCode;
+//
+//    @FindBy(id = "billing_phone")
+//    public WebElement billingPhone;
+//
+//
+//    @FindBy(id = "billing_city")
+//    public WebElement billingCity;
+//
+//    @FindBy(xpath = "//button[@value='Save address']")
+//    public WebElement billingSaveAdressButton;
+//
+//    @FindBy(xpath = "(//input)[3]")
+//    public WebElement firstNameAutomatically;
+//
+//    @FindBy(xpath = "(//input[@class='input-text '])[2]")
+//    public WebElement lastNameAutomatically;
+//
 
     //@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/address[1]/table[1]/tbody[1]/tr[3]/th[1]")
     //public WebElement writingbillingcity;
