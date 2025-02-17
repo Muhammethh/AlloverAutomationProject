@@ -7,7 +7,7 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_01 {
+public class TC_01 extends Notations{
 
 
 
@@ -25,11 +25,11 @@ public class TC_01 {
         ExtentReportsListener.extentTestInfo("SignIn Classından signIn metodu çağrılarak giriş yapılır");
         //SignInCustomer.SignIn();
 
-        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
-        homePage.signIn.click();
-        signIn.UsernameTextBox.sendKeys(ConfigReader.getProperty("signInUserName"));
-        signIn.PasswordTextBox.sendKeys(ConfigReader.getProperty("signInPassword"));
-        signIn.SignInButton.click();
+       // Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+       // homePage.signIn.click();
+       // signIn.UsernameTextBox.sendKeys(ConfigReader.getProperty("signInUserName"));
+       // signIn.PasswordTextBox.sendKeys(ConfigReader.getProperty("signInPassword"));
+       // signIn.SignInButton.click();
 
         //Sign Out butonu görünene kadar beklenir ve göründüğü doğrulanır
         WaitUtils.waitForVisibility(homePage.signOut, 10);

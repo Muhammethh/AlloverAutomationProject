@@ -17,7 +17,7 @@ public class VendorAdressesPage {
     @FindBy(xpath="//a[text()='Edit Your Billing Address']")
     public WebElement editYourBilling ;
 
-    @FindBy(partialLinkText="Edit Your Shipping Address")
+    @FindBy(xpath = "//a[text()='Edit Your Shipping Address']")
     public WebElement getEditYourShipping ;
 
     @FindBy(id="billing_first_name")
@@ -77,4 +77,41 @@ public class VendorAdressesPage {
 
     @FindBy(xpath="(//table)[1]")
     public WebElement verfyName;
+
+    /////////////
+
+    @FindBy(id="shipping_first_name")
+    public WebElement shippingfirstName ;
+
+    @FindBy(id="shipping_last_name")
+    public WebElement shippinglastName ;
+
+    @FindBy(id="shipping_company")
+    public WebElement shippingcompanyName ;
+
+    @FindBy(id="shipping_country")
+    public WebElement shippingcountry ;
+
+
+    @FindBy(id="shipping_address_1")
+    public WebElement shippingstreetAdress1 ;
+
+    @FindBy(id="shipping_address_2")
+    public WebElement shippingstreetAdress2 ;
+
+    @FindBy(id="shipping_city")
+    public WebElement shippingtownCity;
+
+
+    @FindBy(id="shipping_state")
+    public WebElement shippingstate;
+
+
+    @FindBy(id="shipping_postcode")
+    public WebElement shippingzipCode;
+
+
+    @FindBy(id="shipping_phone")
+    public WebElement shippingphone;
+
 }

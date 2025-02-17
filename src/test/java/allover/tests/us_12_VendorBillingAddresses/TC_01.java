@@ -19,7 +19,7 @@ public class TC_01 extends SignInVendor {
 
 
     @Test(description = "US-12 TC-1 Vendor Billing Addrese (Fatura Adresi) gecerli datalar ekleyebilmelidir")
-    public void test2negative() {
+    public void test() {
 
 
         //    Adresses sekmesine tıklanir

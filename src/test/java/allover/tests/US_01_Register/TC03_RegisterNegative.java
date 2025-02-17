@@ -21,16 +21,18 @@ public class TC03_RegisterNegative {
 
         return new Object[][]{
 
-                {faker.name().username(),"Hakan4.techproedgmail.com", "malaky.charith123"},   // (False) @ uzantisi yazilmadiginda...
-                {faker.name().username(),"Hakan5.techproed", "malaky.charith123"},   // (False) @gmail.com uzantisi yazilmadiginda...
+                // (False) @ uzantisi yazilmadiginda...
 
-                // Password alanina 8 karakterden az bir data girilmesine ragmen kayit islemi gerceklesmistir.
+                {faker.name().username(),"Hakan4.techproedgmail.com", "malaky.charith123"},
 
-                {faker.name().username(),faker.internet().emailAddress(),"mal.123"}    // (False) Password alanina 8 karakterden az data yazildiginda...
+                // (False) @gmail.com uzantisi yazilmadiginda...
 
-
+                {faker.name().username(),"Hakan5.techproed", "malaky.charith123"},
 
                 // ...Kayit islemleri gerceklesmemelidir.
+
+                // Not : Bu test isleminde faker password kullanilmamasinin nedeni,
+                // faker objesinin istenilen sartlarda bir password saglayamayacagindandir.
         };
     }
 
@@ -48,13 +50,11 @@ public class TC03_RegisterNegative {
         RegisterPage registerPage = new RegisterPage();
         registerPage.UsernameTextBox.sendKeys(username);
 
-
         // Your email address alanina bir data girelim
         registerPage.MailAddressTextBox.sendKeys(email);
 
         // Password alanina bir data girelim
         registerPage.PasswordTextBox.sendKeys(password);
-
 
         // Agree check box ini tiklayalim.
         registerPage.AgreeCheckBox.click();
@@ -62,18 +62,8 @@ public class TC03_RegisterNegative {
         // SignUp butonuna tiklayalim.
         registerPage.SignUpButton.click();
 
-
         ReusableMethods.visibleWait(registerPage.SignUpButton, 10);
         Assert.assertTrue(registerPage.SignUpButton.isDisplayed());
-
-        ReusableMethods.takeScreenShot();
-
-        // Siteye kayit olundugu dogrulanir.
-        //registerPage.RegistrationCheck.getText().contains("An account is already registered with your email address.");
-
-
-
-
 
 
     }

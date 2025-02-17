@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class TC_03 {
+public class TC_03 extends Notations{
 
 
 
@@ -25,12 +25,12 @@ public class TC_03 {
         SoftAssert softAssert = new SoftAssert();
 
         //SignInCustomer.SignIn();
-        SignInPage signIn=new SignInPage();
-        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
-        homePage.signIn.click();
-        signIn.UsernameTextBox.sendKeys(ConfigReader.getProperty("signInUserName"));
-        signIn.PasswordTextBox.sendKeys(ConfigReader.getProperty("signInPassword"));
-        signIn.SignInButton.click();
+       // SignInPage signIn=new SignInPage();
+       // Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+       // homePage.signIn.click();
+       // signIn.UsernameTextBox.sendKeys(ConfigReader.getProperty("signInUserName"));
+       // signIn.PasswordTextBox.sendKeys(ConfigReader.getProperty("signInPassword"));
+       // signIn.SignInButton.click();
 
 
         //Sign Out butonu görünene kadar beklenir ve göründüğü doğrulanır
