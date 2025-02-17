@@ -2,7 +2,7 @@
 <suite name="AlloverAutomation">
     
     <listeners>
-        <listener class-name="allover.utilities.Listeners"></listener>
+        <listener class-name="allover.utilities.ExtentReportsListener"></listener>
     </listeners>
     <test verbose="2" preserve-order="true"
           name="US-12 VendorBillingAddress">
@@ -11,7 +11,9 @@
 
       <classes>
 
-          <class name="allover.tests.us_12_VendorBillingAddresses.TC_09"></class>
+
+          <class name="allover.tests.us_12_VendorBillingAddresses.TC_03"></class>
+
       </classes>
 
     </test>
