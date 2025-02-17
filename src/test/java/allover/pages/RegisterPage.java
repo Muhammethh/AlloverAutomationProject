@@ -24,9 +24,6 @@ public class RegisterPage {
     public WebElement AgreeCheckBox;
 
     @FindBy(xpath = "(//button[@value='Sign Up'])[1]")
-
-
-
     public WebElement SignUpButton;
 
 
