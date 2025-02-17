@@ -79,7 +79,6 @@ public class TC_06 extends SignInVendor {
 
         vendorAdressesPage.townCity.clear();
         vendorAdressesPage.townCity.sendKeys("!");
-        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestInfo("town/city kısmına geçersiz veri girilir");
         ReusableMethods.waitForSecond(2);
 

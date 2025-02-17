@@ -38,9 +38,8 @@ public class TC_03 extends SignInVendor {
 
         vendorAdressesPage.lastName.clear();
         vendorAdressesPage.lastName.sendKeys("0");
-
         ExtentReportsListener.extentTestFail("Last  name alanı gecersiz data girilir");
-        ExtentReportsListener.addScreenShotToReport();
+
 
         vendorAdressesPage.companyName.clear();
         vendorAdressesPage.companyName.sendKeys(ConfigReader.getProperty("companyname"));
