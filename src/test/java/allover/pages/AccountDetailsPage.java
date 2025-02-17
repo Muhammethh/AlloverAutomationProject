@@ -28,13 +28,15 @@ public class AccountDetailsPage {
 
     @FindBy(xpath = "//body[@id='tinymce']")
     public WebElement BiographyTextBox;
+    @FindBy(xpath = "//*[@id=\"tinymce\"]/p/text()")
+    public WebElement BiographyTextBoxIn;
 
     //-------------------VisualButton
 
     @FindBy(id = "user_description-tmce")
     public WebElement BiographyVisualButton;
 
-    @FindBy(id = "mceu_0-open")
+    @FindBy(id = "mceu_0")
     public WebElement VisualDropDownButton;
 
     @FindBy(id = "mceu_1-button")
@@ -130,6 +132,9 @@ public class AccountDetailsPage {
 
 @FindBy(xpath = "//div[@role='alert']")
     public WebElement SuccesfullyControl;
+
+@FindBy(xpath = "//li[contains(@class, 'alert-danger')]")
+    public WebElement VerifyControl;
 
 
 
