@@ -7,7 +7,7 @@ import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class TC_04 {
+public class TC_04 extends Notations{
 
     @Test
     public void TC_04_IsBillingDetailVisible() {
@@ -19,12 +19,12 @@ public class TC_04 {
         SoftAssert softAssert = new SoftAssert();
 
         //SignInCustomer.SignIn();
-        SignInPage signIn=new SignInPage();
-        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
-        homePage.signIn.click();
-        signIn.UsernameTextBox.sendKeys(ConfigReader.getProperty("signInUserName"));
-        signIn.PasswordTextBox.sendKeys(ConfigReader.getProperty("signInPassword"));
-        signIn.SignInButton.click();
+       // SignInPage signIn=new SignInPage();
+       // Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+       // homePage.signIn.click();
+       // signIn.UsernameTextBox.sendKeys(ConfigReader.getProperty("signInUserName"));
+       // signIn.PasswordTextBox.sendKeys(ConfigReader.getProperty("signInPassword"));
+       // signIn.SignInButton.click();
 
         //Sign Out butonu görünene kadar beklenir ve göründüğü doğrulanır
         WaitUtils.waitForVisibility(homePage.signOut, 10);
