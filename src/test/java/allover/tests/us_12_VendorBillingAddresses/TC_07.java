@@ -85,6 +85,7 @@ public class TC_07 extends SignInVendor {
 //        	Phone kısmına geçersiz veri girilir
         vendorAdressesPage.phone.clear();
         vendorAdressesPage.phone.sendKeys("1");
+        ExtentReportsListener.addScreenShotToReport();
         ReusableMethods.waitForSecond(2);
         ExtentReportsListener.extentTestInfo("Phone kısmına geçersiz veri girilir");
 

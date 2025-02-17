@@ -31,6 +31,7 @@ public class TC_01 {
         signIn.PasswordTextBox.sendKeys(ConfigReader.getProperty("signInPassword"));
         signIn.SignInButton.click();
 
+
         //Sign Out butonu görünene kadar beklenir ve göründüğü doğrulanır
         WaitUtils.waitForVisibility(homePage.signOut, 10);
 
