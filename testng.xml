@@ -3,6 +3,36 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
+          name="/Users/emresmac/IdeaProjects/AlloverAutomationProject/src/test/java/allover/tests/us_11_VendorSignIn">
+        <classes>
+            <class name="allover.tests.us_11_VendorSignIn.TC_01">
+                <methods>
+                    <include name="vendorSignInTest"/>
+                </methods>
+            </class>
+            <class name="allover.tests.us_11_VendorSignIn.TC_02">
+                <methods>
+                    <include name="invalidEmailTest"/>
+                </methods>
+            </class>
+            <class name="allover.tests.us_11_VendorSignIn.TC_03">
+                <methods>
+                    <include name="invalidPasswordTest"/>
+                </methods>
+            </class>
+            <class name="allover.tests.us_11_VendorSignIn.TC_04">
+                <methods>
+                    <include name="DashboardMenuTest"/>
+                </methods>
+            </class>
+            <class name="allover.tests.us_11_VendorSignIn.TC_05">
+                <methods>
+                    <include name="DashboardMenuClickableTest"/>
+=======
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
           name="C:/Users/fatma/IdeaProjects/AlloverAutomationProject/src/test/java/allover/tests/us_12_VendorBillingAddresses">
         <classes>
             <class name="allover.tests.us_12_VendorBillingAddresses.TC_01">
@@ -169,9 +199,14 @@
                 <methods>
                     <include name="testName"/>
 
+
                 </methods>
             </class>
         </classes>
     </test>
+
 </suite>
+=======
+</suite>
+
 

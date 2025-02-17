@@ -33,9 +33,14 @@ public class TC12_UsedEmailTest {
 
         ActionsUtils.hoverOver(accountDetailsPage.EmailAddress);
 
+=======
+
+        ActionsUtils.hoverOver(accountDetailsPage.EmailAddress);
+
 
         //ActionsUtils.hoverOver(accountDetailsPage.EmailAddress);
         JSUtils.JSscrollIntoView(accountDetailsPage.EmailAddress);
+
 
         ExtentReportsListener.extentTestInfo("kullanıcı hesap detaylarında Email box ına daha önce hesap oluşturulmuş geçerli bir mail adresi girilir");
         accountDetailsPage.EmailAddress.clear();
