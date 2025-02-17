@@ -12,7 +12,7 @@ import org.testng.asserts.SoftAssert;
 
 public class TC16_BiographyTextButtonsTest {
     @Test(description = "Kullanıcı Account Details (Hesap Detaylarını) bölümü Text butonları seçilebilir olmalı")
-    public void testName() {
+    public void tc16() {
 
         // sayfaya kullanıcı olarak giriş yapılır
         //sing out butonuna tıklanır
@@ -27,22 +27,21 @@ public class TC16_BiographyTextButtonsTest {
         WaitUtils.waitFor(3);
 
         //Account details url sine gidilir
-        ExtentReportsListener.extentTestInfo("Account details url sine gidilir");
 
         Driver.getDriver().get(ConfigReader.getProperty("accountDetailsUrl"));
+        ExtentReportsListener.extentTestInfo("Account details url sine gidilir");
 
         // Url nin "edit-account" içerdiği doğrulanır
-        ExtentReportsListener.extentTestInfo("Url nin 'edit-account' içerdiği doğrulanır");
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("edit-account"));
+        ExtentReportsListener.extentTestInfo("Url nin 'edit-account' içerdiği doğrulanır");
 
         //Biography bölümğnde Text butonuna tıklanır
-        ExtentReportsListener.extentTestInfo("Biography bölümğnde Text butonuna tıklanır");
 
         accountDetailsPage.BiographyVisualButton.submit();
+        ExtentReportsListener.extentTestInfo("Biography bölümğnde Text butonuna tıklanır");
 
       //Biography bölümü Text butonları seçilir
 
-         ExtentReportsListener.extentTestInfo("Biography bölümü Text butonları seçilir");
         softAssert.assertTrue(accountDetailsPage.TextBoldButton.isSelected());
         softAssert.assertTrue(accountDetailsPage.TextItalicButton.isSelected());
         softAssert.assertTrue(accountDetailsPage.TextLinkButton.isSelected());
@@ -56,6 +55,7 @@ public class TC16_BiographyTextButtonsTest {
         softAssert.assertTrue(accountDetailsPage.TextMoreButton.isSelected());
         softAssert.assertTrue(accountDetailsPage.TextCloseTagButton.isSelected());
 
+        ExtentReportsListener.extentTestInfo("Biography bölümü Text butonları seçilir");
 
         //sayfa kapatılır
         Driver.closeDriver();

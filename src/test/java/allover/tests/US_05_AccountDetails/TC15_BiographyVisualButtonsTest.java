@@ -11,7 +11,7 @@ import org.testng.asserts.SoftAssert;
 
 public class TC15_BiographyVisualButtonsTest {
     @Test(description = "Kullanıcı Account Details (Hesap Detaylarını) bölümü Visual butonları seçilebilir olmalı")
-    public void testName() {
+    public void tc15() {
 
         // sayfaya kullanıcı olarak giriş yapılır
         //sing out butonuna tıklanır
@@ -26,13 +26,13 @@ public class TC15_BiographyVisualButtonsTest {
         WaitUtils.waitFor(3);
 
         //Account details url sine gidilir
-        ExtentReportsListener.extentTestInfo("Account details url sine gidilir");
 
         Driver.getDriver().get(ConfigReader.getProperty("accountDetailsUrl"));
+        ExtentReportsListener.extentTestInfo("Account details url sine gidilir");
 
         // Url nin "edit-account" içerdiği doğrulanır
-        ExtentReportsListener.extentTestInfo("Url nin 'edit-account' içerdiği doğrulanır");
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("edit-account"));
+        ExtentReportsListener.extentTestInfo("Url nin 'edit-account' içerdiği doğrulanır");
 
         accountDetailsPage.BiographyVisualButton.submit();
 
@@ -51,6 +51,7 @@ public class TC15_BiographyVisualButtonsTest {
         softAssert.assertTrue(accountDetailsPage.VisualInsertReadButton.isSelected());
         softAssert.assertTrue(accountDetailsPage.VisualToolbarTagleButton.isSelected());
 
+        ExtentReportsListener.extentTestInfo("Biography bölümü visual butonları seçilir");
 
         //sayfa kapatılır
         Driver.closeDriver();
