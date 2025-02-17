@@ -96,7 +96,7 @@ public class TC_03 {
        // Succcessfullynin gorulmedigi dogrulanir.
         ReusableMethods.waitForSecond(2);
         Assert.assertTrue(userAddressesPage.nameRequiredField.isDisplayed());
-        ExtentReportsListener.extentTestInfo("Save Address butonuna tıklayarak successfully yazisi gorulmemelidir");
+        ExtentReportsListener.extentTestPass("Save Address butonuna tıklayarak successfully yazisi gorulmemelidir");
 
         Driver.closeDriver();
 

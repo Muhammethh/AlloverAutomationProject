@@ -19,10 +19,13 @@ public class TC_04 {
         SignInCustomer.SignIn();
 
         HomePage homePage = new HomePage();
+
+        WaitUtils.waitForVisibility(homePage.myAccount,7);
         ReusableMethods.click(homePage.myAccount);
         ReusableMethods.waitForSecond(2);
 
         UserAddressesPage userAddressesPage = new UserAddressesPage();
+        WaitUtils.waitForVisibility(userAddressesPage.adresses,3);
         userAddressesPage.adresses.click();
         ReusableMethods.click(userAddressesPage.addBillingAddress);
 
