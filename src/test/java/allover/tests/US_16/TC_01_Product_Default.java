@@ -45,13 +45,19 @@ public class TC_01_Product_Default {
         myAccountPage.StoreManagerButton.click();
 
         ReusableMethods.scroll(storeManagerPage.ProductsButton);
-        ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
+        JSUtils.JSscrollIntoView(storeManagerPage.ProductsButton);
         storeManagerPage.ProductsButton.click();
 
         ReusableMethods.scroll((WebElement) storeManagerPage.addNewButton);
-        ReusableMethods.visibleWait((WebElement) storeManagerPage.addNewButton, 5);
-        ReusableMethods.click();
-        new Actions(Driver.getDriver()).sendKeys(Keys.PAGE_DOWN).perform();
+        JSUtils.JSscrollIntoView((WebElement) storeManagerPage.addNewButton);
+        storeManagerPage.addNewButton.click();
+
+
+       
+
+
+
+
 
         WebElement productTypeDropdown = driver.findElement(By.id("product_type"));
         String selectedOption = productTypeDropdown.getText();
