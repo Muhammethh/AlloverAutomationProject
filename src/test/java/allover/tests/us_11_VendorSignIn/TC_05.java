@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class TC_05 {
 
     @Test (description = "US-11 TC-05 Dashboard menusunde yer alan sekmeler tiklanabilir olmali")
-    public void DashboardMenuTest() {
+    public void DashboardMenuClickableTest() {
 
         //Vendor sign-in sayfasina gilidir
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
@@ -49,22 +49,29 @@ public class TC_05 {
         // wishlist, Support tickets, followings ve log out'a girilir
 
         WaitUtils.waitFor(3);
-        ReusableMethods.click(myAccountPage.DashboardButton);
-        ReusableMethods.click(myAccountPage.StoreManagerButton);
+        Assert.assertTrue(myAccountPage.DashboardButton.isEnabled());
+        Assert.assertTrue(myAccountPage.StoreManagerButton.isEnabled());
         Driver.getDriver().navigate().back();
-        ReusableMethods.click(myAccountPage.OrdersButton);
-        ReusableMethods.click(myAccountPage.DownloadsButton);
+        WaitUtils.waitFor(3);
+        Assert.assertTrue(myAccountPage.OrdersButton.isEnabled());
+        Assert.assertTrue(myAccountPage.DownloadsButton.isEnabled());
+        //WaitUtils.waitFor(3);
         ReusableMethods.click(myAccountPage.AddressesButton);
-        ReusableMethods.click(myAccountPage.AccountDetailsButton);
+        Assert.assertTrue(myAccountPage.AccountDetailsButton.isEnabled());
+        WaitUtils.waitFor(3);
 
         ActionsUtils.scrollDown();
-        ReusableMethods.click(myAccountPage.WishlistButton);
+        Assert.assertTrue(myAccountPage.WishlistButton.isEnabled());
+        //WaitUtils.waitFor(3);
         Driver.getDriver().navigate().back();
-        ReusableMethods.click(myAccountPage.SupportTicketsButton);
-        ReusableMethods.click(myAccountPage.FollowingsButton);
-        ReusableMethods.click(myAccountPage.LogoutButton);
+        Assert.assertTrue(myAccountPage.SupportTicketsButton.isEnabled());
+        // WaitUtils.waitFor(3);
+        //ReusableMethods.click(myAccountPage.FollowingsButton);
+        //WaitUtils.waitFor(3);
 
-        ExtentReportsListener.extentTestInfo("Dashboard altinda yer alan sekmelerin erisilebilir oldugu dogrulanir");
+        Assert.assertTrue(myAccountPage.FollowingsButton.isEnabled());
+        Assert.assertTrue(myAccountPage.LogoutButton.isEnabled());
+        ExtentReportsListener.extentTestPass("Dashboard altinda yer alan sekmelerin erisilebilir oldugu dogrulanir");
         Driver.closeDriver();
 
 

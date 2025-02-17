@@ -25,6 +25,7 @@ public class RegisterPage {
 
 
    @FindBy(xpath = "(//button[@value='Sign Up'])[1]")
+
    public WebElement SignUpButton;
 
 

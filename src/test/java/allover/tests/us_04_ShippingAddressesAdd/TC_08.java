@@ -40,8 +40,13 @@ public class TC_08 extends SignInCustomer {
 
         ExtentReportsListener.extentTestInfo("Last name kısmına geçersiz veri girilir");
 
+=======
+
+        ExtentReportsListener.extentTestInfo("Last name kısmına geçersiz veri girilir");
+
         ReusableMethods.addScreenShotToReport();
         ExtentReportsListener.extentTestInfo("Last name kısmına geçersiz veri girildiginde adres eklenmemelidir fakat eklendi");
+
 
 
 
@@ -56,10 +61,17 @@ public class TC_08 extends SignInCustomer {
 
         //    Country/Region seçilir.
 
+
+        ReusableMethods.scroll(userAddressesPage.shippingCountry);
+        ReusableMethods.visibleWait(userAddressesPage.shippingCountry,5);
+        ReusableMethods.click(userAddressesPage.shippingCountry);
+        ReusableMethods.waitForSecond(2);
+=======
         JSUtils.JSscrollIntoView(userAddressesPage.shippingCountry);
         ReusableMethods.click(userAddressesPage.shippingCountry);
         ActionsUtils.scrollDown();
         ReusableMethods.ddmValue(userAddressesPage.shippingCountry,"TR");
+
         ExtentReportsListener.extentTestInfo("Country/Region kısmına geçerli veri girilir");
 
         //    Street address alanina gecerli veri girilir
@@ -101,7 +113,11 @@ public class TC_08 extends SignInCustomer {
         userAddressesPage.shippingSaveAdress.click();
 
         Assert.assertFalse(userAddressesPage.changedSuccessfullyText.isDisplayed());
+
+        ExtentReportsListener.extentTestInfo("Save Address butonuna tıklayarak successfully yazisi gorulmemelidir");
+=======
         ExtentReportsListener.extentTestFail("Save Address butonuna tıklayarak successfully yazisi gorulmemelidir fakat Gecersiz veri ile giris yapilmistir");
+
         Driver.closeDriver();
 
 

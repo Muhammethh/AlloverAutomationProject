@@ -31,7 +31,9 @@ public class TC12_UsedEmailTest {
 
         //Email Text box ına geçerli bir Last name girilir
 
+
         JSUtils.JSscrollIntoView(accountDetailsPage.EmailAddress);
+
         accountDetailsPage.EmailAddress.clear();
         accountDetailsPage.EmailAddress.sendKeys(ConfigReader.getProperty("usedEmail"));
         ExtentReportsListener.extentTestInfo("kullanıcı hesap detaylarında Email box ına daha önce hesap oluşturulmuş geçerli bir mail adresi girilir");
