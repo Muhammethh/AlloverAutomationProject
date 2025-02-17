@@ -59,7 +59,13 @@ public class CartPage {
     @FindBy(xpath = "//li[@class=' alert alert-simple alert-icon alert-close-top alert-danger']")
     public WebElement couponAlertMessage;
 
+    @FindBy(xpath = "(//table)[2]")
+    public WebElement totalverify;
 
+
+
+    @FindBy(xpath = "//h2[text()='Order details']")
+    public WebElement orderdetails;
 
 
 
