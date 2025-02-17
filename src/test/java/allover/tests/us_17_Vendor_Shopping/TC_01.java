@@ -16,6 +16,11 @@ public class TC_01 {
 
     @Test
     public void test01() throws InterruptedException {
+
+        //testin konusu
+        //Ürün ve ürünler seçilip sepete eklenebilmeli
+        //Chart - Chekout yapılarak alınacak ürün ve ürünler görülebilmeli
+
         SampleItemsPage sampleItemsPage = new SampleItemsPage();
         CartPage cartPage = new CartPage();
 
@@ -64,22 +69,19 @@ public class TC_01 {
 
         homePage.searchBox.sendKeys("Laptop", Keys.ENTER);
         ActionsUtils.hoverOver(sampleItemsPage.firstItemAfterSearch);
-
         ReusableMethods.click(sampleItemsPage.addFirstItemInCart);
+        ExtentReportsListener.extentTestInfo("Laptop sepete eklendi.");
 
+        //**Sepete gitme işlemi**
         ActionsUtils.hoverOver(homePage.cartHead);
-
         homePage.cartHead.click();
         Thread.sleep(3000);
         cartPage.ViewCartButton.click();
         Thread.sleep(3000);
         Assert.assertTrue(cartPage.firstItemInCart.isDisplayed());
+        ExtentReportsListener.extentTestPass("Ürünler sepete eklendi");
+        Driver.closeDriver();
 
-//        String productName = "Book";
-//        String xpath = "//table[1]//td[contains(text(), '" + productName + "')]";
-//
-//        // Assertion: Ürün sepette görünüyor mu?
-//        Assert.assertFalse(Driver.getDriver().findElements(By.xpath(xpath))., "Ürün sepette değil!");
     }
 }
 

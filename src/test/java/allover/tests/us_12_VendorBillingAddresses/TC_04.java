@@ -19,7 +19,7 @@ public class TC_04 extends SignInVendor {
         MyAccountPage myAccountPage=new MyAccountPage();
         myAccountPage.AddressesButton.click();
         ReusableMethods.waitForSecond(2);
-
+        ExtentReportsListener.extentTestInfo("Vendor address sekmesine tiklar");
         // Edit Billing Adresses sekmesine tıklanır.
 
         VendorAdressesPage vendorAdressesPage=new VendorAdressesPage();
@@ -27,6 +27,7 @@ public class TC_04 extends SignInVendor {
         ReusableMethods.scroll(vendorAdressesPage.editYourBilling);
         ReusableMethods.visibleWait(vendorAdressesPage.editYourBilling,3);
         ReusableMethods.click(  vendorAdressesPage.editYourBilling);
+        ExtentReportsListener.extentTestInfo("Vendor edit your billing adsress sekmesine tiklar");
 
 
         //First name kismina gecerli data girilir
@@ -56,7 +57,7 @@ public class TC_04 extends SignInVendor {
         vendorAdressesPage.streetAdress2.clear();
         vendorAdressesPage.streetAdress2.sendKeys("?");
         ReusableMethods.waitForSecond(2);
-        ExtentReportsListener.extentTestFail("StreetAdress alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
+        ExtentReportsListener.extentTestInfo("Street address kısmına geçerersiz veri girilir");
 
 //        	Town/City kısmına geçerli veri girilir
         vendorAdressesPage.townCity.clear();
@@ -92,7 +93,8 @@ public class TC_04 extends SignInVendor {
 
 //      "Address changed successfully." metni görülmedigi doğrulanır
         Assert.assertFalse(vendorAdressesPage.changedSuccessfully.isDisplayed());
-        ExtentReportsListener.extentTestInfo("Address changed successfully. metni görülmedigi doğrulanır");
+        ExtentReportsListener.extentTestFail("StreetAdress alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
+
         Driver.closeDriver();
     }
 }
