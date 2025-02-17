@@ -49,10 +49,10 @@ public class TC_06 extends SignInCustomer {
 
         //    Country/Region seçilir.
 
-        ReusableMethods.scroll(userAddressesPage.shippingCountry);
-        ReusableMethods.visibleWait(userAddressesPage.shippingCountry,5);
+        JSUtils.JSscrollIntoView(userAddressesPage.shippingCountry);
         ReusableMethods.click(userAddressesPage.shippingCountry);
-        ReusableMethods.waitForSecond(2);
+        ActionsUtils.scrollDown();
+        ReusableMethods.ddmValue(userAddressesPage.shippingCountry,"TR");
         ExtentReportsListener.extentTestInfo("Country/Region kısmına geçerli veri girilir");
 
         //    Street address alanina gecerli veri girilir
@@ -93,7 +93,7 @@ public class TC_06 extends SignInCustomer {
         userAddressesPage.shippingSaveAdress.click();
 
         Assert.assertTrue(userAddressesPage.cityRequiredField.isDisplayed());
-        ExtentReportsListener.extentTestInfo("Save Address butonuna tıklayarak successfully yazisi goruldu");
+        ExtentReportsListener.extentTestPass("Save Address butonuna tıklayarak successfully yazisi gorulmedi ve zorunlu alanla ilgili uyari mesaji vermistir.");
         Driver.closeDriver();
 
 
