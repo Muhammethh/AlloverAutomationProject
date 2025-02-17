@@ -32,6 +32,9 @@ public class TC_01 extends Notations{
        // signIn.SignInButton.click();
 
 
+
+
+
         //Sign Out butonu görünene kadar beklenir ve göründüğü doğrulanır
         WaitUtils.waitForVisibility(homePage.signOut, 10);
 

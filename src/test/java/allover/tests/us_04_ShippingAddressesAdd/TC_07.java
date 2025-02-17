@@ -32,7 +32,13 @@ public class TC_07 extends SignInCustomer {
         userAddressesPage.shippingFirstName.clear();
         userAddressesPage.shippingFirstName.sendKeys("123?");
 
+
         ExtentReportsListener.extentTestInfo("First name kısmına geçersiz veri girilir");
+
+        ReusableMethods.addScreenShotToReport();
+
+        ExtentReportsListener.extentTestInfo("First name kısmına geçersiz veri girildiginde adres eklenmemelidir fakat eklendi");
+
 
         //    Last name alanı gecerli veri girilir
         userAddressesPage.shippingLastName.clear();

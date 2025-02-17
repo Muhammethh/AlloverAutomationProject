@@ -37,7 +37,12 @@ public class TC_08 extends SignInCustomer {
         //    Last name alanına gecersiz veri girilir
         userAddressesPage.shippingLastName.clear();
         userAddressesPage.shippingLastName.sendKeys("123?");
+
         ExtentReportsListener.extentTestInfo("Last name kısmına geçersiz veri girilir");
+
+        ReusableMethods.addScreenShotToReport();
+        ExtentReportsListener.extentTestInfo("Last name kısmına geçersiz veri girildiginde adres eklenmemelidir fakat eklendi");
+
 
 
 
