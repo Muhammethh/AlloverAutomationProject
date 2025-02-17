@@ -101,6 +101,10 @@ public class StoreManagerPage {
     public WebElement ColorVisibleOnSearchBoxButton;
 
 
+    @FindBy(xpath = "//a[@href='https://allovercommerce.com/store-manager/products-manage/']")
+    public WebElement AddNew;
+
+
 
 
 
