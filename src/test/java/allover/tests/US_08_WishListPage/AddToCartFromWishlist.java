@@ -1,6 +1,5 @@
-package allover.tests.US_08;
+package allover.tests.US_08_WishListPage;
 
-import allover.pages.CartPage;
 import allover.pages.CheckOutPage;
 import allover.pages.HomePage;
 import allover.pages.WishlistPage;

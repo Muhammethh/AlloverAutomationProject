@@ -1,4 +1,5 @@
-package allover.tests.US_09;
+package allover.tests.US_09_VendorRegistration;
+
 import allover.pages.HomePage;
 import allover.pages.RegisterPage;
 import allover.pages.VendorRegistrationPage;
@@ -8,9 +9,9 @@ import allover.utilities.ExtentReportsListener;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_06 {
+public class TC_02 {
     @Test
-    public void testVendorInvalidEMailRegistration() throws InterruptedException {
+    public void testVendorWithoutMailRegistration() throws InterruptedException {
 
         //  Web sitesine gidilir
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
@@ -27,7 +28,7 @@ public class TC_06 {
         RegisterPage registerPage = new RegisterPage();
         registerPage.BecomeVendorButton.click();
         ExtentReportsListener.extentTestInfo("Become a Vendor butonuna tiklandi");
-        Thread.sleep(2000);
+        Thread.sleep(3000);
 
         //  Vendor kayyit sayfasina yonlendirildigini dogrula
         String expectedUrl = Driver.getDriver().getCurrentUrl();
@@ -36,10 +37,10 @@ public class TC_06 {
         ExtentReportsListener.extentTestInfo("Vendor kayit sayfasina basariyla yonlendirildi");
 
         VendorRegistrationPage vendorRegistrationPage = new VendorRegistrationPage();
-        String invalideMail = "denememail@gmail.com";
+        String invalideMail = "";
         ConfigReader.getProperty(invalideMail);
         vendorRegistrationPage.VendorEmailTextBox.sendKeys(invalideMail);
-        ExtentReportsListener.extentTestInfo("Gecersiz e mail adresi girilir");
+        ExtentReportsListener.extentTestInfo("e-mail kismi bos birakilir");
 
         //Password alanina gecerli bir password girilir
         String validPassword = "123456789Aa!";
@@ -50,23 +51,20 @@ public class TC_06 {
         vendorRegistrationPage.VendorConfirmPasswordTextBox.sendKeys(validPassword);
 
         //Verification kismina kod girilir
-        String validVerification = "*/*/";
+        String validVerification = "563435";
         vendorRegistrationPage.VerificationCodeInput.sendKeys(validVerification);
-        ExtentReportsListener.extentTestInfo("verification code kismina gecersiz karakter girilir");
+        ExtentReportsListener.extentTestInfo("gecerli verification code girilir");
 
         //Register butonuna tiklanir
         vendorRegistrationPage.RegisterButton.click();
-        Thread.sleep(2000);
-        //hatayi almak icin 2 kere registera basmam gerektigi icin tekrar click ekledim
-        vendorRegistrationPage.RegisterButton.click();
+        Thread.sleep(3000);
 
         // kayit olunup olunmadigi dogrulanir
-        Assert.assertTrue(vendorRegistrationPage.WarningEmailUsing.isDisplayed(),"Verification code gecerli olmalidir");
-        ExtentReportsListener.extentTestInfo("Verification code gecerli olmalidir");
+        Assert.assertTrue(vendorRegistrationPage.WarningEmptyEmailBox.isDisplayed());
+        ExtentReportsListener.extentTestInfo("Email alani bos birakilamaz");
 
 
         Driver.closeDriver();
-
 
     }
 }

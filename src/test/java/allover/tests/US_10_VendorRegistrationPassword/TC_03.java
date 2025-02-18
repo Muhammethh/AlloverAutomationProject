@@ -1,4 +1,4 @@
-package allover.tests.US_10;
+package allover.tests.US_10_VendorRegistrationPassword;
 
 import allover.pages.HomePage;
 import allover.pages.RegisterPage;
@@ -6,8 +6,6 @@ import allover.pages.VendorRegistrationPage;
 import allover.utilities.ConfigReader;
 import allover.utilities.Driver;
 import allover.utilities.ExtentReportsListener;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;

@@ -1,4 +1,4 @@
-package allover.tests.US_09;
+package allover.tests.US_09_VendorRegistration;
 
 import allover.pages.HomePage;
 import allover.pages.RegisterPage;
@@ -9,9 +9,9 @@ import allover.utilities.ExtentReportsListener;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_02 {
+public class TC_03 {
     @Test
-    public void testVendorWithoutMailRegistration() throws InterruptedException {
+    public void testVendorInvalidEMailRegistration() throws InterruptedException {
 
         //  Web sitesine gidilir
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
@@ -37,10 +37,10 @@ public class TC_02 {
         ExtentReportsListener.extentTestInfo("Vendor kayit sayfasina basariyla yonlendirildi");
 
         VendorRegistrationPage vendorRegistrationPage = new VendorRegistrationPage();
-        String invalideMail = "";
+        String invalideMail = "deneme.mail@.com";
         ConfigReader.getProperty(invalideMail);
         vendorRegistrationPage.VendorEmailTextBox.sendKeys(invalideMail);
-        ExtentReportsListener.extentTestInfo("e-mail kismi bos birakilir");
+        ExtentReportsListener.extentTestInfo("Gecersiz e mail adresi girilir");
 
         //Password alanina gecerli bir password girilir
         String validPassword = "123456789Aa!";
@@ -60,11 +60,12 @@ public class TC_02 {
         Thread.sleep(3000);
 
         // kayit olunup olunmadigi dogrulanir
-        Assert.assertTrue(vendorRegistrationPage.WarningEmptyEmailBox.isDisplayed());
-        ExtentReportsListener.extentTestInfo("Email alani bos birakilamaz");
+        Assert.assertTrue(vendorRegistrationPage.WarningEmptyEmailBox.isDisplayed(),"E-mail adresi gecersiz olamaz");
+        ExtentReportsListener.extentTestInfo("Email adresi gecersiz olamaz");
 
 
         Driver.closeDriver();
+
 
     }
 }

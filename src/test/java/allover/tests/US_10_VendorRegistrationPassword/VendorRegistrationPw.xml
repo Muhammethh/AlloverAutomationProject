@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Vendor Registration Password Test">
+
+    <listeners>
+        <listener class-name="allover.utilities.ExtentReportsListener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true"
+          name="US_10_VendorRegistrationPassword" parallel="classes" thread-count="1">
+        <packages>
+            <package name="allover.tests.US_10_VendorRegistrationPassword"></package>
+        </packages>
+    </test>
+</suite>

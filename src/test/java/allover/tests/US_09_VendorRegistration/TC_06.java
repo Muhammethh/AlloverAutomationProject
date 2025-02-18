@@ -1,4 +1,4 @@
-package allover.tests.US_09;
+package allover.tests.US_09_VendorRegistration;
 import allover.pages.HomePage;
 import allover.pages.RegisterPage;
 import allover.pages.VendorRegistrationPage;
@@ -8,7 +8,7 @@ import allover.utilities.ExtentReportsListener;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_05 {
+public class TC_06 {
     @Test
     public void testVendorInvalidEMailRegistration() throws InterruptedException {
 
@@ -36,7 +36,7 @@ public class TC_05 {
         ExtentReportsListener.extentTestInfo("Vendor kayit sayfasina basariyla yonlendirildi");
 
         VendorRegistrationPage vendorRegistrationPage = new VendorRegistrationPage();
-        String invalideMail = "akifrencber.techproed@gmail.com";
+        String invalideMail = "denememail@gmail.com";
         ConfigReader.getProperty(invalideMail);
         vendorRegistrationPage.VendorEmailTextBox.sendKeys(invalideMail);
         ExtentReportsListener.extentTestInfo("Gecersiz e mail adresi girilir");
@@ -50,9 +50,9 @@ public class TC_05 {
         vendorRegistrationPage.VendorConfirmPasswordTextBox.sendKeys(validPassword);
 
         //Verification kismina kod girilir
-        String validVerification = "";
+        String validVerification = "*/*/";
         vendorRegistrationPage.VerificationCodeInput.sendKeys(validVerification);
-        ExtentReportsListener.extentTestInfo("verification code kismi bos birakilir");
+        ExtentReportsListener.extentTestInfo("verification code kismina gecersiz karakter girilir");
 
         //Register butonuna tiklanir
         vendorRegistrationPage.RegisterButton.click();
@@ -61,8 +61,8 @@ public class TC_05 {
         vendorRegistrationPage.RegisterButton.click();
 
         // kayit olunup olunmadigi dogrulanir
-        Assert.assertTrue(vendorRegistrationPage.WarningEmailUsing.isDisplayed(),"Verification code kismi bos birakilamaz");
-        ExtentReportsListener.extentTestInfo("Verification code kismi bos birakilamaz");
+        Assert.assertTrue(vendorRegistrationPage.WarningEmailUsing.isDisplayed(),"Verification code gecerli olmalidir");
+        ExtentReportsListener.extentTestInfo("Verification code gecerli olmalidir");
 
 
         Driver.closeDriver();

@@ -1,4 +1,4 @@
-package allover.tests.US_10;
+package allover.tests.US_10_VendorRegistrationPassword;
 
 import allover.pages.HomePage;
 import allover.pages.RegisterPage;
@@ -6,8 +6,6 @@ import allover.pages.VendorRegistrationPage;
 import allover.utilities.ConfigReader;
 import allover.utilities.Driver;
 import allover.utilities.ExtentReportsListener;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -15,15 +13,16 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class TC_01 {
+public class TC_02 {
     @Test
-    public void testVendorTooShortPassword() throws InterruptedException {
+    public void testVendorWeakPassword() throws InterruptedException {
 
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
         //  Web sitesine gidilir
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
         ExtentReportsListener.extentTestInfo("Web sitesine gidildi.");
+
 
         // Sag ustte bulunan Sign in/Register sekmesine tiklanir
         HomePage homePage = new HomePage();
@@ -48,16 +47,16 @@ public class TC_01 {
         vendorRegistrationPage.VendorEmailTextBox.sendKeys(validEmail);
         ExtentReportsListener.extentTestInfo("siteye daha once kayit olmamis bir mail girilir");
 
-        //Password alanina yalnizca kucuk harf veya buyuk harf girilir
-        String password = "asdfg";
+        //Password alanina yalnizca kucuk harf veya buyuk harf ve rakam girilir
+        String password = "abc123";
         vendorRegistrationPage.VendorPasswordTextBox.sendKeys(password);
-        ExtentReportsListener.extentTestInfo("Password alanina yalnizca kucuk harf veya buyuk harf girilir");
+        ExtentReportsListener.extentTestInfo("Password alanina yalnizca kucuk harf veya buyuk ve rakam girilir");
 
-        // "Too Short" hata mesajinin goruntulendigini dogrula
+        // "weak" hata mesajinin goruntulendigini dogrula
         wait.until(ExpectedConditions.visibilityOf(vendorRegistrationPage.PasswordStrength));
-        Assert.assertTrue(vendorRegistrationPage.PasswordStrength.isDisplayed(), "Too short hatasi goruntulenmedi!");
-        Assert.assertEquals(vendorRegistrationPage.PasswordStrength.getText(), "Too short", "Hata mesaji beklenen gibi degil!");
-        ExtentReportsListener.extentTestInfo("Too short hatasi dogrulandi");
+        Assert.assertTrue(vendorRegistrationPage.PasswordStrength.isDisplayed(), "Weak hatasi goruntulenmedi!");
+        Assert.assertEquals(vendorRegistrationPage.PasswordStrength.getText(), "Weak", "Hata mesaji beklenen gibi degil!");
+        ExtentReportsListener.extentTestInfo("Weak hatasi dogrulandi");
 
         Driver.closeDriver();
     }

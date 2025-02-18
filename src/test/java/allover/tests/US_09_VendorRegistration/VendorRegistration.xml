@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="none" name="Allover Project Reports">
+<suite name="Vendor Registration Test">
 
     <listeners>
         <listener class-name="allover.utilities.ExtentReportsListener"></listener>
     </listeners>
-
-
-    <test name="US_06 Test Cases">
+    <test verbose="2" preserve-order="true"
+          name="US_09_Vendor Registration Test" parallel="classes" thread-count="1">
         <packages>
-            <package name="allover.tests.us_06_ShoppingTests"></package>
+            <package name="allover.tests.US_09_VendorRegistration"></package>
         </packages>
     </test>
 </suite>

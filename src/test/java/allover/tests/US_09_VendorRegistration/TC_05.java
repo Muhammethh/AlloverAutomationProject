@@ -1,5 +1,4 @@
-package allover.tests.US_09;
-
+package allover.tests.US_09_VendorRegistration;
 import allover.pages.HomePage;
 import allover.pages.RegisterPage;
 import allover.pages.VendorRegistrationPage;
@@ -9,7 +8,7 @@ import allover.utilities.ExtentReportsListener;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_03 {
+public class TC_05 {
     @Test
     public void testVendorInvalidEMailRegistration() throws InterruptedException {
 
@@ -28,7 +27,7 @@ public class TC_03 {
         RegisterPage registerPage = new RegisterPage();
         registerPage.BecomeVendorButton.click();
         ExtentReportsListener.extentTestInfo("Become a Vendor butonuna tiklandi");
-        Thread.sleep(3000);
+        Thread.sleep(2000);
 
         //  Vendor kayyit sayfasina yonlendirildigini dogrula
         String expectedUrl = Driver.getDriver().getCurrentUrl();
@@ -37,7 +36,7 @@ public class TC_03 {
         ExtentReportsListener.extentTestInfo("Vendor kayit sayfasina basariyla yonlendirildi");
 
         VendorRegistrationPage vendorRegistrationPage = new VendorRegistrationPage();
-        String invalideMail = "deneme.mail@.com";
+        String invalideMail = "akifrencber.techproed@gmail.com";
         ConfigReader.getProperty(invalideMail);
         vendorRegistrationPage.VendorEmailTextBox.sendKeys(invalideMail);
         ExtentReportsListener.extentTestInfo("Gecersiz e mail adresi girilir");
@@ -51,17 +50,19 @@ public class TC_03 {
         vendorRegistrationPage.VendorConfirmPasswordTextBox.sendKeys(validPassword);
 
         //Verification kismina kod girilir
-        String validVerification = "563435";
+        String validVerification = "";
         vendorRegistrationPage.VerificationCodeInput.sendKeys(validVerification);
-        ExtentReportsListener.extentTestInfo("gecerli verification code girilir");
+        ExtentReportsListener.extentTestInfo("verification code kismi bos birakilir");
 
         //Register butonuna tiklanir
         vendorRegistrationPage.RegisterButton.click();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
+        //hatayi almak icin 2 kere registera basmam gerektigi icin tekrar click ekledim
+        vendorRegistrationPage.RegisterButton.click();
 
         // kayit olunup olunmadigi dogrulanir
-        Assert.assertTrue(vendorRegistrationPage.WarningEmptyEmailBox.isDisplayed(),"E-mail adresi gecersiz olamaz");
-        ExtentReportsListener.extentTestInfo("Email adresi gecersiz olamaz");
+        Assert.assertTrue(vendorRegistrationPage.WarningEmailUsing.isDisplayed(),"Verification code kismi bos birakilamaz");
+        ExtentReportsListener.extentTestInfo("Verification code kismi bos birakilamaz");
 
 
         Driver.closeDriver();

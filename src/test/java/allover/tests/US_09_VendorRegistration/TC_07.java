@@ -1,4 +1,4 @@
-package allover.tests.US_09;
+package allover.tests.US_09_VendorRegistration;
 
 import allover.pages.HomePage;
 import allover.pages.RegisterPage;
