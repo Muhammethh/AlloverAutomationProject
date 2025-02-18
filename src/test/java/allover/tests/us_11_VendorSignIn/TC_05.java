@@ -49,6 +49,7 @@ public class TC_05 {
         // wishlist, Support tickets, followings ve log out'a girilir
 
         WaitUtils.waitFor(3);
+<<<<<<< HEAD
         ReusableMethods.click();
         ReusableMethods.click();
         Driver.getDriver().navigate().back();
@@ -63,6 +64,22 @@ public class TC_05 {
         ReusableMethods.click();
         ReusableMethods.click();
         ReusableMethods.click();
+=======
+        ReusableMethods.click(myAccountPage.DashboardButton);
+        ReusableMethods.click(myAccountPage.StoreManagerButton);
+        Driver.getDriver().navigate().back();
+        ReusableMethods.click(myAccountPage.OrdersButton);
+        ReusableMethods.click(myAccountPage.DownloadsButton);
+        ReusableMethods.click(myAccountPage.AddressesButton);
+        ReusableMethods.click(myAccountPage.AccountDetailsButton);
+
+        ActionsUtils.scrollDown();
+        ReusableMethods.click(myAccountPage.WishlistButton);
+        Driver.getDriver().navigate().back();
+        ReusableMethods.click(myAccountPage.SupportTicketsButton);
+        ReusableMethods.click(myAccountPage.FollowingsButton);
+        ReusableMethods.click(myAccountPage.LogoutButton);
+>>>>>>> master
 
         ExtentReportsListener.extentTestInfo("Dashboard altinda yer alan sekmelerin erisilebilir oldugu dogrulanir");
         Driver.closeDriver();

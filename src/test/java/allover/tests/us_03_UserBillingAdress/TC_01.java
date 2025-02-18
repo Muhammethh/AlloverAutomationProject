@@ -16,14 +16,20 @@ public class TC_01 extends SignInCustomer {
         //Web sitesine gidilir.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         SignInCustomer.SignIn();
         HomePage homePage = new HomePage();
         ReusableMethods.click();
 =======
+=======
+>>>>>>> master
         HomePage homePage=new HomePage();
         RegisterPage registerPage= new RegisterPage();
         SignInPage signIn=new SignInPage();
         UserAddressesPage userAddressesPage=new UserAddressesPage();
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));

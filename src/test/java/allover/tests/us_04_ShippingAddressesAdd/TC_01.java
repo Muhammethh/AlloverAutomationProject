@@ -1,5 +1,6 @@
 package allover.tests.us_04_ShippingAddressesAdd;
 
+<<<<<<< HEAD
 import allover.pages.HomePage;
 import allover.pages.UserAddressesPage;
 import allover.tests.SignInCustomer;
@@ -10,6 +11,15 @@ import allover.utilities.*;
 import com.github.javafaker.Faker;
 import org.testng.Assert;
 
+=======
+import allover.pages.AccountDetailsPage;
+import allover.pages.HomePage;
+import allover.pages.UserAddressesPage;
+import allover.tests.SignInCustomer;
+import allover.utilities.*;
+import com.github.javafaker.Faker;
+import org.testng.Assert;
+>>>>>>> master
 import org.testng.annotations.Test;
 
 public class TC_01 extends SignInCustomer {
@@ -23,12 +33,15 @@ public class TC_01 extends SignInCustomer {
         SignInCustomer.SignIn();
 
         HomePage homePage = new HomePage();
+<<<<<<< HEAD
 
         ReusableMethods.click();
         UserAddressesPage userAddressesPage=new UserAddressesPage();
         userAddressesPage.adresses.click();
         ReusableMethods.click();
 
+=======
+>>>>>>> master
         ReusableMethods.click(homePage.myAccount);
         ReusableMethods.waitForSecond(2);
 
@@ -113,6 +126,9 @@ public class TC_01 extends SignInCustomer {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
     }
 }

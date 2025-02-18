@@ -1,6 +1,13 @@
 package allover.tests.US_16;
 
+<<<<<<< HEAD
 import allover.pages.*;
+=======
+import allover.pages.HomePage;
+import allover.pages.MyAccountPage;
+import allover.pages.SignInPage;
+import allover.pages.StoreManagerPage;
+>>>>>>> master
 import allover.utilities.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -31,10 +38,21 @@ public class TC_01_Product_Default {
         signInPage.SignInButton.click();
         WaitUtils.waitFor(2);
         ActionsUtils.scrollDown();
+<<<<<<< HEAD
 
+=======
+        //    My account a tiklanir
+>>>>>>> master
         ReusableMethods.scrollEnd();
         ReusableMethods.waitForSecond(2);
         homePage.myAccount.click();
+
+//        ReusableMethods.scroll(homePage.myAccount);
+//        ReusableMethods.scroll(homePage.myAccount);
+//        ReusableMethods.scrollEnd();
+//        ReusableMethods.visibleWait(homePage.myAccount, 5);
+//         homePage.myAccount.click();
+       // homePage.myAccount.click();
 
         myAccountPage.StoreManagerButton.click();
 

@@ -28,14 +28,14 @@ public class TC_01_DisplayMenuTest {
         signInPage.SignInButton.click();
         ReusableMethods.scroll(homePage.myAccount);
         ReusableMethods.scroll(homePage.myAccount);
-        ReusableMethods.visibleWait(homePage.myAccount,5);
+        ReusableMethods.visibleWait(homePage.myAccount, 5);
 
         homePage.myAccount.click();
 
         myAccountPage.StoreManagerButton.click();
 
         ReusableMethods.scroll(storeManagerPage.ProductsButton);
-        ReusableMethods.visibleWait(storeManagerPage.ProductsButton,5);
+        ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
         storeManagerPage.ProductsButton.click();
 
         storeManagerPage.SearchBox.click();
@@ -43,9 +43,13 @@ public class TC_01_DisplayMenuTest {
         ReusableMethods.scroll(storeManagerPage.TeaMaker);
 
         ActionsUtils.scrollDown();
+<<<<<<< HEAD
         WaitUtils.waitForClickablility(storeManagerPage.TeaMaker,5);
 
 
+=======
+        WaitUtils.waitForClickablility(storeManagerPage.TeaMaker, 5);
+>>>>>>> master
 
         storeManagerPage.TeaMaker.click();
 
@@ -54,6 +58,16 @@ public class TC_01_DisplayMenuTest {
         ActionsUtils.scrollDown();
 
         JSUtils.JSclickWithTimeout(storeManagerPage.InventoryButton);
+<<<<<<< HEAD
+
+        Assert.assertTrue(storeManagerPage.InventoryButton.isDisplayed());
+        Assert.assertTrue(storeManagerPage.ShippingButton.isDisplayed());
+        Assert.assertTrue(storeManagerPage.AttributesButton.isDisplayed());
+        Assert.assertTrue(storeManagerPage.LinkedButton.isDisplayed());
+        Assert.assertTrue(storeManagerPage.SeoButton.isDisplayed());
+        Assert.assertTrue(storeManagerPage.AdvancedButton.isDisplayed());
+=======
+>>>>>>> master
 
         Assert.assertTrue(storeManagerPage.InventoryButton.isDisplayed());
         Assert.assertTrue(storeManagerPage.ShippingButton.isDisplayed());
@@ -62,9 +76,7 @@ public class TC_01_DisplayMenuTest {
         Assert.assertTrue(storeManagerPage.SeoButton.isDisplayed());
         Assert.assertTrue(storeManagerPage.AdvancedButton.isDisplayed());
 
-
         Driver.closeDriver();
-
     }
 }
 

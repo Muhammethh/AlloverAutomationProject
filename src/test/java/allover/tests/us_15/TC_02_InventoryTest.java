@@ -55,14 +55,22 @@ public class TC_02_InventoryTest {
         ActionsUtils.pressTab();
         ActionsUtils.pressTab();
         JSUtils.JSclickWithTimeout(storeManagerPage.ManageStockCheckBox);
+<<<<<<< HEAD
         ReusableMethods.click();
+=======
+        ReusableMethods.click(storeManagerPage.ManageStockCheckBox);
+>>>>>>> master
         ActionsUtils.pressTab();
         storeManagerPage.StockQtyTextBox.sendKeys("2");
         ActionsUtils.pressTab();
         storeManagerPage.AllowBackorders.click();
 
         ReusableMethods.ddmValue(storeManagerPage.AllowBackorders,"notify");
+<<<<<<< HEAD
         ReusableMethods.click();
+=======
+        ReusableMethods.click(storeManagerPage.SoldIndividually);
+>>>>>>> master
         storeManagerPage.SubmitButton.click();
         WaitUtils.waitFor(3);
         ReusableMethods.takeScreenShot();

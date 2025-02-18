@@ -26,7 +26,11 @@ public class TC_04 extends SignInVendor {
         ReusableMethods.waitForSecond(2);
         ReusableMethods.scroll(vendorAdressesPage.editYourBilling);
         ReusableMethods.visibleWait(vendorAdressesPage.editYourBilling,3);
+<<<<<<< HEAD
         ReusableMethods.click();
+=======
+        ReusableMethods.click(  vendorAdressesPage.editYourBilling);
+>>>>>>> master
         ExtentReportsListener.extentTestInfo("Vendor edit your billing adsress sekmesine tiklar");
 
 
@@ -46,7 +50,11 @@ public class TC_04 extends SignInVendor {
         //Country/Region kısmına geçerli veri girilir
         ReusableMethods.scroll(vendorAdressesPage.country);
         ReusableMethods.visibleWait(vendorAdressesPage.country,3);
+<<<<<<< HEAD
         ReusableMethods.click();
+=======
+        ReusableMethods.click(vendorAdressesPage.country);
+>>>>>>> master
         ReusableMethods.waitForSecond(2);
         ExtentReportsListener.extentTestInfo("Country/Region kısmına geçerli veri girilir");
 
@@ -66,7 +74,11 @@ public class TC_04 extends SignInVendor {
         ExtentReportsListener.extentTestInfo("Town/City kısmına geçerli veri girilir");
 
         //        States kismina gecerli veri girlir
+<<<<<<< HEAD
         ReusableMethods.click();
+=======
+        ReusableMethods.click(vendorAdressesPage.state);
+>>>>>>> master
         ReusableMethods.waitForSecond(2);
         ExtentReportsListener.extentTestInfo("States kismina gecerli veri girlir");
 
@@ -86,7 +98,11 @@ public class TC_04 extends SignInVendor {
 
 //       Save Address butonuna tıklayarak Billing Addrese (Fatura Adresi) eklenir
         ReusableMethods.visibleWait(vendorAdressesPage.saveButton,5);
+<<<<<<< HEAD
         ReusableMethods.click();
+=======
+        ReusableMethods.click(vendorAdressesPage.saveButton);
+>>>>>>> master
         ReusableMethods.waitForSecond(2);
         ExtentReportsListener.extentTestInfo("Save Address butonuna tıklayarak Billing Addrese (Fatura Adresi) eklenir");
 

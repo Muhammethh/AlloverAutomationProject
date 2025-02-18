@@ -23,6 +23,7 @@ public class TC01 {
         ExtentReportsListener.extentTestInfo("register butonuna tıklanır");
         homePage.register.click();
 
+<<<<<<< HEAD
 
 
         ExtentReportsListener.extentTestInfo("Username bölümüne önceden kayıt olunan bir userName girilir");
@@ -30,6 +31,11 @@ public class TC01 {
 
         ExtentReportsListener.extentTestInfo("Username bölümüne önceden kayıt olunan bir username girilir");
         registerPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("registerPositiveUsername"));
+=======
+        ExtentReportsListener.extentTestInfo("Username bölümüne önceden kayıt olunan bir userName girilir");
+        registerPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("registerUsedUsername"));
+
+>>>>>>> master
 
 
         ExtentReportsListener.extentTestInfo("Email bölümüne kayıtlı bir email girilir");
@@ -50,5 +56,11 @@ public class TC01 {
         Assert.assertTrue(registerPage.RegistrationCheck.getText().contains("An account is already"));
 
 
+<<<<<<< HEAD
+=======
+        //sayfa kapatılır
+        Driver.closeDriver();
+
+>>>>>>> master
     }
 }
