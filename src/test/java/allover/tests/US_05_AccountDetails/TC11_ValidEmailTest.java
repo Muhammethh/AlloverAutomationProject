@@ -1,6 +1,8 @@
 package allover.tests.US_05_AccountDetails;
 
 import allover.pages.AccountDetailsPage;
+import allover.pages.HomePage;
+import allover.pages.SignInPage;
 import allover.tests.SignInCustomer;
 import allover.utilities.*;
 import com.github.javafaker.Faker;
@@ -9,28 +11,24 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class TC11_ValidEmailTest {
-    @DataProvider
-    public Object[][] email() {
-
-        Faker faker = new Faker();
-
-        return new Object[][]{
-
-                {faker.internet().emailAddress()},
-                {ConfigReader.getProperty("signInEmail")}
 
 
-        };
-    }
-
-    @Test(dataProvider = "email", description = "Kullanıcı Account Details (Hesap Detaylarını) bölümünde Display name i değiştirebilmeli\n")
-    public void tc08(String email){
+    @Test( description = "Kullanıcı Account Details (Hesap Detaylarını) bölümünde Display name i değiştirebilmeli\n")
+    public void tc08(){
         //sayfaya kullanıcı olarak giriş yapılır
         //sing out butonuna tıklanır
+        HomePage homePage=new HomePage();
+        SignInPage signIn=new SignInPage();
 
+
+        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+        homePage.signIn.click();
+        signIn.UsernameTextBox.sendKeys("mail");
+        signIn.PasswordTextBox.sendKeys("mailcontrol.1");
+        signIn.SignInButton.click();
         AccountDetailsPage accountDetailsPage=new AccountDetailsPage();
-        SignInCustomer.SignIn();
-
+        Faker faker=new Faker();
+        String mail = faker.internet().emailAddress();
 
         WaitUtils.waitFor(3);
 
@@ -48,7 +46,7 @@ public class TC11_ValidEmailTest {
 
         accountDetailsPage.EmailAddress.clear();
 
-        accountDetailsPage.EmailAddress.sendKeys(email);
+        accountDetailsPage.EmailAddress.sendKeys(mail);
         ExtentReportsListener.extentTestInfo("kullanıcı hesap detaylarında Email box ına geçerli bir name girilir");
 
         //Save changes butonuna tıklanır
@@ -62,8 +60,8 @@ public class TC11_ValidEmailTest {
 
         //email in girilen yeni isimle aynı olduğu doğrulanır
 
-        Assert.assertEquals(accountDetailsPage.EmailAddress.getAttribute("value"),email);
-        ExtentReportsListener.extentTestInfo("Email in girilen yeni isimle aynı olduğu doğrulanır");
+        Assert.assertEquals(accountDetailsPage.EmailAddress.getAttribute("value"),mail);
+        ExtentReportsListener.extentTestInfo("Email in girilen yeni mail aynı olduğu doğrulanır");
 
         //sayfa kapatılır
         Driver.closeDriver();

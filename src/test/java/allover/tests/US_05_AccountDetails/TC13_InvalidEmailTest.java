@@ -1,6 +1,8 @@
 package allover.tests.US_05_AccountDetails;
 
 import allover.pages.AccountDetailsPage;
+import allover.pages.HomePage;
+import allover.pages.SignInPage;
 import allover.tests.SignInCustomer;
 import allover.utilities.*;
 import com.github.javafaker.Faker;
@@ -12,10 +14,18 @@ public class TC13_InvalidEmailTest {
     public void tc13() {
         //sayfaya kullanıcı olarak giriş yapılır
         //sing out butonuna tıklanır
+        HomePage homePage=new HomePage();
+        SignInPage signIn=new SignInPage();
 
+
+        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+        homePage.signIn.click();
+        signIn.UsernameTextBox.sendKeys("mail3");
+        signIn.PasswordTextBox.sendKeys("mailcontrol.3");
+        signIn.SignInButton.click();
         AccountDetailsPage accountDetailsPage=new AccountDetailsPage();
 
-        SignInCustomer.SignIn();
+
 
 
         WaitUtils.waitFor(3);
@@ -30,7 +40,7 @@ public class TC13_InvalidEmailTest {
         ExtentReportsListener.extentTestInfo("Url nin 'edit-account' içerdiği doğrulanır");
 
         //Email Text box ına geçerli bir Email adres girilir
-        ActionsUtils.hoverOver(accountDetailsPage.EmailAddress);
+        JSUtils.JSscrollIntoView(accountDetailsPage.EmailAddress);
 
         accountDetailsPage.EmailAddress.clear();
 

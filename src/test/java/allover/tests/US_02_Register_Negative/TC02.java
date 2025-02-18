@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 public class TC02 {
 
-    @Test(description = "Siteye daha önce kayıtlı bilgiler ile(username ve email) kayıt yapılamamalı.(Register)")
+    @Test(description = "Siteye daha önce kayıtlı bilgiler ile(username) kayıt yapılamamalı.(Register)")
     public void testName() {
         HomePage homePage= new HomePage();
         RegisterPage registerPage= new RegisterPage();
