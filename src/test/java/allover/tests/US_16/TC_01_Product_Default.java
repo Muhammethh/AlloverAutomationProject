@@ -4,9 +4,7 @@ import allover.pages.HomePage;
 import allover.pages.MyAccountPage;
 import allover.pages.SignInPage;
 import allover.pages.StoreManagerPage;
-import allover.utilities.ConfigReader;
-import allover.utilities.Driver;
-import allover.utilities.ReusableMethods;
+import allover.utilities.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -33,16 +31,25 @@ public class TC_01_Product_Default {
         signInPage.PasswordTextBox.sendKeys(ConfigReader.getProperty("vendorPassword"));
 
         signInPage.SignInButton.click();
-        ReusableMethods.scroll(homePage.myAccount);
-        ReusableMethods.scroll(homePage.myAccount);
-        ReusableMethods.visibleWait(homePage.myAccount, 5);
-
+        WaitUtils.waitFor(2);
+        ActionsUtils.scrollDown();
+        //    My account a tiklanir
+        ReusableMethods.scrollEnd();
+        ReusableMethods.waitForSecond(2);
         homePage.myAccount.click();
+
+//        ReusableMethods.scroll(homePage.myAccount);
+//        ReusableMethods.scroll(homePage.myAccount);
+//        ReusableMethods.scrollEnd();
+//        ReusableMethods.visibleWait(homePage.myAccount, 5);
+//         homePage.myAccount.click();
+       // homePage.myAccount.click();
 
         myAccountPage.StoreManagerButton.click();
 
         ReusableMethods.scroll(storeManagerPage.ProductsButton);
-        ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
+        JSUtils.JSscrollIntoView(storeManagerPage.ProductsButton);
+       // ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
         storeManagerPage.ProductsButton.click();
 
         WebElement productTypeDropdown = driver.findElement(By.id("product_type"));

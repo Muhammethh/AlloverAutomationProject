@@ -93,8 +93,14 @@ public class StoreManagerPage {
     @FindBy (xpath = "(//button[contains(text(),'Select all')])[2]")
     public WebElement SelectAllButton2;
 
-    @FindBy (xpath = "//input[@type='checkbox' and @id='attributes_is_visible_1']")
+    @FindBy (id = "attributes_is_visible_1")
     public WebElement ColorVisibleOnSearchBoxButton;
+
+    @FindBy (id = "attributes_is_visible_2")
+    public WebElement SizeVisibleOnSearchBoxButton;
+
+    @FindBy(xpath = "//a[@href='https://allovercommerce.com/store-manager/products-manage/']")
+    public WebElement AddNew;
 
 
 

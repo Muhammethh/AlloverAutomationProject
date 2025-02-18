@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class ActionsUtils {
-    private static Actions actions = new Actions(Driver.getDriver());
 
     /**
      * Belirtilen element üzerinde sağ tıklama (context click) işlemi yapar.
@@ -13,6 +12,7 @@ public class ActionsUtils {
      * @param element Sağ tıklama yapılacak WebElement.
      */
     public static void rightClick(WebElement element) {
+        Actions actions = new Actions(Driver.getDriver());  // Her metodda yeni bir Actions nesnesi oluşturuluyor
         actions.contextClick(element).perform();
     }
 
@@ -22,6 +22,7 @@ public class ActionsUtils {
      * @param element Çift tıklama yapılacak WebElement.
      */
     public static void doubleClick(WebElement element) {
+        Actions actions = new Actions(Driver.getDriver());  // Her metodda yeni bir Actions nesnesi oluşturuluyor
         actions.doubleClick(element).build().perform();
     }
 
@@ -31,6 +32,7 @@ public class ActionsUtils {
      * @param element Üzerine gelinmesi istenen WebElement.
      */
     public static void hoverOver(WebElement element) {
+        Actions actions = new Actions(Driver.getDriver());  // Her metodda yeni bir Actions nesnesi oluşturuluyor
         actions.moveToElement(element).perform();
     }
 
@@ -38,6 +40,7 @@ public class ActionsUtils {
      * Sayfayı PAGE_DOWN tuşu ile aşağı kaydırır.
      */
     public static void scrollDown() {
+        Actions actions = new Actions(Driver.getDriver());  // Her metodda yeni bir Actions nesnesi oluşturuluyor
         actions.sendKeys(Keys.PAGE_DOWN).perform();
     }
 
@@ -45,6 +48,7 @@ public class ActionsUtils {
      * Sayfayı PAGE_UP tuşu ile yukarı kaydırır.
      */
     public static void scrollUp() {
+        Actions actions = new Actions(Driver.getDriver());  // Her metodda yeni bir Actions nesnesi oluşturuluyor
         actions.sendKeys(Keys.PAGE_UP).perform();
     }
 
@@ -52,6 +56,7 @@ public class ActionsUtils {
      * Sayfayı ARROW_RIGHT tuşu ile sağa kaydırır.
      */
     public static void scrollRight() {
+        Actions actions = new Actions(Driver.getDriver());  // Her metodda yeni bir Actions nesnesi oluşturuluyor
         actions.sendKeys(Keys.ARROW_RIGHT, Keys.ARROW_RIGHT).perform();
     }
 
@@ -59,6 +64,7 @@ public class ActionsUtils {
      * Sayfayı ARROW_LEFT tuşu ile sola kaydırır.
      */
     public static void scrollLeft() {
+        Actions actions = new Actions(Driver.getDriver());  // Her metodda yeni bir Actions nesnesi oluşturuluyor
         actions.sendKeys(Keys.ARROW_LEFT, Keys.ARROW_LEFT).perform();
     }
 
@@ -66,6 +72,7 @@ public class ActionsUtils {
      * Sayfayı HOME tuşu ile en üste kaydırır.
      */
     public static void scrollHome() {
+        Actions actions = new Actions(Driver.getDriver());  // Her metodda yeni bir Actions nesnesi oluşturuluyor
         actions.sendKeys(Keys.HOME).perform();
     }
 
@@ -73,6 +80,7 @@ public class ActionsUtils {
      * Sayfayı END tuşu ile en alta kaydırır.
      */
     public static void scrollEnd() {
+        Actions actions = new Actions(Driver.getDriver());  // Her metodda yeni bir Actions nesnesi oluşturuluyor
         actions.sendKeys(Keys.END).perform();
     }
 
@@ -83,6 +91,7 @@ public class ActionsUtils {
      * @param target Bırakılmak istenen WebElement.
      */
     public static void dragAndDrop(WebElement source, WebElement target) {
+        Actions actions = new Actions(Driver.getDriver());  // Her metodda yeni bir Actions nesnesi oluşturuluyor
         actions.dragAndDrop(source, target).perform();
     }
 
@@ -94,6 +103,7 @@ public class ActionsUtils {
      * @param yOffset Dikey eksende sürüklenme mesafesi (pozitif aşağı, negatif yukarı).
      */
     public static void dragAndDropBy(WebElement source, int xOffset, int yOffset) {
+        Actions actions = new Actions(Driver.getDriver());  // Her metodda yeni bir Actions nesnesi oluşturuluyor
         actions.dragAndDropBy(source, xOffset, yOffset).perform();
     }
 
@@ -101,26 +111,23 @@ public class ActionsUtils {
      * TAB tuşuna basarak elementler arası geçiş yapmayı sağlar.
      */
     public static void pressTab() {
+        Actions actions = new Actions(Driver.getDriver());  // Her metodda yeni bir Actions nesnesi oluşturuluyor
         actions.sendKeys(Keys.TAB).build().perform();
     }
 
     /**
-     *  Asagi yon tusuna basar.
+     * Aşağı yön tuşuna basar.
      */
-
     public static void pressArrowDown() {
+        Actions actions = new Actions(Driver.getDriver());  // Her metodda yeni bir Actions nesnesi oluşturuluyor
         actions.sendKeys(Keys.ARROW_DOWN).build().perform();
     }
 
     /**
-     *  Enter tusuna basar.
+     * Enter tuşuna basar.
      */
-
     public static void pressEnter() {
+        Actions actions = new Actions(Driver.getDriver());  // Her metodda yeni bir Actions nesnesi oluşturuluyor
         actions.sendKeys(Keys.ENTER).build().perform();
     }
-
-
-
-
 }

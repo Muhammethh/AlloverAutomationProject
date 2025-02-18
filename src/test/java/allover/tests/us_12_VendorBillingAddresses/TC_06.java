@@ -11,11 +11,11 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertFalse;
 
-public class TC_06 extends SignInVendor {
+public class TC_06  {
 
     @Test(description = "US-12 TC-6 Town/City kismina gecersiz data girildiginde adres ekleme  basarili olmamalidir ")
     public void test() {
-
+        SignInVendor.SignIn();
         //    Adresses sekmesine tıklanir
         MyAccountPage myAccountPage=new MyAccountPage();
         myAccountPage.AddressesButton.click();
@@ -79,6 +79,7 @@ public class TC_06 extends SignInVendor {
 
         vendorAdressesPage.townCity.clear();
         vendorAdressesPage.townCity.sendKeys("!");
+        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestInfo("town/city kısmına geçersiz veri girilir");
         ReusableMethods.waitForSecond(2);
 

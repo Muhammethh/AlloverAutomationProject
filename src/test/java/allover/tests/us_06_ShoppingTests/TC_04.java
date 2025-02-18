@@ -1,19 +1,13 @@
 package allover.tests.us_06_ShoppingTests;
 
-import allover.pages.CartPage;
-import allover.pages.CheckOutPage;
-import allover.pages.HomePage;
-import allover.pages.SampleItemsPage;
+import allover.pages.*;
 import allover.tests.SignInCustomer;
-import allover.utilities.ActionsUtils;
-import allover.utilities.Driver;
-import allover.utilities.ReusableMethods;
-import allover.utilities.WaitUtils;
+import allover.utilities.*;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class TC_04 {
+public class TC_04{
 
     @Test
     public void TC_04_IsBillingDetailVisible() {
@@ -24,7 +18,13 @@ public class TC_04 {
         CheckOutPage checkOutPage = new CheckOutPage();
         SoftAssert softAssert = new SoftAssert();
 
-        SignInCustomer.SignIn();
+
+        SignInPage signIn=new SignInPage();
+        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+        homePage.signIn.click();
+        signIn.UsernameTextBox.sendKeys(ConfigReader.getProperty("signInUserName"));
+        signIn.PasswordTextBox.sendKeys(ConfigReader.getProperty("signInPassword"));
+        signIn.SignInButton.click();
 
         //Sign Out butonu görünene kadar beklenir ve göründüğü doğrulanır
         WaitUtils.waitForVisibility(homePage.signOut, 10);
@@ -33,8 +33,10 @@ public class TC_04 {
         homePage.searchBox.sendKeys("Masa", Keys.ENTER);
 
         //Çıkan ilk ürünün üzerine gelerek sepete ekle butonuna basılır
+        WaitUtils.waitForVisibility(sampleItemsPage.firstItemAfterSearch,10);
         ActionsUtils.hoverOver(sampleItemsPage.firstItemAfterSearch);
 
+        WaitUtils.waitForVisibility(sampleItemsPage.addFirstItemInCart,10);
         ReusableMethods.click(sampleItemsPage.addFirstItemInCart);
 
         ActionsUtils.hoverOver(homePage.cartHead);
