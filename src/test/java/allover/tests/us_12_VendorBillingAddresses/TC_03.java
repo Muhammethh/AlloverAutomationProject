@@ -37,6 +37,7 @@ public class TC_03  {
 
 
         vendorAdressesPage.lastName.clear();
+        ReusableMethods.addScreenShotToReport();
         vendorAdressesPage.lastName.sendKeys("0");
         ExtentReportsListener.extentTestFail("Last  name alanı gecersiz data girilir");
 

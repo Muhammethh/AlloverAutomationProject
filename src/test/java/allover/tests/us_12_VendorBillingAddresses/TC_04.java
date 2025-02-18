@@ -56,7 +56,11 @@ public class TC_04  {
         ReusableMethods.waitForSecond(2);
         vendorAdressesPage.streetAdress2.clear();
         vendorAdressesPage.streetAdress2.sendKeys("?");
+
         ExtentReportsListener.addScreenShotToReport();
+
+        ReusableMethods.addScreenShotToReport();
+
         ReusableMethods.waitForSecond(2);
         ExtentReportsListener.extentTestInfo("Street address kısmına geçerersiz veri girilir");
 
