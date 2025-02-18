@@ -1,10 +1,8 @@
 package allover.tests.US_18_Coupon;
 
 import allover.pages.*;
-import allover.utilities.ConfigReader;
-import allover.utilities.Driver;
-import allover.utilities.JSUtils;
-import allover.utilities.ReusableMethods;
+import allover.utilities.*;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC07 {
@@ -30,14 +28,26 @@ public class TC07 {
         ReusableMethods.visibleWait(homePage.myAccount, 5);
         homePage.myAccount.click();
         myAccountPage.StoreManagerButton.click();
+        ExtentReportsListener.extentTestInfo("StoreManger Butonuna tıklar");
+
         ReusableMethods.scroll(couponPage.CouponButton);
         JSUtils.JSclickWithTimeout(couponPage.CouponButton);
-        couponPage.CouponButton.click();
+        ExtentReportsListener.extentTestInfo("Coupon Butonuna tıklar");
+        //couponPage.CouponButton.click();
+
+        //couponPage.AddNewButton.click();
+        //JSUtils.JSclickWithTimeout(couponPage.AddNewButton);
         ReusableMethods.click(couponPage.AddNewButton);
-       // storeManagerPage.AddNewButton.click();
+        ExtentReportsListener.extentTestInfo("AddNew Butonuna tıklar");
 
-
+        ActionsUtils.scrollDown();
         couponPage.ShowonstoreCheckBox.click();
+        ExtentReportsListener.extentTestInfo("ShowonstoreCheckBox secilebilmeli");
+        JSUtils.JSclickWithTimeout(couponPage.SubmitButton);
 
+        Assert.assertTrue(couponPage.ShowonstoreCheckBox.isDisplayed());
+        ExtentReportsListener.extentTestPass("Submit Butonuna tıklanarak ShowonstoreCheckBox secildigi dogrulanir");
+
+        Driver.closeDriver();
     }
 }

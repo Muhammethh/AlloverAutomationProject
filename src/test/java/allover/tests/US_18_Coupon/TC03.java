@@ -1,11 +1,13 @@
 package allover.tests.US_18_Coupon;
 
 import allover.pages.*;
-import allover.utilities.ConfigReader;
-import allover.utilities.Driver;
-import allover.utilities.JSUtils;
-import allover.utilities.ReusableMethods;
+import allover.utilities.*;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class TC03 {
     @Test
@@ -30,16 +32,45 @@ public class TC03 {
         ReusableMethods.visibleWait(homePage.myAccount, 5);
         homePage.myAccount.click();
         myAccountPage.StoreManagerButton.click();
+        ExtentReportsListener.extentTestInfo("StoreManger Butonuna tıklar");
+
         ReusableMethods.scroll(couponPage.CouponButton);
         JSUtils.JSclickWithTimeout(couponPage.CouponButton);
-        couponPage.CouponButton.click();
+        ExtentReportsListener.extentTestInfo("Coupon Butonuna tıklar");
+        //couponPage.CouponButton.click();
+
+
+        //couponPage.AddNewButton.click();
+        //JSUtils.JSclickWithTimeout(couponPage.AddNewButton);
         ReusableMethods.click(couponPage.AddNewButton);
-       // storeManagerPage.AddNewButton.click();
+        ExtentReportsListener.extentTestInfo("AddNew Butonuna tıklar");
+
+        ActionsUtils.scrollDown();
+        couponPage.dropdown.click();
+        ExtentReportsListener.extentTestInfo("DiscountType DropDown a tıklar");
+       // ReusableMethods.ddmValue(couponPage.dropdown,"percent");
+        //ReusableMethods.ddmValue(couponPage.dropdown,"fixed_product");
+
+        ActionsUtils.pressArrowDown();
+        ActionsUtils.pressEnter();
+
+        JSUtils.JSclickWithTimeout(couponPage.SubmitButton);
+
+        Assert.assertTrue(couponPage.dropdown.isDisplayed());
+        ExtentReportsListener.extentTestPass("Submit Butonuna tıklanarak DiscountType DropDown da secim yapilabildigi dogrulanir");
 
 
-        couponPage.DropdownInput.click();
-        couponPage.DropdownOption.click();
+        Driver.closeDriver();
 
+//        WebElement dropdown = null;
+//        Select selectdiscount= new Select(dropdown);
+//
+//        List<WebElement> discount=selectdiscount.getOptions();
+//        for (WebElement w:discount){
+//            w.click();
+//        }
+//
+//        //selectdiscount.selectByValue("fixed_product");
 
     }
 }

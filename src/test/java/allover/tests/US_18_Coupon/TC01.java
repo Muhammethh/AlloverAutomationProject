@@ -2,6 +2,7 @@ package allover.tests.US_18_Coupon;
 
 import allover.pages.*;
 import allover.utilities.*;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC01 {
@@ -14,6 +15,7 @@ public class TC01 {
         MyAccountPage myAccountPage = new MyAccountPage();
         StoreManagerPage storeManagerPage = new StoreManagerPage();
         CouponPage couponPage=new CouponPage();
+
         homePage.signIn.click();
 
         signInPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("vendorEmail"));
@@ -26,17 +28,27 @@ public class TC01 {
         ReusableMethods.visibleWait(homePage.myAccount, 5);
         homePage.myAccount.click();
         myAccountPage.StoreManagerButton.click();
+        ExtentReportsListener.extentTestInfo("StoreManger Butonuna tıklar");
 
         ReusableMethods.scroll(couponPage.CouponButton);
         JSUtils.JSclickWithTimeout(couponPage.CouponButton);
-        couponPage.CouponButton.click();
+        ExtentReportsListener.extentTestInfo("Coupon Butonuna tıklar");
+        //couponPage.CouponButton.click();
 
-       // ReusableMethods.scroll(couponPage.AddNewButton);
-        ActionsUtils.scrollDown();
-       // couponPage.AddNewButton.click();
-        JSUtils.JSclickWithTimeout(couponPage.AddNewButton);
-        couponPage.AddNewButton.click();
-        couponPage.CodeTextBox.sendKeys("KPTech");
 
+        //couponPage.AddNewButton.click();
+        //JSUtils.JSclickWithTimeout(couponPage.AddNewButton);
+        ReusableMethods.click(couponPage.AddNewButton);
+        ExtentReportsListener.extentTestInfo("AddNew Butonuna tıklar");
+
+        couponPage.CodeTextBox.sendKeys("KPTech1");
+        ExtentReportsListener.extentTestInfo("Code TextBox a code yazabilmeliyim ");
+        JSUtils.JSclickWithTimeout(couponPage.SubmitButton);
+       // couponPage.SubmitButton.click();
+
+        Assert.assertTrue(couponPage.CodeTextBox.isDisplayed());
+        ExtentReportsListener.extentTestPass("Submit Butonuna tıklanarak codenin yazildigi dogrulanir");
+
+        Driver.closeDriver();
     }
 }

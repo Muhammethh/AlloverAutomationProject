@@ -1,10 +1,8 @@
 package allover.tests.US_18_Coupon;
 
 import allover.pages.*;
-import allover.utilities.ConfigReader;
-import allover.utilities.Driver;
-import allover.utilities.JSUtils;
-import allover.utilities.ReusableMethods;
+import allover.utilities.*;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC02 {
@@ -30,14 +28,28 @@ public class TC02 {
         ReusableMethods.visibleWait(homePage.myAccount, 5);
         homePage.myAccount.click();
         myAccountPage.StoreManagerButton.click();
+        ExtentReportsListener.extentTestInfo("StoreManger Butonuna tıklar");
+
+
         ReusableMethods.scroll(couponPage.CouponButton);
         JSUtils.JSclickWithTimeout(couponPage.CouponButton);
-        couponPage.CouponButton.click();
-        //ReusableMethods.click(couponPage.AddNewButton);
-        couponPage.AddNewButton.click();
+        ExtentReportsListener.extentTestInfo("Coupon Butonuna tıklar");
+        //couponPage.CouponButton.click();
 
+
+        //couponPage.AddNewButton.click();
+        //JSUtils.JSclickWithTimeout(couponPage.AddNewButton);
+        ReusableMethods.click(couponPage.AddNewButton);
+        ExtentReportsListener.extentTestInfo("AddNew Butonuna tıklar");
 
         couponPage.DescriptionTextArea.sendKeys("urun aciklaması");
+        ExtentReportsListener.extentTestInfo("Description TextArea a description yazabilmeliyim ");
+        JSUtils.JSclickWithTimeout(couponPage.SubmitButton);
 
+        Assert.assertTrue(couponPage.DescriptionTextArea.isDisplayed());
+        ExtentReportsListener.extentTestPass("Submit Butonuna tıklanarak desciription un yazildigi dogrulanir");
+
+
+        Driver.closeDriver();
     }
 }

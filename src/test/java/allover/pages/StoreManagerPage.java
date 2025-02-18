@@ -96,10 +96,8 @@ public class StoreManagerPage {
     @FindBy (xpath = "//input[@type='checkbox' and @id='attributes_is_visible_1']")
     public WebElement ColorVisibleOnSearchBoxButton;
 
-
-
-
-
+    @FindBy (id = "attributes_is_visible_2")
+    public WebElement SizeVisibleOnSearchBoxButton;
 
 
 

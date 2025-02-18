@@ -24,7 +24,14 @@ public class TC_03 {
         CheckOutPage checkOutPage = new CheckOutPage();
         SoftAssert softAssert = new SoftAssert();
 
-        SignInCustomer.SignIn();
+        //SignInCustomer.SignIn();
+        SignInPage signIn=new SignInPage();
+        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+        homePage.signIn.click();
+        signIn.UsernameTextBox.sendKeys(ConfigReader.getProperty("signInUserName"));
+        signIn.PasswordTextBox.sendKeys(ConfigReader.getProperty("signInPassword"));
+        signIn.SignInButton.click();
+
 
         //Sign Out butonu görünene kadar beklenir ve göründüğü doğrulanır
         WaitUtils.waitForVisibility(homePage.signOut, 10);
@@ -35,8 +42,10 @@ public class TC_03 {
         homePage.searchBox.sendKeys("Masa", Keys.ENTER);
 
         //Çıkan ilk ürünün üzerine gelerek sepete ekle butonuna basılır
+        WaitUtils.waitForVisibility(sampleItemsPage.firstItemAfterSearch,10);
         ActionsUtils.hoverOver(sampleItemsPage.firstItemAfterSearch);
 
+        WaitUtils.waitForVisibility(sampleItemsPage.addFirstItemInCart,10);
         ReusableMethods.click(sampleItemsPage.addFirstItemInCart);
 
         ActionsUtils.hoverOver(homePage.cartHead);
@@ -61,9 +70,10 @@ public class TC_03 {
 
         softAssert.assertEquals(decreasedItem,"1");
 
-        Driver.closeDriver();
+        //Driver.closeDriver();
 
         softAssert.assertAll();
+
     }
 
 
