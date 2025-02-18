@@ -33,6 +33,7 @@ public class TC_02  {
         //Adress bolumunde name kismina gecersiz data girildiginde ekleme yapilmamali
         vendorAdressesPage.firstName.clear();
         vendorAdressesPage.firstName.sendKeys("12");
+        ReusableMethods.addScreenShotToReport();
         ExtentReportsListener.extentTestInfo("First name alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
 
         vendorAdressesPage.lastName.clear();

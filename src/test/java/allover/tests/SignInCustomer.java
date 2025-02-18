@@ -23,8 +23,5 @@ public class SignInCustomer {
         signIn.SignInButton.click();
 
 
-        //Driver.closeDriver();
-
-
     }
 }

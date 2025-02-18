@@ -75,6 +75,7 @@ public class TC_05  {
 //          ZIP Code kısmına geçersiz veri girilir
         vendorAdressesPage.zipCode.clear();
         vendorAdressesPage.zipCode.sendKeys("a123?");
+        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestInfo(" ZIP Code kısmına geçersiz veri girilir");
 
 
