@@ -1,6 +1,8 @@
 package allover.tests.US_05_AccountDetails;
 
 import allover.pages.AccountDetailsPage;
+import allover.pages.HomePage;
+import allover.pages.SignInPage;
 import allover.tests.SignInCustomer;
 import allover.utilities.ConfigReader;
 import allover.utilities.Driver;
@@ -12,28 +14,25 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class TC08_ValidDisplayNameTest {
-    @DataProvider
-    public Object[][] displayName() {
 
-        Faker faker = new Faker();
-
-        return new Object[][]{
-
-                {faker.name().username()},
-                {ConfigReader.getProperty("signInUserName")}
-
-
-        };
-    }
-
-    @Test(dataProvider = "displayName", description = "Kullanıcı Account Details (Hesap Detaylarını) bölümünde Display name i değiştirebilmeli\n")
-    public void tc08(String displayName) {
+    @Test(description = "Kullanıcı Account Details (Hesap Detaylarını) bölümünde Display name i değiştirebilmeli\n")
+    public void tc08() {
         //sayfaya kullanıcı olarak giriş yapılır
         //sing out butonuna tıklanır
+        HomePage homePage=new HomePage();
+        SignInPage signIn=new SignInPage();
+
+
+        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+        homePage.signIn.click();
+        signIn.UsernameTextBox.sendKeys("display1");
+        signIn.PasswordTextBox.sendKeys("displaycontrol.1");
+        signIn.SignInButton.click();
 
         AccountDetailsPage accountDetailsPage=new AccountDetailsPage();
         Faker faker=new Faker();
-        SignInCustomer.SignIn();
+
+        String displayName = faker.name().username();
 
 
         WaitUtils.waitFor(3);

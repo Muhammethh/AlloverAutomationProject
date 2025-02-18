@@ -1,6 +1,8 @@
 package allover.tests.US_05_AccountDetails;
 
 import allover.pages.AccountDetailsPage;
+import allover.pages.HomePage;
+import allover.pages.SignInPage;
 import allover.tests.SignInCustomer;
 import allover.utilities.ConfigReader;
 import allover.utilities.Driver;
@@ -15,11 +17,17 @@ public class TC18_ShortCharacterPasswordTest {
 
         // sayfaya kullanıcı olarak giriş yapılır
         //sing out butonuna tıklanır
+        HomePage homePage=new HomePage();
+        SignInPage signIn=new SignInPage();
 
+
+        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+        homePage.signIn.click();
+        signIn.UsernameTextBox.sendKeys("display1");
+        signIn.PasswordTextBox.sendKeys("displaycontrol.1");
+        signIn.SignInButton.click();
         AccountDetailsPage accountDetailsPage = new AccountDetailsPage();
 
-
-        SignInCustomer.SignIn();
 
 
         WaitUtils.waitFor(3);

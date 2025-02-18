@@ -1,6 +1,8 @@
 package allover.tests.US_05_AccountDetails;
 
 import allover.pages.AccountDetailsPage;
+import allover.pages.HomePage;
+import allover.pages.SignInPage;
 import allover.tests.SignInCustomer;
 import allover.utilities.*;
 import com.github.javafaker.Faker;
@@ -12,9 +14,17 @@ public class TC12_UsedEmailTest {
     public void tc12() {
         //sayfaya kullanıcı olarak giriş yapılır
         //sing out butonuna tıklanır
+        HomePage homePage=new HomePage();
+        SignInPage signIn=new SignInPage();
 
+
+        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+        homePage.signIn.click();
+        signIn.UsernameTextBox.sendKeys("mail2");
+        signIn.PasswordTextBox.sendKeys("mailcontrol.2");
+        signIn.SignInButton.click();
         AccountDetailsPage accountDetailsPage=new AccountDetailsPage();
-        SignInCustomer.SignIn();
+
 
 
         WaitUtils.waitFor(3);
@@ -36,7 +46,7 @@ public class TC12_UsedEmailTest {
         JSUtils.JSscrollIntoView(accountDetailsPage.EmailAddress);
 
         accountDetailsPage.EmailAddress.clear();
-        accountDetailsPage.EmailAddress.sendKeys(ConfigReader.getProperty("usedEmail"));
+        accountDetailsPage.EmailAddress.sendKeys(ConfigReader.getProperty("usedMail"));
         ExtentReportsListener.extentTestInfo("kullanıcı hesap detaylarında Email box ına daha önce hesap oluşturulmuş geçerli bir mail adresi girilir");
 
         //Save changes butonuna tıklanır

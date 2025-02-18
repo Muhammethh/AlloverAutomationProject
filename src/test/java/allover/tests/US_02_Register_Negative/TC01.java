@@ -1,5 +1,5 @@
 
-package allover.tests.US_02;
+package allover.tests.US_02_Register_Negative;
 
 import allover.pages.AccountDetailsPage;
 import allover.pages.HomePage;
@@ -11,9 +11,6 @@ import allover.utilities.ExtentReportsListener;
 import allover.utilities.WaitUtils;
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
-
-//package allover.tests.US_02_Register_Negative;
-
 import allover.pages.HomePage;
 import allover.pages.RegisterPage;
 import allover.utilities.ConfigReader;
@@ -30,7 +27,6 @@ public class TC01 {
 
         HomePage homePage = new HomePage();
         RegisterPage registerPage = new RegisterPage();
-        ExtentReportsListener extentReportsListener = new ExtentReportsListener();
 
         ExtentReportsListener.extentTestInfo("sayfaya gidilir");
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
@@ -39,17 +35,7 @@ public class TC01 {
         homePage.register.click();
 
 
-        ExtentReportsListener.extentTestInfo("Username bölümüne önceden kayıt olunan bir username girilir");
-        registerPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("registerPositiveUsername"));
-
-        ExtentReportsListener.extentTestInfo("Email bölümüne kayıtlı bir email girilir");
-        registerPage.MailAddressTextBox.sendKeys(ConfigReader.getProperty("registerPositiveEmail"));
-
-
-        ExtentReportsListener.extentTestInfo("Password bölümüne geçerli bir şifre girilir");
-        registerPage.PasswordTextBox.sendKeys(ConfigReader.getProperty("registerPositivePassword"));
-
-        ExtentReportsListener.extentTestInfo("Username bölümüne önceden kayıt olunan bir userName girilir");
+            ExtentReportsListener.extentTestInfo("Username bölümüne önceden kayıt olunan bir userName girilir");
         registerPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("registerUsedUsername"));
 
 

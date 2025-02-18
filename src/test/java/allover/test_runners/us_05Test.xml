@@ -7,16 +7,28 @@
     <test verbose="2" preserve-order="true"
           name="US_05_AccountDetails">
         <classes>
-            <class name="allover.tests.US_05_AccountDetails.TC01_TextBoxesTest">            </class>
+            <class name="allover.tests.US_05_AccountDetails.TC01_TextBoxesTest"></class>
             <class name="allover.tests.US_05_AccountDetails.TC02_ValidFirstNameTest"></class>
             <class name="allover.tests.US_05_AccountDetails.TC03_NullFirstNameTest"></class>
             <class name="allover.tests.US_05_AccountDetails.TC04_InvalidFirstNameTest"></class>
             <class name="allover.tests.US_05_AccountDetails.TC05_ValidLastNameTest"></class>
             <class name="allover.tests.US_05_AccountDetails.TC06_NullLastNameTest"></class>
             <class name="allover.tests.US_05_AccountDetails.TC07_InvalidLastNameTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC08_ValidDisplayNameTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC09_NullDisplayNameTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC10_InvalidDisplayNameTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC11_ValidEmailTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC12_UsedEmailTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC13_InvalidEmailTest"></class>
             <class name="allover.tests.US_05_AccountDetails.TC14_BiographyBoxTest"></class>
             <class name="allover.tests.US_05_AccountDetails.TC15_BiographyVisualButtonsTest"></class>
             <class name="allover.tests.US_05_AccountDetails.TC16_BiographyTextButtonsTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC17_NullCurrentPasswordTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC18_ShortCharacterPasswordTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC19_OnlyNumbersPasswordTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC20_OnlyLettersPasswordTest"></class>
+            <class name="allover.tests.US_05_AccountDetails.TC21_OnlySymbolPasswordTest"></class>
+
         </classes>
     </test>
 </suite>
