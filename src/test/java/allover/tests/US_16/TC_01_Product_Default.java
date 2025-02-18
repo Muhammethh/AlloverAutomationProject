@@ -48,7 +48,8 @@ public class TC_01_Product_Default {
         myAccountPage.StoreManagerButton.click();
 
         ReusableMethods.scroll(storeManagerPage.ProductsButton);
-        ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
+        JSUtils.JSscrollIntoView(storeManagerPage.ProductsButton);
+       // ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
         storeManagerPage.ProductsButton.click();
 
         WebElement productTypeDropdown = driver.findElement(By.id("product_type"));

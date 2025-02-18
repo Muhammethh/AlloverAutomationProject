@@ -10,11 +10,11 @@ import allover.utilities.ReusableMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_03 extends SignInVendor {
+public class TC_03  {
 
     @Test(description = "US-12 TC-3 Last name gecersiz data girildiginde adres ekleme  basarili olmamalidir ")
     public void test() {
-
+        SignInVendor.SignIn();
         //    Adresses sekmesine tıklanir
         MyAccountPage myAccountPage=new MyAccountPage();
         myAccountPage.AddressesButton.click();
