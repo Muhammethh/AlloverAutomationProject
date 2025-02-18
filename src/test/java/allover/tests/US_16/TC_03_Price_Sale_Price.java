@@ -1,14 +1,9 @@
 package allover.tests.US_16;
 
-import allover.pages.HomePage;
-import allover.pages.MyAccountPage;
-import allover.pages.SignInPage;
-import allover.pages.StoreManagerPage;
+import allover.pages.*;
 import allover.utilities.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 public class TC_03_Price_Sale_Price {
@@ -44,19 +39,18 @@ public class TC_03_Price_Sale_Price {
         ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
         storeManagerPage.ProductsButton.click();
 
-        ReusableMethods.scroll((WebElement) storeManagerPage.addNewButton);
-        ReusableMethods.visibleWait((WebElement) storeManagerPage.addNewButton, 5);
-        ReusableMethods.click();
-        new Actions(Driver.getDriver()).sendKeys(Keys.PAGE_DOWN).perform();
 
-        WebElement priceField = driver.findElement(By.id("regular_price"));
-        priceField.clear();
-        priceField.sendKeys("100");
+        ActionsUtils.scrollRight();
+        storeManagerPage.AddNew.click();
+        ReusableMethods.waitForSecond(3);
 
-        WebElement salePriceField = driver.findElement(By.id("sale_price"));
-        salePriceField.clear();
-        salePriceField.sendKeys("80");
+
+        AddProduct vendorAddProuct = new AddProduct();
+        vendorAddProuct.PriceVendor.sendKeys(ConfigReader.getProperty("PriceVendor"));
+
+        vendorAddProuct.SalePriceVendor.sendKeys(ConfigReader.getProperty("SalePriceVendor"));
+        vendorAddProuct.ChooseImage.click();
+        ReusableMethods.waitForSecond(2);
 
     }
-
 }

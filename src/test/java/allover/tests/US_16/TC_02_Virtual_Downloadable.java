@@ -6,9 +6,7 @@ import allover.pages.SignInPage;
 import allover.pages.StoreManagerPage;
 import allover.utilities.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 public class TC_02_Virtual_Downloadable {
@@ -45,10 +43,10 @@ public class TC_02_Virtual_Downloadable {
         ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
         storeManagerPage.ProductsButton.click();
 
-        ReusableMethods.scroll((WebElement) storeManagerPage.addNewButton);
-        ReusableMethods.visibleWait((WebElement) storeManagerPage.addNewButton, 5);
-        ReusableMethods.click();
-        new Actions(Driver.getDriver()).sendKeys(Keys.PAGE_DOWN).perform();
+
+        ActionsUtils.scrollRight();
+        storeManagerPage.AddNew.click();
+        ReusableMethods.waitForSecond(3);
 
         WebElement virtualCheckbox = driver.findElement(By.id("is_virtual"));
         if (!virtualCheckbox.isSelected()) {

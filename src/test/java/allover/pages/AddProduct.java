@@ -15,14 +15,8 @@ public class AddProduct {
     @FindBy(xpath = "//input[@type='email']")
     public WebElement MailAddressTextBox;
 
-    @FindBy(partialLinkText = "Become a Vendor")
-    public WebElement BecomeVendorButton;
-
     @FindBy(xpath = "//input[@id='reg_password']")
     public WebElement PasswordTextBox;
-
-    @FindBy(xpath="//a/span[text()='Sign In']")
-    public WebElement signIn2 ;
 
     @FindBy(partialLinkText="My Account")
     public WebElement myAccount;
@@ -30,32 +24,53 @@ public class AddProduct {
     @FindBy(xpath = "//a[text()='Store Manager']")
     public WebElement StoreManagerButton;
 
-    @FindBy(xpath = "//*[@id=\"wcfm_menu\"]/div[5]/a/span[2]")
-    public WebElement getProductsButton;
+    @FindBy(xpath = "//*[@id=\"product_type\"]")
+    public WebElement SimpleProduct;
 
-    @FindBy(id = "<a href= https://allovercommerce.com/store-manager/products-manage/")
-    public WebElement addNewButton;
+    @FindBy(xpath = "//input[@id='pro_title']")
+    public WebElement ProductTitle;
 
-    @FindBy(id = "product_type")
-    public WebElement productTypeDropdown;
+    @FindBy(xpath = "//*[@id=\"regular_price\"]")
+    public WebElement PriceVendor;
 
-    @FindBy(id = "is_virtual")
-    public WebElement virtualOption;
+    @FindBy(xpath = "//input[@id='sale_price']")
+    public WebElement SalePriceVendor;
 
-    @FindBy(id = "is_downloadable")
-    public WebElement downloadableOption;
-    @FindBy(id = "pro_title") public WebElement proTitle;
+    @FindBy(xpath = "//img[@id='featured_img_display']")
+    public WebElement ChooseImage;
 
-    @FindBy(id = "regular_price")
-    public WebElement regPrice;
+    @FindBy(xpath = "//*[@id=\"menu-item-browse\"]")
+    public WebElement MediaLibrary;
 
-    @FindBy(id = "sale_price")
-    public WebElement salePrice;
+    @FindBy(xpath = "//img[contains(@src, 'redshirt-9-150x150.png')]")
+    public WebElement TshirtFoto;
 
-    @FindBy(id = "product_cats[]")
-    public WebElement category;
+    @FindBy(xpath = "//*[@id=\"__wp-uploader-id-0\"]/div[4]/div/div[2]/button")
+    public WebElement SelecVendorFoto;
 
-    @FindBy (xpath = "(//span[@class='text'])[4]")
-    public WebElement ProductsButton;
+    @FindBy(xpath = "//*[@id=\"gallery_img_gimage_0_display\"]")
+    public WebElement AddtoGalaleryVendor;
+
+    @FindBy(xpath = "//*[@id=\"__attachments-view-436\"]/li[25]/div")
+    public WebElement TshirtFoto2;
+
+    @FindBy(xpath = "//*[@id=\"__wp-uploader-id-3\"]/div[4]/div/div[2]/button")
+    public WebElement AddtoGallery;
+
+    @FindBy(xpath = "//input[@value='1086']")
+    public WebElement Categories123;
+
+    @FindBy(xpath = "//input[@value='1509']")
+    public WebElement Productbrands001;
+
+    @FindBy(xpath = "//input[@id='wcfm_products_simple_submit_button']")
+    public WebElement SubmitAddProduct;
+
+    @FindBy(xpath = "//*[@id=\"description_ifr\"]")
+    public WebElement ShortDescription;
+
+    @FindBy(css = ".your-success-message-class")
+    public WebElement message;
+
 
 }

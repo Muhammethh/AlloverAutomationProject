@@ -4,11 +4,11 @@ import allover.pages.HomePage;
 import allover.pages.MyAccountPage;
 import allover.pages.SignInPage;
 import allover.pages.StoreManagerPage;
-import allover.utilities.*;
+import allover.utilities.ConfigReader;
+import allover.utilities.Driver;
+import allover.utilities.ReusableMethods;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -34,11 +34,10 @@ public class TC_07_Fail_1 {
         signInPage.PasswordTextBox.sendKeys(ConfigReader.getProperty("vendorPassword"));
 
         signInPage.SignInButton.click();
-        WaitUtils.waitFor(2);
-        ActionsUtils.scrollDown();
+        ReusableMethods.scroll(homePage.myAccount);
+        ReusableMethods.scroll(homePage.myAccount);
+        ReusableMethods.visibleWait(homePage.myAccount, 5);
 
-        ReusableMethods.scrollEnd();
-        ReusableMethods.waitForSecond(2);
         homePage.myAccount.click();
 
         myAccountPage.StoreManagerButton.click();
@@ -47,21 +46,15 @@ public class TC_07_Fail_1 {
         ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
         storeManagerPage.ProductsButton.click();
 
-        ReusableMethods.scroll((WebElement) storeManagerPage.addNewButton);
-        ReusableMethods.visibleWait((WebElement) storeManagerPage.addNewButton, 5);
-        ReusableMethods.click();
-        new Actions(Driver.getDriver()).sendKeys(Keys.PAGE_DOWN).perform();
-
-
         WebElement productTypeDropdown = driver.findElement(By.id("product_type"));
         String selectedOption = productTypeDropdown.getText();
         assertEquals("Simple Product", selectedOption);
 
-        // Ürün Başlığı Girme
+        // 1️⃣ Ürün Başlığı Girme
     WebElement productTitle = driver.findElement(By.id("title"));
         productTitle.sendKeys("Test Ürünü");
 
-    // Fiyat Alanlarını Doldurma
+    // 2️⃣ Fiyat Alanlarını Doldurma
     WebElement priceField = driver.findElement(By.id("regular_price"));
         priceField.clear();
         priceField.sendKeys("100");
@@ -70,11 +63,11 @@ public class TC_07_Fail_1 {
         salePriceField.clear();
         salePriceField.sendKeys("80");
 
-    // Kategori Seçmeden Ürünü Kaydetme
+    // 3️⃣ Kategori Seçmeden Ürünü Kaydetme
     WebElement submitButton = driver.findElement(By.id("publish"));
         submitButton.click();
 
-    // Ürünün Eklenmediğini Doğrulama
+    // 4️⃣ Ürünün Eklenmediğini Doğrulama
     WebElement errorMessage = driver.findElement(By.xpath("//div[contains(@class,'error')]"));
         Assert.assertTrue(errorMessage.getText().contains("You must select a category"));
 }

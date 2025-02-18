@@ -1,20 +1,15 @@
 package allover.tests.US_16;
 
-import allover.pages.HomePage;
-import allover.pages.MyAccountPage;
-import allover.pages.SignInPage;
-import allover.pages.StoreManagerPage;
+import allover.pages.*;
 import allover.utilities.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC_06_Ürünün_Eklendi {
 
-WebElement driver;
+    WebElement driver;
     @Test
     public void productDefalt() throws InterruptedException {
 
@@ -45,21 +40,57 @@ WebElement driver;
         ReusableMethods.visibleWait(storeManagerPage.ProductsButton, 5);
         storeManagerPage.ProductsButton.click();
 
-        ReusableMethods.scroll((WebElement) storeManagerPage.addNewButton);
-        ReusableMethods.visibleWait((WebElement) storeManagerPage.addNewButton, 5);
-        ReusableMethods.click();
-        new Actions(Driver.getDriver()).sendKeys(Keys.PAGE_DOWN).perform();
 
-        WebElement submitButton = driver.findElement(By.id("publish"));
-        submitButton.click();
+        ActionsUtils.scrollRight();
+        storeManagerPage.AddNew.click();
+        ReusableMethods.waitForSecond(3);
 
-        WebElement successMessage = driver.findElement(By.xpath("//div[@class='updated notice']"));
-        Assert.assertTrue(successMessage.getText().contains("Product published"));
+        VendorAddProuctPage vendorAddProuct = new VendorAddProuctPage();
+        vendorAddProuct.SimpleProduct.click();
+        Assert.assertTrue(vendorAddProuct.SimpleProduct.isDisplayed(), "Simple Product is not displayed!");
 
-        driver.findElement(By.linkText("Products")).click();
-        WebElement addedProduct = driver.findElement(By.xpath("//a[contains(text(),'Test Ürünü')]"));
-        Assert.assertTrue(addedProduct.isDisplayed());
+        vendorAddProuct.ProductTitle.sendKeys(ConfigReader.getProperty("productTittle"));
+
+        vendorAddProuct.PriceVendor.sendKeys(ConfigReader.getProperty("PriceVendor"));
+        //ReusableMethods.waitForSecond(2);
+
+        vendorAddProuct.SalePriceVendor.sendKeys(ConfigReader.getProperty("SalePriceVendor"));
+        vendorAddProuct.ChooseImage.click();
+        ReusableMethods.waitForSecond(2);
+
+        vendorAddProuct.MediaLibrary.click();
+        ReusableMethods.waitForSecond(4);
+
+        JSUtils.JSclickWithTimeout(vendorAddProuct.TshirtFoto);
+
+        vendorAddProuct.SelecVendorFoto.click();
+        ReusableMethods.waitForSecond(4);
+        ActionsUtils.scrollDown();
+        ReusableMethods.waitForSecond(2);
+        vendorAddProuct.AddtoGalaleryVendor.click();
+        ReusableMethods.waitForSecond(4);
+        JSUtils.JSclickWithTimeout(vendorAddProuct.TshirtFoto2);
+        vendorAddProuct.AddtoGallery.click();
+
+        vendorAddProuct.Categories123.click();
+        vendorAddProuct.Productbrands001.click();
+
+
+        ReusableMethods.waitForSecond(2);
+        vendorAddProuct.ShortDescription.click();
+
+
+        ReusableMethods.scrollEnd();
+
+        ReusableMethods.waitForSecond(2);
+
+        vendorAddProuct.SubmitAddProduct.click();
+
+        ReusableMethods.waitForSecond(2);
+
 
     }
 
-}
+    }
+
+
