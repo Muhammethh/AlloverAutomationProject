@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    
+    <listeners>
+        <listener class-name="allover.utilities.ExtentReportsListener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/nimet/IdeaProjects/AlloverAutomationProject/src/test/java/allover/tests/US_05_AccountDetails" parallel="classes" thread-count="1">
+        <packages>
+            <package name="allover.tests.us_06_ShoppingTests"></package>
+        </packages>
+    </test>
+</suite>

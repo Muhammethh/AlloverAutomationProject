@@ -7,7 +7,7 @@ import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class TC_04 {
+public class TC_04{
 
     @Test
     public void TC_04_IsBillingDetailVisible() {
@@ -18,7 +18,7 @@ public class TC_04 {
         CheckOutPage checkOutPage = new CheckOutPage();
         SoftAssert softAssert = new SoftAssert();
 
-        //SignInCustomer.SignIn();
+
         SignInPage signIn=new SignInPage();
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
         homePage.signIn.click();
@@ -80,7 +80,7 @@ public class TC_04 {
 
         softAssert.assertAll();
 
-        //Driver.closeDriver();
+        Driver.closeDriver();
 
     }
 }

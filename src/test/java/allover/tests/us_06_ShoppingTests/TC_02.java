@@ -21,9 +21,9 @@ public class TC_02 {
         SampleItemsPage sampleItemsPage = new SampleItemsPage();
 
         ExtentReportsListener.extentTestInfo("SignIn Classından signIn metodu çağrılarak giriş yapılır");
-        //SignInCustomer.SignIn();
 
-        SignInPage signIn=new SignInPage();
+
+        SignInPage signIn = new SignInPage();
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
         homePage.signIn.click();
         signIn.UsernameTextBox.sendKeys(ConfigReader.getProperty("signInUserName"));
@@ -44,7 +44,7 @@ public class TC_02 {
         ExtentReportsListener.extentTestInfo("Ürün çıkmadığı doğrulanır");
         Assert.assertTrue(sampleItemsPage.noProductWereFoundWriting.isDisplayed());
 
-        //Driver.closeDriver();
+        Driver.closeDriver();
 
 
     }

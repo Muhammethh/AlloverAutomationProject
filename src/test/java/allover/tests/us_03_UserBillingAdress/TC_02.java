@@ -32,8 +32,8 @@ public class TC_02 extends SignInCustomer {
         ReusableMethods.click(userAddressesPage.addBillingAddress);
 
         //    First name alanına gecerli veri girilir
-        userAddressesPage.billingFirstName.clear();
-        userAddressesPage.billingFirstName.sendKeys(faker.name().firstName());
+        userAddressesPage.billingfirstnamefield.clear();
+        userAddressesPage.billingfirstnamefield.sendKeys(faker.name().firstName());
         ExtentReportsListener.extentTestInfo("First name kısmına geçerli veri girilir");
 
         //    Last name alanı gecerli veri girilir

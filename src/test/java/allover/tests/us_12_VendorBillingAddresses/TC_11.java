@@ -8,16 +8,17 @@ import allover.utilities.ReusableMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_11 extends SignInVendor {
+public class TC_11  {
 
 
     @Test(description = "US-12 TC-11 My Accountta  last name   otomatik gelmelidir  ")
     public void test() {
-
+        SignInVendor.SignIn();
         //    Adresses sekmesine tıklanir
         MyAccountPage myAccountPage=new MyAccountPage();
         myAccountPage.AddressesButton.click();
         ReusableMethods.waitForSecond(2);
+        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestInfo("Vendor address sekmesine tiklar");
 
 

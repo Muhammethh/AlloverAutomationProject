@@ -64,6 +64,8 @@ public class TC_02_InventoryTest {
         ReusableMethods.ddmValue(storeManagerPage.AllowBackorders,"notify");
         ReusableMethods.click(storeManagerPage.SoldIndividually);
         storeManagerPage.SubmitButton.click();
+        WaitUtils.waitFor(3);
+        ReusableMethods.takeScreenShot();
 
         Driver.closeDriver();
 

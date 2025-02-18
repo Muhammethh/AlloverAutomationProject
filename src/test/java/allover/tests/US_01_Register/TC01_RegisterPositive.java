@@ -4,6 +4,7 @@ import allover.pages.HomePage;
 import allover.pages.RegisterPage;
 import allover.utilities.ConfigReader;
 import allover.utilities.Driver;
+import allover.utilities.ExtentReportsListener;
 import allover.utilities.ReusableMethods;
 import com.github.javafaker.Faker;
 import org.testng.Assert;
@@ -50,22 +51,18 @@ public class TC01_RegisterPositive {
         registerPage.AgreeCheckBox.click();
 
         // SignUp butonuna tiklayalim.
+
         registerPage.SignUpButton.click();
 
         ReusableMethods.visibleWait(registerPage.SignUpButton, 10);
         Assert.assertTrue(registerPage.SignUpButton.isDisplayed());
 
-         // Siteye kayit olundugu dogrulanir.
+         //
 
-        Assert.assertEquals(registerPage.RegistrationCheck.getText(),"");
+        // Gerekli datalar girildikten sonra siteye kayit olundugu dogrulanir ve "Sign Out" butonu görünür
 
-        System.out.println(registerPage.RegistrationCheck.getText());
-
+        Assert.assertTrue(homePage.signOut.isDisplayed(), "Sign Out");
 
     }
+
 }
-
-
-
-
-

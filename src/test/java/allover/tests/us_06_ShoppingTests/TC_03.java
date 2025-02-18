@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class TC_03 {
+public class TC_03{
 
 
 
@@ -24,7 +24,7 @@ public class TC_03 {
         CheckOutPage checkOutPage = new CheckOutPage();
         SoftAssert softAssert = new SoftAssert();
 
-        //SignInCustomer.SignIn();
+
         SignInPage signIn=new SignInPage();
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
         homePage.signIn.click();
@@ -70,7 +70,7 @@ public class TC_03 {
 
         softAssert.assertEquals(decreasedItem,"1");
 
-        //Driver.closeDriver();
+        Driver.closeDriver();
 
         softAssert.assertAll();
 

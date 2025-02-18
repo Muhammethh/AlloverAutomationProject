@@ -9,11 +9,11 @@ import allover.utilities.ReusableMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_08 extends SignInVendor {
+public class TC_08  {
 
     @Test(description = "US-12 TC-8 Email kismi otomatik gelmelidir  ")
     public void test() {
-
+        SignInVendor.SignIn();
         //    Adresses sekmesine tıklanir
         MyAccountPage myAccountPage=new MyAccountPage();
         myAccountPage.AddressesButton.click();

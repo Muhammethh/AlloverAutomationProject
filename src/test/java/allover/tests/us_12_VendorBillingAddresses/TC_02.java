@@ -10,11 +10,11 @@ import allover.utilities.ReusableMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_02 extends SignInVendor {
+public class TC_02  {
 
     @Test(description = "US-12 TC-2 First name gecersiz data girildiginde adres ekleme  basarili olmamalidir ")
     public void test() {
-
+       SignInVendor.SignIn();
         //    Adresses sekmesine tıklanir
         MyAccountPage myAccountPage=new MyAccountPage();
         myAccountPage.AddressesButton.click();
@@ -26,13 +26,14 @@ public class TC_02 extends SignInVendor {
         ReusableMethods.waitForSecond(2);
         ReusableMethods.scroll(vendorAdressesPage.editYourBilling);
         ReusableMethods.visibleWait(vendorAdressesPage.editYourBilling,3);
-        ReusableMethods.click(  vendorAdressesPage.editYourBilling);
-        ExtentReportsListener.extentTestInfo("Vendor edit your billing adsress sekmesine tiklar");
+        ReusableMethods.click(vendorAdressesPage.editYourBilling);
+        ExtentReportsListener.extentTestInfo("Vendor edit your billing addresses sekmesine tiklar");
 
 
         //Adress bolumunde name kismina gecersiz data girildiginde ekleme yapilmamali
         vendorAdressesPage.firstName.clear();
         vendorAdressesPage.firstName.sendKeys("12");
+        ReusableMethods.addScreenShotToReport();
         ExtentReportsListener.extentTestInfo("First name alanı hatalı girildiğinde adres eklenmemeli ancak eklendi!");
 
         vendorAdressesPage.lastName.clear();
@@ -94,7 +95,7 @@ public class TC_02 extends SignInVendor {
 
 //      "Address changed successfully." metni görülmedigi doğrulanır
         Assert.assertFalse(vendorAdressesPage.changedSuccessfully.isDisplayed());
-        ExtentReportsListener.extentTestFail(" Gceresiz dta girildigi icin Address changed successfully. metni görülmedigi doğrulanmaliydi fakat hatali");
+        ExtentReportsListener.extentTestFail(" Gecersiz data girildigi icin Address changed successfully!. metni görülmedigi doğrulanmaliydi fakat hatali");
         Driver.closeDriver();
     }
 }

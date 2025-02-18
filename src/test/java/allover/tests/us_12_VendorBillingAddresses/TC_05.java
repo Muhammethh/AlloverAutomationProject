@@ -10,11 +10,11 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
-public class TC_05 extends SignInVendor {
+public class TC_05  {
 
     @Test(description = "US-12 TC-5 ZipCode kismina gecersiz data girildiginde adres ekleme  basarili olmamalidir ")
     public void test() {
-
+        SignInVendor.SignIn();
         //    Adresses sekmesine tıklanir
         MyAccountPage myAccountPage=new MyAccountPage();
         myAccountPage.AddressesButton.click();
@@ -75,6 +75,7 @@ public class TC_05 extends SignInVendor {
 //          ZIP Code kısmına geçersiz veri girilir
         vendorAdressesPage.zipCode.clear();
         vendorAdressesPage.zipCode.sendKeys("a123?");
+        ExtentReportsListener.addScreenShotToReport();
         ExtentReportsListener.extentTestInfo(" ZIP Code kısmına geçersiz veri girilir");
 
 
