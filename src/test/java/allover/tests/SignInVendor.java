@@ -6,11 +6,13 @@ import allover.pages.SignInPage;
 import allover.utilities.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 public class SignInVendor {
-    @BeforeClass
-    public void beforeClass() {
-          //Sayfaya gidilir
+    @Test
+    public static void SignIn() {
+        //Sayfaya gidilir
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
         HomePage homePage = new HomePage();
         homePage.signIn.click();
@@ -29,8 +31,5 @@ public class SignInVendor {
 
     }
 
-    @AfterMethod
-    public void tearDown() {
-        Driver.closeDriver();
-    }
+
 }

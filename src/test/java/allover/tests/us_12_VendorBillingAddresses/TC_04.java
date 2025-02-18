@@ -10,11 +10,11 @@ import allover.utilities.ReusableMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_04 extends SignInVendor {
+public class TC_04  {
 
     @Test(description = "US-12 TC-4 Street address kismina gecersiz data girildiginde adres ekleme  basarili olmamalidir ")
     public void test() {
-
+        SignInVendor.SignIn();
         //    Adresses sekmesine tıklanir
         MyAccountPage myAccountPage=new MyAccountPage();
         myAccountPage.AddressesButton.click();

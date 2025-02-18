@@ -3,9 +3,11 @@ package allover.tests.us_11_VendorSignIn;
 import allover.pages.HomePage;
 import allover.pages.MyAccountPage;
 import allover.pages.SignInPage;
-import allover.utilities.*;
-import org.testng.annotations.Test;
+import allover.utilities.ConfigReader;
+import allover.utilities.Driver;
+import allover.utilities.ExtentReportsListener;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 
 public class TC_01 {
@@ -13,11 +15,13 @@ public class TC_01 {
     @Test (description = "US-11 TC-1 Vendor sign in,Vendor olarak Sign in yapılabilmeli")
     public void vendorSignInTest() {
 
-        //Vendor sign-in sayfasina gilidir
+        //Vendor sign-in sayfasina gidilir
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+
         ExtentReportsListener.extentTestInfo("allovercommerce anasayfasnia gidilir");
 
         //Sign-in linkine tıklanır
+
         HomePage homePage = new HomePage();
         homePage.signIn.click();
         ExtentReportsListener.extentTestInfo("Sign-in butonuna tiklanir");
@@ -40,7 +44,6 @@ public class TC_01 {
         //My Account bölümünun gorulur oldugu dogrulanir (Bu islem icin once tekrardan
         // signout butonuna tiklamak gerekmekte)
 
-        //ActionsUtils.scrollEnd();
         homePage.signOut.click();
         MyAccountPage myAccountPage = new MyAccountPage();
         Assert.assertTrue(myAccountPage.MyAccountTitle.isDisplayed());

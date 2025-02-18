@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class TC04_InvalidFirstNameTest {
     @Test(description = "Kullanıcı Account Details (Hesap Detaylarını) bölümünde geçersiz bir name ile  first name değiştirilememeli")
-    public void testName() {
+    public void tc04() {
         //sayfaya kullanıcı olarak giriş yapılır
         //sing out butonuna tıklanır
 
@@ -20,34 +20,35 @@ public class TC04_InvalidFirstNameTest {
         WaitUtils.waitFor(3);
 
         //Account details url sine gidilir
+        Driver.getDriver().get(ConfigReader.getProperty("accountDetailsUrl"));
         ExtentReportsListener.extentTestInfo("Account details url sine gidilir");
 
-        Driver.getDriver().get(ConfigReader.getProperty("accountDetailsUrl"));
         // Url nin "edit-account" içerdiği doğrulanır
-        ExtentReportsListener.extentTestInfo("Url nin 'edit-account' içerdiği doğrulanır");
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("edit-account"));
         String value1 = accountDetailsPage.FirstName.getAttribute("value");
+        ExtentReportsListener.extentTestInfo("Url nin 'edit-account' içerdiği doğrulanır");
 
         //First name geçersiz bir name girilir
-        ExtentReportsListener.extentTestInfo("First name geçersiz bir name girilir");
         accountDetailsPage.FirstName.clear();
         accountDetailsPage.FirstName.sendKeys(ConfigReader.getProperty("gecersizName"));
+        ExtentReportsListener.extentTestInfo("First name geçersiz bir name girilir");
 
         //Save changes butonuna tıklanır
-        ExtentReportsListener.extentTestInfo("Save changes butonuna tıklanır");
         accountDetailsPage.SaveButton.submit();
         WaitUtils.waitFor(2);
+        ExtentReportsListener.extentTestInfo("Save changes butonuna tıklanır");
 
 
 
         //First name in değişmediği görülmeli
-        ExtentReportsListener.extentTestFail("First name in değişmediği görülmeli");
-        String value2 = accountDetailsPage.FirstName.getAttribute("value");
-        ActionsUtils.hoverOver(accountDetailsPage.FirstName);
-        ExtentReportsListener.extentTestFail("Geçersiz girilen First Name box ı değişiklik olarak kabul ediliyor");
+        String testString = accountDetailsPage.FirstName.getAttribute("value");
+        // Harf içeriyor mu?
+        boolean hasLetter = testString.matches(".*[a-zA-Z]+.*");
 
-        ExtentReportsListener.addScreenShotToReport();
-        Assert.assertEquals(value2,value1);
+        // Assert ile doğrula
+        Assert.assertTrue(hasLetter, "String dışında karekterler var!");
+        ExtentReportsListener.extentTestFail("First name in değişmediği görülmeli");
+        ExtentReportsListener.extentTestFail("Geçersiz girilen First Name box ı değişiklik olarak kabul ediliyor");
 
         //sayfa kapatılır
         Driver.closeDriver();

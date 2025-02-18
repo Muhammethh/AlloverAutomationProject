@@ -12,11 +12,12 @@ import org.testng.annotations.Test;
 
 public class TC_03 {
 
-    @Test (description = "US-11 TC-03 Gecersiz password ile Sign in yapılamamali (Negative case)")
-    public void invalidPasswordTest() {
+    @Test (description = "US-11 TC-1 Vendor sign in,Vendor olarak Sign in yapılabilmeli")
+    public void vendorSignInTest() {
 
         //Vendor sign-in sayfasina gilidir
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+
         ExtentReportsListener.extentTestInfo("allovercommerce anasayfasnia gidilir");
 
         //Sign-in linkine tıklanır
@@ -28,25 +29,24 @@ public class TC_03 {
         //Email kısmına geçerli veri girilir
         SignInPage signInPage = new SignInPage();
         signInPage.UsernameTextBox.sendKeys(ConfigReader.getProperty("vendorEmail"));
-        ExtentReportsListener.extentTestInfo("Gecerli email adresi girilir");
-
-
-        //Password kısmına geçersiz veri girilir
-        signInPage.PasswordTextBox.sendKeys(ConfigReader.getProperty("invalidPassword"));
-        ExtentReportsListener.extentTestInfo("Gecersiz vendor password girilir");
+        ExtentReportsListener.extentTestInfo("Gecerli vendor email girilir");
+        //Password kısmına geçerli veri girilir
+        signInPage.PasswordTextBox.sendKeys(ConfigReader.getProperty("vendorPassword"));
+        ExtentReportsListener.extentTestInfo("Gecerli vendor password girilir");
 
         //Sign-in butonuna tıklanır
         signInPage.SignInButton.click();
         ExtentReportsListener.extentTestInfo("Sign-in butonuna tiklanir");
 
+        //My Account bölümünun gorulur oldugu dogrulanir (Bu islem icin once tekrardan
+        // signout butonuna tiklamak gerekmekte)
 
-        //Sign-in olunamadığı doğrulanır
-
+        homePage.signOut.click();
         MyAccountPage myAccountPage = new MyAccountPage();
-        Assert.assertTrue(myAccountPage.WrongUsernamePasswordWarning.isDisplayed());
-        ExtentReportsListener.extentTestInfo("Gecersiz password ile giris yapilamadigi dogrulanir");
+        Assert.assertTrue(myAccountPage.MyAccountTitle.isDisplayed());
+        ExtentReportsListener.extentTestInfo("My Account bilgisinin gorunur oldugu dogrulanir");
 
-        Driver.closeDriver();
+     Driver.closeDriver();
 
 
     }

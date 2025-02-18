@@ -99,6 +99,9 @@ public class StoreManagerPage {
     @FindBy (id = "attributes_is_visible_2")
     public WebElement SizeVisibleOnSearchBoxButton;
 
+    @FindBy(xpath = "//a[@href='https://allovercommerce.com/store-manager/products-manage/']")
+    public WebElement AddNew;
+
 
 
 
